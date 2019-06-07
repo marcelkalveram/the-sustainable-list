@@ -25,7 +25,7 @@ export function Header() {
       paddingBottom={majorScale(1)}
     >
       <Heading color="#00783E" size={600}>
-        Fashion for future{' '}
+        Sustainable Brands{' '}
         <Text color="#47B881"> The fastest way to shop sustainably</Text>
       </Heading>
       <UnorderedList display="flex" alignItems="center">
