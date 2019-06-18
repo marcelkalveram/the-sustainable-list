@@ -8,6 +8,9 @@ import {
   majorScale,
 } from 'evergreen-ui';
 
+const getFieldProp = (val, prop) =>
+  typeof val === 'string' ? val : val.fields[prop];
+
 export function Filters(props) {
   const [hidden, setHidden] = useState([]);
 
@@ -32,105 +35,49 @@ export function Filters(props) {
     }
     props.setSelected({ ...newSelected });
   };
+
   return (
     <Pane
       background="tint1"
+      position="fixed"
       float="left"
       width="200px"
+      height="calc(100vh - 74px)"
+      top="74px"
       padding={majorScale(3)}
-      marginTop={minorScale(3)}
+      overflow="auto"
     >
-      <Heading
-        cursor="pointer"
-        size={400}
-        onClick={() => toggleHidden('categories')}
-        paddingBottom={hidden.includes('categories') && majorScale(1)}
-      >
-        Categories
-        <Icon
-          paddingTop={minorScale(2)}
-          icon={hidden.includes('categories') ? 'caret-up' : 'caret-down'}
-        />
-      </Heading>
+      {props.criteriaMap.map(criteria => (
+        <React.Fragment key={criteria.title}>
+          <Heading
+            cursor="pointer"
+            size={400}
+            onClick={() => toggleHidden(criteria.name)}
+            paddingBottom={hidden.includes(criteria.name) ? majorScale(1) : 0}
+          >
+            {criteria.title}
+            <Icon
+              paddingTop={minorScale(2)}
+              icon={hidden.includes(criteria.name) ? 'caret-up' : 'caret-down'}
+            />
+          </Heading>
 
-      <Pane display={hidden.includes('categories') ? 'none' : 'block'}>
-        {props.filters.category.map(i => (
-          <Checkbox
-            checked={props.selected.category.includes(i)}
-            label={i}
-            onChange={e => toggleFilter(i, 'category')}
-          />
-        ))}
-      </Pane>
-
-      <Heading
-        cursor="pointer"
-        size={400}
-        onClick={() => toggleHidden('clothing')}
-        paddingBottom={hidden.includes('clothing') && majorScale(1)}
-      >
-        Clothing
-        <Icon
-          paddingTop={minorScale(2)}
-          icon={hidden.includes('clothing') ? 'caret-up' : 'caret-down'}
-        />
-      </Heading>
-
-      <Pane display={hidden.includes('clothing') ? 'none' : 'block'}>
-        {props.filters.type.map(i => (
-          <Checkbox
-            checked={props.selected.type.includes(i.fields.slug)}
-            label={i.fields.title}
-            onChange={e => toggleFilter(i.fields.slug, 'type')}
-          />
-        ))}
-      </Pane>
-
-      <Heading
-        cursor="pointer"
-        size={400}
-        onClick={() => toggleHidden('styles')}
-        paddingBottom={hidden.includes('styles') && majorScale(1)}
-      >
-        Styles
-        <Icon
-          paddingTop={minorScale(2)}
-          icon={hidden.includes('styles') ? 'caret-up' : 'caret-down'}
-        />
-      </Heading>
-      <Pane display={hidden.includes('styles') ? 'none' : 'block'}>
-        {props.filters.style.map(i => (
-          <Checkbox
-            checked={props.selected.style.includes(i.fields.slug)}
-            label={i.fields.title}
-            onChange={e => toggleFilter(i.fields.slug, 'style')}
-          />
-        ))}
-      </Pane>
-
-      <Heading
-        cursor="pointer"
-        size={400}
-        onClick={() => toggleHidden('certificates')}
-        paddingBottom={hidden.includes('certificates') && majorScale(1)}
-      >
-        Certificates
-        <Icon
-          paddingTop={minorScale(2)}
-          icon={hidden.includes('certificates') ? 'caret-up' : 'caret-down'}
-        />
-      </Heading>
-      <Pane display={hidden.includes('certificates') ? 'none' : 'block'}>
-        {props.filters.certificates.map(i => (
-          <Checkbox
-            checked={props.selected.certificates.includes(i.fields.slug)}
-            label={i.fields.title}
-            onChange={e => toggleFilter(i.fields.slug, 'certificates')}
-          />
-        ))}
-      </Pane>
-
-      {/* <h3>Shipping options</h3> */}
+          <Pane display={hidden.includes(criteria.name) ? 'none' : 'block'}>
+            {props.filters[criteria.name].map(i => (
+              <Checkbox
+                key={getFieldProp(i, 'slug')}
+                checked={props.selected[criteria.name].includes(
+                  getFieldProp(i, 'slug'),
+                )}
+                label={getFieldProp(i, 'title')}
+                onChange={e =>
+                  toggleFilter(getFieldProp(i, 'slug'), criteria.name)
+                }
+              />
+            ))}
+          </Pane>
+        </React.Fragment>
+      ))}
     </Pane>
   );
 }

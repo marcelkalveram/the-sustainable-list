@@ -9,34 +9,37 @@ import {
   ListItem,
   majorScale,
 } from 'evergreen-ui';
+import { minorScale } from 'evergreen-ui/commonjs/scales';
 
 export function Header() {
   return (
     <Pane
-      backgroundColor="#F1FAF5"
+      position="fixed"
+      backgroundColor="#FEFEFE"
       width="100%"
       display="flex"
       justifyContent="space-between"
       alignItems="center"
-      borderBottom="1px solid #47B881"
+      borderBottom="1px solid #999"
       paddingLeft={majorScale(3)}
       paddingRight={majorScale(3)}
       paddingTop={majorScale(1)}
       paddingBottom={majorScale(1)}
     >
-      <Heading color="#00783E" size={600}>
-        Sustainable Brands{' '}
-        <Text color="#47B881"> The fastest way to shop sustainably</Text>
+      <Heading size={700} fontFamily="Satisfy">
+        Sustainable brands{' '}
+        <Text color="#425A70" size={300} marginLeft={minorScale(1)}>
+          {' '}
+          the fairest way to shop
+        </Text>
       </Heading>
       <UnorderedList display="flex" alignItems="center">
         <ListItem>
-          <Link href="/about" color="#47B881">
-            About the project
-          </Link>
+          <Link href="/about">About the project</Link>
         </ListItem>
         <ListItem>
-          <Link href="/list" color="#47B881">
-            <Button color="#47B881">Not listed yet?</Button>
+          <Link href="/list">
+            <Button>Not listed yet?</Button>
           </Link>
         </ListItem>
       </UnorderedList>

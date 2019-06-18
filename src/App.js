@@ -12,20 +12,27 @@ const client = contentful.createClient({
     'be01c9a3fbc1d2fdc2e018a979db97ce9a90b3cfeab7f64e7ba70ba5d878a597',
 });
 
+const criteriaMap = [
+  { name: 'category', title: 'Category', contentfulField: 'category' },
+  { name: 'type', title: 'Type', contentfulField: 'clothingTypes' },
+  { name: 'style', title: 'Style', contentfulField: 'clothingStyles' },
+  {
+    name: 'certificates',
+    title: 'Certificates',
+    contentfulField: 'certificates',
+  },
+];
+
+const reducerFunction = (acc, cur) => ({ [cur.name]: [], ...acc });
+
 function App() {
   const [brands, setBrands] = useState([]);
-  const [filters, setFilters] = useState({
-    category: [],
-    style: [],
-    type: [],
-    certificates: [],
-  });
-  const [selected, setSelected] = useState({
-    category: [],
-    style: [],
-    type: [],
-    certificates: [],
-  });
+  const [filters, setFilters] = useState(
+    criteriaMap.reduce(reducerFunction, {}),
+  );
+  const [selected, setSelected] = useState(
+    criteriaMap.reduce(reducerFunction, {}),
+  );
 
   useEffect(() => {
     client.getEntries().then(function(entries) {
@@ -49,11 +56,12 @@ function App() {
     <div className="App">
       <Header />
       <Filters
+        criteriaMap={criteriaMap}
         filters={filters}
         selected={selected}
         setSelected={setSelected}
       />
-      <Brands brands={brands} selected={selected} />
+      <Brands criteriaMap={criteriaMap} brands={brands} selected={selected} />
     </div>
   );
 }

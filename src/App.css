@@ -1,37 +1,4 @@
-.App {
-    /* text-align: center; */
-}
-
-.App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 40vmin;
-    pointer-events: none;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
+@import url('https://fonts.googleapis.com/css?family=Satisfy|Caveat&display=swap');
 ul li {
     list-style: none;
     padding: 0;
@@ -44,12 +11,11 @@ ul li:last-child {
 }
 
 ul li a, ul li a:link, ul li a:visited {
-    color: #47B881;
+    color: #425A70;
     text-decoration: none;
 }
 
 ul li a:hover {
-    color: #00783E !important;
     text-decoration: none;
 }
 
@@ -62,41 +28,10 @@ ul li a:hover {
 
 .brands-container {
     padding: 12px;
+    margin-left: 200px;
+    padding-top: 75px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 12px;
     grid-auto-rows: minmax(100px, auto);
-}
-
-.brand {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background: #EEE;
-    text-align: left;
-}
-
-.brand-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    margin-left: 32px;
-    margin-right: 32px;
-    background: #FFF;
-    padding: 12px;
-    border: 1px solid #333;
-}
-
-.brand-content {}
-
-.brand-content a {
-    text-decoration: none;
-}
-
-.brand-styles, .brand-types {
-    font-size: 11px;
-    color: #999;
 }
