@@ -35,10 +35,11 @@ function App() {
   );
 
   useEffect(() => {
-    client.getEntries().then(function(entries) {
+    client.getEntries({ limit: 1000 }).then(function(entries) {
       const brands = entries.items.filter(
         entry => entry.sys.contentType.sys.id === 'category',
       );
+      console.log(brands);
       setBrands(brands);
 
       const filters = { category: ['Men', 'Women', 'Kids'] };
