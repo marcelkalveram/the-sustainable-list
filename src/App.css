@@ -26,10 +26,21 @@ ul li a:hover {
     padding: 30px;
 }
 
+.main-container {
+    margin-left: 200px;
+    /* padding: 12px; */
+    padding-top: 75px;
+}
+
+.sort-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+}
+
 .brands-container {
     padding: 12px;
-    margin-left: 200px;
-    padding-top: 75px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 12px;

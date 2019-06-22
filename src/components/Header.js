@@ -15,7 +15,7 @@ export function Header() {
   return (
     <Pane
       position="fixed"
-      backgroundColor="#FEFEFE"
+      backgroundColor="white"
       width="100%"
       display="flex"
       justifyContent="space-between"
@@ -28,10 +28,10 @@ export function Header() {
     >
       <Heading size={700} fontFamily="Satisfy">
         Sustainable brands{' '}
-        <Text color="#425A70" size={300} marginLeft={minorScale(1)}>
+        {/* <Text color="#00783E" size={300} marginLeft={minorScale(1)}>
           {' '}
           the fairest way to shop
-        </Text>
+        </Text> */}
       </Heading>
       <UnorderedList display="flex" alignItems="center">
         <ListItem>
