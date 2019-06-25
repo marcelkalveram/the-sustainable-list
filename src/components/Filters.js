@@ -8,6 +8,8 @@ import {
   majorScale,
 } from 'evergreen-ui';
 
+import { Sticky } from 'react-sticky';
+
 const getFieldProp = (val, prop) =>
   typeof val === 'string' ? val : val.fields[prop];
 
@@ -37,16 +39,7 @@ export function Filters(props) {
   };
 
   return (
-    <Pane
-      background="tint1"
-      position="fixed"
-      float="left"
-      width="200px"
-      height="calc(100vh - 74px)"
-      top="74px"
-      padding={majorScale(3)}
-      overflow="auto"
-    >
+    <div className="filters-container" style={props.style}>
       {props.criteriaMap.map(criteria => (
         <React.Fragment key={criteria.title}>
           <Heading
@@ -78,6 +71,6 @@ export function Filters(props) {
           </Pane>
         </React.Fragment>
       ))}
-    </Pane>
+    </div>
   );
 }

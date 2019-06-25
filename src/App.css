@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Satisfy|Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore&display=swap');
 ul li {
     list-style: none;
     padding: 0;
@@ -11,7 +11,7 @@ ul li:last-child {
 }
 
 ul li a, ul li a:link, ul li a:visited {
-    color: #425A70;
+    color: #F9F9FB;
     text-decoration: none;
 }
 
@@ -19,30 +19,54 @@ ul li a:hover {
     text-decoration: none;
 }
 
+a, a:visited, a:link, a:hover {
+    text-decoration: none;
+    color: #425A70;
+}
+
+a:hover {
+    color: #E4E7EB !important;
+}
+
 .filters-container {
+    position: sticky;
+    top: 0px;
     float: left;
     width: 200px;
     text-align: left;
-    padding: 30px;
+    padding: 16px;
+    margin-top: 16px;
+    background: #F9F9FB;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
 }
 
 .main-container {
     margin-left: 200px;
-    /* padding: 12px; */
-    padding-top: 75px;
 }
 
 .sort-container {
+    position: sticky;
+    top: 0px;
+    background: #FFFFFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 12px;
+    margin: 0 16px 0;
+    padding: 16px 0;
+    margin-left: 48px;
+}
+
+.sort-container a:hover {
+    color: #425A70 !important;
+    opacity: 0.75;
 }
 
 .brands-container {
-    padding: 12px;
+    padding: 16px;
+    padding-top: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 12px;
+    grid-gap: 16px;
     grid-auto-rows: minmax(100px, auto);
 }

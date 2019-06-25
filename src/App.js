@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import * as contentful from 'contentful';
 import './App.css';
+import { StickyContainer } from 'react-sticky';
 
 import { Header } from './components/Header';
+import { Sort } from './components/Sort';
 import { Brands } from './components/Brands';
 import { Filters } from './components/Filters';
 
@@ -26,7 +28,7 @@ const criteriaMap = [
 const reducerFunction = (acc, cur) => ({ [cur.name]: [], ...acc });
 
 function App() {
-  const [brands, setBrands] = useState([]);
+  let [brands, setBrands] = useState([]);
   const [filters, setFilters] = useState(
     criteriaMap.reduce(reducerFunction, {}),
   );
@@ -34,12 +36,14 @@ function App() {
     criteriaMap.reduce(reducerFunction, {}),
   );
 
+  const [sortBy, setSortBy] = useState({ az: true, price: false });
+  const [searchFor, setSearchFor] = useState('');
+
   useEffect(() => {
     client.getEntries({ limit: 1000 }).then(function(entries) {
-      const brands = entries.items.filter(
+      let brands = entries.items.filter(
         entry => entry.sys.contentType.sys.id === 'category',
       );
-      console.log(brands);
       setBrands(brands);
 
       const filters = { category: ['Men', 'Women', 'Kids'] };
@@ -53,8 +57,63 @@ function App() {
     });
   }, []);
 
+  brands = brands.filter(brand => {
+    const matches = [];
+
+    criteriaMap.forEach((criteria, index) => {
+      matches[index] = selected[criteria.name].length === 0;
+      if (!brand.fields[criteria.contentfulField]) {
+        return;
+      }
+      brand.fields[criteria.contentfulField].forEach(field => {
+        if (typeof field === 'string') {
+          if (selected[criteria.name].includes(field)) {
+            matches[index] = true;
+          }
+        } else if (selected[criteria.name].includes(field.fields.slug)) {
+          matches[index] = true;
+        }
+      });
+    });
+    return matches.every(match => match);
+  });
+
+  if (searchFor !== '') {
+    brands = brands.filter(brand =>
+      brand.fields.title.toLowerCase().includes(searchFor.toLowerCase()),
+    );
+  }
+
+  if (sortBy.price === false) {
+    brands.sort((a, b) => {
+      const priceA = a.fields.price || 0;
+      const priceB = b.fields.price || 0;
+      if (priceA < priceB) {
+        return 1;
+      }
+      if (priceA >= priceB) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  if (sortBy.az === false) {
+    brands.sort((a, b) => {
+      const titleA = a.fields.title || 0;
+      const titleB = b.fields.title || 0;
+      if (titleA < titleB) {
+        return 1;
+      }
+      if (titleA >= titleB) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+
   return (
-    <div className="App">
+    <StickyContainer>
       <Header />
       <Filters
         criteriaMap={criteriaMap}
@@ -62,8 +121,17 @@ function App() {
         selected={selected}
         setSelected={setSelected}
       />
-      <Brands criteriaMap={criteriaMap} brands={brands} selected={selected} />
-    </div>
+      <div className="main-container">
+        <Sort
+          searchFor={searchFor}
+          setSearchFor={setSearchFor}
+          count={brands.length}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+        />
+        <Brands criteriaMap={criteriaMap} brands={brands} selected={selected} />
+      </div>
+    </StickyContainer>
   );
 }
 
