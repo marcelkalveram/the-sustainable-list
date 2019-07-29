@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Button,
   Heading,
+  IconButton,
   Text,
   Link,
   Pane,
@@ -11,11 +12,9 @@ import {
 } from 'evergreen-ui';
 import { minorScale } from 'evergreen-ui/commonjs/scales';
 
-export function Header() {
+export function Header(props) {
   return (
     <Pane
-      // position="fixed"
-      backgroundColor="white"
       width="100%"
       display="flex"
       justifyContent="space-between"
@@ -28,6 +27,7 @@ export function Header() {
       paddingBottom={majorScale(0)}
     >
       <Heading
+        className="header-logo"
         size={700}
         color="#F9F9FB"
         fontFamily="La Belle Aurore"
@@ -44,7 +44,11 @@ export function Header() {
           the fastest way to shop sustainably
         </Text>
       </Heading>
-      <UnorderedList display="flex" alignItems="center">
+      <UnorderedList
+        className="header-content"
+        display="flex"
+        alignItems="center"
+      >
         <ListItem>
           <Link href="/about">About the project</Link>
         </ListItem>
@@ -54,6 +58,7 @@ export function Header() {
           </Link>
         </ListItem>
       </UnorderedList>
+      <IconButton appearance="minimal" className="menu-icon" icon="menu" />
     </Pane>
   );
 }

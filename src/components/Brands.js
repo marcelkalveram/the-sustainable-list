@@ -56,6 +56,7 @@ export function Brands(props) {
     <div className="brands-container">
       {props.brands.map(brand => (
         <Pane
+          className="brand"
           key={brand.sys.id}
           background="#F9F9FB"
           display="flex"

@@ -1,23 +1,23 @@
 import React from 'react';
-import { Link, Text, Paragraph, SearchInput } from 'evergreen-ui';
+import { Button, Link, Icon, Paragraph, SearchInput } from 'evergreen-ui';
+import { majorScale } from 'evergreen-ui/commonjs/scales';
 
 export function Sort(props) {
   return (
     <div className="sort-container">
       <Paragraph
+        className="brands-count"
         size={300}
-        backgroundColor="#F5F6F7"
         padding={8}
         marginRight={8}
       >
         Showing <b>{props.count}</b> out of 100 sustainable brands
       </Paragraph>
       <div>
-        <Link
-          backgroundColor="#F5F6F7"
-          padding={8}
-          size={300}
-          href="#"
+        <Button
+          color="#425A70"
+          appearance="minimal"
+          iconSize={18}
           onClick={() =>
             props.setSortBy({
               az: !props.sortBy.az,
@@ -26,15 +26,12 @@ export function Sort(props) {
           }
         >
           {props.sortBy.az ? 'A-Z' : 'Z-A'}
-        </Link>
-
-        <Link
-          backgroundColor="#F5F6F7"
-          size={300}
-          padding={8}
-          marginLeft={8}
-          marginRight={16}
-          href="#"
+        </Button>
+        <Button
+          color="#425A70"
+          appearance="minimal"
+          marginRight={majorScale(2)}
+          iconSize={18}
           onClick={() =>
             props.setSortBy({
               az: true,
@@ -42,14 +39,34 @@ export function Sort(props) {
             })
           }
         >
-          {props.sortBy.price ? 'Price (ascending)' : 'Price (descending)'}
-        </Link>
+          {props.sortBy.price ? '$$$' : '$'}
+        </Button>
+
         <SearchInput
           onChange={e => props.setSearchFor(e.target.value)}
           value={props.searchFor}
           height={31}
           placeholder="Search by name..."
         />
+      </div>
+      <div className="mobile-filter-search">
+        <Button
+          color="#425A70"
+          appearance="minimal"
+          iconBefore="filter"
+          iconSize={18}
+          onClick={() => props.setShowFilters(true)}
+        >
+          Filter
+        </Button>
+        <Button
+          color="#425A70"
+          appearance="minimal"
+          iconBefore="search"
+          iconSize={18}
+        >
+          Search
+        </Button>
       </div>
     </div>
   );

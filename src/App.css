@@ -1,72 +1,159 @@
 @import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore&display=swap');
 ul li {
-    list-style: none;
-    padding: 0;
-    float: left;
-    margin-right: 16px;
+  list-style: none;
+  padding: 0;
+  float: left;
+  margin-right: 16px;
 }
 
 ul li:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
-ul li a, ul li a:link, ul li a:visited {
-    color: #F9F9FB;
-    text-decoration: none;
+ul li a,
+ul li a:link,
+ul li a:visited {
+  color: #f9f9fb;
+  text-decoration: none;
 }
 
 ul li a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-a, a:visited, a:link, a:hover {
-    text-decoration: none;
-    color: #425A70;
+a,
+a:visited,
+a:link,
+a:hover {
+  text-decoration: none;
+  color: #425a70;
 }
 
 a:hover {
-    color: #E4E7EB !important;
+  color: #e4e7eb !important;
+}
+
+.menu-icon {
+  display: none !important;
+}
+
+.mobile-filter-search {
+  display: none;
 }
 
 .filters-container {
-    position: sticky;
-    top: 0px;
-    float: left;
-    width: 200px;
-    text-align: left;
-    padding: 16px;
-    margin-top: 16px;
-    background: #F9F9FB;
-    height: calc(100vh - 60px);
-    overflow-y: scroll;
+  position: sticky;
+  top: 0px;
+  float: left;
+  width: 200px;
+  text-align: left;
+  padding: 16px;
+  margin-top: 16px;
+  background: #f9f9fb;
+  height: calc(100vh - 30px);
+  overflow-y: scroll;
 }
 
 .main-container {
-    margin-left: 200px;
+  margin-left: 200px;
 }
 
 .sort-container {
-    position: sticky;
-    top: 0px;
-    background: #FFFFFF;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 16px 0;
-    padding: 16px 0;
-    margin-left: 48px;
+  position: sticky;
+  top: 0px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 16px 0;
+  padding: 16px 0;
+  margin-left: 48px;
 }
 
 .sort-container a:hover {
-    color: #425A70 !important;
-    opacity: 0.75;
+  color: #425a70 !important;
+  opacity: 0.75;
 }
 
 .brands-container {
+  padding: 16px;
+  padding-top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+@media only screen and (max-width: 1280px) {
+  .brands-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .brands-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .brands-count {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .menu-icon {
+    display: block !important;
+  }
+  .main-container {
+    margin-left: 0;
+  }
+  .filters-container {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 32px);
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+  }
+  .filters-container--visible {
+    display: block;
+  }
+  .sort-container {
+    margin: 0;
+    padding: 8px;
+  }
+  .sort-container .📦h_31px {
+    display: none;
+  }
+  .sort-container .mobile-filter-search {
+    display: block;
+  }
+  .brands-container {
+    display: block;
+    padding: 0;
+  }
+  .brand {
+    padding: 8px 0;
+    margin: 8px 0;
+  }
+  .header-logo {
     padding: 16px;
-    padding-top: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px;
-    grid-auto-rows: minmax(100px, auto);
+    padding-left: 0;
+    text-align: center;
+  }
+  .header-logo h2 {
+    margin-bottom: 0 !important;
+    line-height: 20 !important;
+  }
+  .header-logo span {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: -10px;
+  }
+  .header-content {
+    display: none !important;
+  }
 }

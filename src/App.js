@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as contentful from 'contentful';
 import './App.css';
-import { StickyContainer } from 'react-sticky';
 
 import { Header } from './components/Header';
 import { Sort } from './components/Sort';
@@ -35,6 +34,8 @@ function App() {
   const [selected, setSelected] = useState(
     criteriaMap.reduce(reducerFunction, {}),
   );
+
+  const [showFilters, setShowFilters] = useState(false);
 
   const [sortBy, setSortBy] = useState({ az: true, price: false });
   const [searchFor, setSearchFor] = useState('');
@@ -113,13 +114,15 @@ function App() {
   }
 
   return (
-    <StickyContainer>
+    <div style={showFilters ? { position: 'fixed' } : {}}>
       <Header />
       <Filters
         criteriaMap={criteriaMap}
         filters={filters}
         selected={selected}
         setSelected={setSelected}
+        showFilters={showFilters}
+        setShowFilters={setShowFilters}
       />
       <div className="main-container">
         <Sort
@@ -128,10 +131,11 @@ function App() {
           count={brands.length}
           sortBy={sortBy}
           setSortBy={setSortBy}
+          setShowFilters={setShowFilters}
         />
         <Brands criteriaMap={criteriaMap} brands={brands} selected={selected} />
       </div>
-    </StickyContainer>
+    </div>
   );
 }
 

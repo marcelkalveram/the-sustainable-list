@@ -3,12 +3,11 @@ import {
   Pane,
   Heading,
   Icon,
+  IconButton,
   Checkbox,
   minorScale,
   majorScale,
 } from 'evergreen-ui';
-
-import { Sticky } from 'react-sticky';
 
 const getFieldProp = (val, prop) =>
   typeof val === 'string' ? val : val.fields[prop];
@@ -39,7 +38,19 @@ export function Filters(props) {
   };
 
   return (
-    <div className="filters-container" style={props.style}>
+    <div
+      className={`filters-container${
+        props.showFilters ? ' filters-container--visible' : ''
+      }`}
+      style={props.style}
+    >
+      <IconButton
+        appearance="minimal"
+        className="menu-icon"
+        icon="cross"
+        onClick={() => props.setShowFilters(false)}
+        style={{ position: 'absolute', right: '16px', top: '16px' }}
+      />
       {props.criteriaMap.map(criteria => (
         <React.Fragment key={criteria.title}>
           <Heading
@@ -50,7 +61,8 @@ export function Filters(props) {
           >
             {criteria.title}
             <Icon
-              paddingTop={minorScale(2)}
+              position="relative"
+              top={minorScale(1)}
               icon={hidden.includes(criteria.name) ? 'caret-up' : 'caret-down'}
             />
           </Heading>
