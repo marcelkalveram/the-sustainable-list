@@ -19,8 +19,8 @@ export function Header(props) {
       display="flex"
       justifyContent="space-between"
       alignItems="center"
-      borderBottom="1px solid #999"
-      backgroundColor="#234361"
+      borderBottom="1px solid #E4E7EB"
+      backgroundColor="#F9F9FB"
       paddingLeft={majorScale(2)}
       paddingRight={majorScale(2)}
       paddingTop={majorScale(0)}
@@ -29,19 +29,19 @@ export function Header(props) {
       <Heading
         className="header-logo"
         size={700}
-        color="#F9F9FB"
+        color="#425A70"
         fontFamily="La Belle Aurore"
         marginBottom={-10}
       >
-        sustainable brands{' '}
+        the sustainable list{' '}
         <Text
-          color="#F9F9FB"
+          color="#425A70"
           opacity={0.33}
           size={300}
           marginLeft={minorScale(1)}
         >
           {' '}
-          the fastest way to shop sustainably
+          the easy way to shop sustainably
         </Text>
       </Heading>
       <UnorderedList
