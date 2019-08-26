@@ -58,7 +58,7 @@ export function Header(props) {
           </Link>
         </ListItem>
       </UnorderedList>
-      <IconButton appearance="minimal" className="menu-icon" icon="menu" />
+      {/* <IconButton appearance="minimal" className="menu-icon" icon="menu" /> */}
     </Pane>
   );
 }

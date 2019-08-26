@@ -12,6 +12,8 @@ import {
 const getFieldProp = (val, prop) =>
   typeof val === 'string' ? val : val.fields[prop];
 
+const getFieldPropLocation = (val, prop) => val.fields.country;
+
 export function Filters(props) {
   const [hidden, setHidden] = useState([]);
 
@@ -36,6 +38,12 @@ export function Filters(props) {
     }
     props.setSelected({ ...newSelected });
   };
+
+  const countries = props.filters['location'].reduce((unique, item) => {
+    return unique.filter(u => u === getFieldPropLocation(item)).length
+      ? unique
+      : unique.concat(getFieldPropLocation(item));
+  }, []);
 
   return (
     <div
@@ -68,18 +76,27 @@ export function Filters(props) {
           </Heading>
 
           <Pane display={hidden.includes(criteria.name) ? 'none' : 'block'}>
-            {props.filters[criteria.name].map(i => (
-              <Checkbox
-                key={getFieldProp(i, 'slug')}
-                checked={props.selected[criteria.name].includes(
-                  getFieldProp(i, 'slug'),
-                )}
-                label={getFieldProp(i, 'title')}
-                onChange={e =>
-                  toggleFilter(getFieldProp(i, 'slug'), criteria.name)
-                }
-              />
-            ))}
+            {criteria.name !== 'location'
+              ? props.filters[criteria.name].map(i => (
+                  <Checkbox
+                    key={getFieldProp(i, 'slug')}
+                    checked={props.selected[criteria.name].includes(
+                      getFieldProp(i, 'slug'),
+                    )}
+                    label={getFieldProp(i, 'title')}
+                    onChange={e =>
+                      toggleFilter(getFieldProp(i, 'slug'), criteria.name)
+                    }
+                  />
+                ))
+              : countries.map(country => (
+                  <Checkbox
+                    key={country}
+                    checked={props.selected[criteria.name].includes(country)}
+                    label={country}
+                    onChange={e => toggleFilter(country, criteria.name)}
+                  />
+                ))}
           </Pane>
         </React.Fragment>
       ))}

@@ -15,6 +15,7 @@ const client = contentful.createClient({
 
 const criteriaMap = [
   { name: 'category', title: 'Category', contentfulField: 'category' },
+  { name: 'location', title: 'Location', contentfulField: 'location' },
   { name: 'type', title: 'Type', contentfulField: 'clothingTypes' },
   { name: 'style', title: 'Style', contentfulField: 'clothingStyles' },
   {
@@ -28,6 +29,8 @@ const reducerFunction = (acc, cur) => ({ [cur.name]: [], ...acc });
 
 function App() {
   let [brands, setBrands] = useState([]);
+  let [brandsCount, setBrandsCount] = useState(0);
+
   const [filters, setFilters] = useState(
     criteriaMap.reduce(reducerFunction, {}),
   );
@@ -46,9 +49,10 @@ function App() {
         entry => entry.sys.contentType.sys.id === 'category',
       );
       setBrands(brands);
+      setBrandsCount(brands.length);
 
       const filters = { category: ['Men', 'Women', 'Kids'] };
-      ['style', 'type', 'certificates'].forEach(model => {
+      ['style', 'type', 'certificates', 'location'].forEach(model => {
         filters[model] = entries.items.filter(
           entry => entry.sys.contentType.sys.id === model,
         );
@@ -66,15 +70,27 @@ function App() {
       if (!brand.fields[criteria.contentfulField]) {
         return;
       }
-      brand.fields[criteria.contentfulField].forEach(field => {
-        if (typeof field === 'string') {
-          if (selected[criteria.name].includes(field)) {
-            matches[index] = true;
-          }
-        } else if (selected[criteria.name].includes(field.fields.slug)) {
+      if (criteria.name === 'location') {
+        if (
+          brand.fields[criteria.contentfulField].fields &&
+          selected[criteria.name].includes(
+            brand.fields[criteria.contentfulField].fields.country,
+          )
+        ) {
           matches[index] = true;
         }
-      });
+      }
+      if (criteria.name !== 'location') {
+        brand.fields[criteria.contentfulField].forEach(field => {
+          if (typeof field === 'string') {
+            if (selected[criteria.name].includes(field)) {
+              matches[index] = true;
+            }
+          } else if (selected[criteria.name].includes(field.fields.slug)) {
+            matches[index] = true;
+          }
+        });
+      }
     });
     return matches.every(match => match);
   });
@@ -128,6 +144,7 @@ function App() {
         <Sort
           searchFor={searchFor}
           setSearchFor={setSearchFor}
+          totalCount={brandsCount}
           count={brands.length}
           sortBy={sortBy}
           setSortBy={setSortBy}

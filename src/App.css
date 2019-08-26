@@ -125,11 +125,14 @@ a:hover {
     margin: 0;
     padding: 8px;
   }
-  .sort-container .📦h_31px {
+  .sort-container .📦h_31px.📦dspl_inline-flex {
     display: none;
   }
   .sort-container .mobile-filter-search {
     display: block;
+  }
+  .sort-container .mobile-filter-search .📦h_31px.📦dspl_inline-flex {
+    display: inline-flex;
   }
   .brands-container {
     display: block;

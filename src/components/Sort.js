@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Link, Icon, Paragraph, SearchInput } from 'evergreen-ui';
+import { Button, Paragraph, SearchInput } from 'evergreen-ui';
 import { majorScale } from 'evergreen-ui/commonjs/scales';
 
 export function Sort(props) {
@@ -11,7 +11,8 @@ export function Sort(props) {
         padding={8}
         marginRight={8}
       >
-        Showing <b>{props.count}</b> out of 100 sustainable brands
+        Showing <b>{props.count}</b> out of {props.totalCount} sustainable
+        brands
       </Paragraph>
       <div>
         <Button
@@ -59,14 +60,13 @@ export function Sort(props) {
         >
           Filter
         </Button>
-        <Button
-          color="#425A70"
-          appearance="minimal"
-          iconBefore="search"
-          iconSize={18}
-        >
-          Search
-        </Button>
+        <SearchInput
+          onChange={e => props.setSearchFor(e.target.value)}
+          value={props.searchFor}
+          height={31}
+          width={150}
+          placeholder="Search by name..."
+        />
       </div>
     </div>
   );
