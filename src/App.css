@@ -109,7 +109,7 @@ a:hover {
   .filters-container {
     display: none;
     position: absolute;
-    width: 100%;
+    width: calc(100vw - 32px);
     height: calc(100vh - 32px);
     margin-top: 0;
     top: 0;
