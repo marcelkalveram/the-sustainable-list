@@ -21,12 +21,12 @@ export function Sort(props) {
           iconSize={18}
           onClick={() =>
             props.setSortBy({
-              az: !props.sortBy.az,
-              price: true,
+              az: props.sortBy.az === 'asc' ? 'desc' : 'asc',
+              price: null,
             })
           }
         >
-          {props.sortBy.az ? 'A-Z' : 'Z-A'}
+          {props.sortBy.az !== 'asc' ? 'A-Z' : 'Z-A'}
         </Button>
         <Button
           color="#425A70"
@@ -35,12 +35,12 @@ export function Sort(props) {
           iconSize={18}
           onClick={() =>
             props.setSortBy({
-              az: true,
-              price: !props.sortBy.price,
+              az: null,
+              price: props.sortBy.price === 'asc' ? 'desc' : 'asc',
             })
           }
         >
-          {props.sortBy.price ? '$$$' : '$'}
+          {props.sortBy.price === 'asc' ? '$$$' : '$'}
         </Button>
 
         <SearchInput

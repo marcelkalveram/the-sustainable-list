@@ -4,11 +4,8 @@ import { majorScale } from 'evergreen-ui/commonjs/scales';
 
 const getLocation = location => {
   let locationString = 'Unknown location';
-  if (location && location.fields && location.fields.city) {
-    locationString = location.fields.city;
-  }
   if (location && location.fields && location.fields.country) {
-    locationString += `, ${location.fields.country}`;
+    locationString = `${location.fields.country}`;
   }
   return locationString;
 };

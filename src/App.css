@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
 ul li {
   list-style: none;
   padding: 0;
@@ -10,9 +10,7 @@ ul li:last-child {
   margin-right: 0;
 }
 
-ul li a,
-ul li a:link,
-ul li a:visited {
+ul li a, ul li a:link, ul li a:visited {
   color: #f9f9fb;
   text-decoration: none;
 }
@@ -21,10 +19,7 @@ ul li a:hover {
   text-decoration: none;
 }
 
-a,
-a:visited,
-a:link,
-a:hover {
+a, a:visited, a:link, a:hover {
   text-decoration: none;
   color: #425a70;
 }

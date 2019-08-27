@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Button,
   Heading,
-  IconButton,
   Text,
   Link,
   Pane,
@@ -30,10 +29,10 @@ export function Header(props) {
         className="header-logo"
         size={700}
         color="#425A70"
-        fontFamily="La Belle Aurore"
-        marginBottom={-10}
+        fontFamily="Caveat"
+        // marginBottom={-10}
       >
-        the sustainable list{' '}
+        The Sustainable List{' '}
         <Text
           color="#425A70"
           opacity={0.33}
@@ -41,7 +40,7 @@ export function Header(props) {
           marginLeft={minorScale(1)}
         >
           {' '}
-          the easy way to shop sustainably
+          the easy way to be sustainable
         </Text>
       </Heading>
       <UnorderedList

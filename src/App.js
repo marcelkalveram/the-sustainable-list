@@ -40,7 +40,7 @@ function App() {
 
   const [showFilters, setShowFilters] = useState(false);
 
-  const [sortBy, setSortBy] = useState({ az: true, price: false });
+  const [sortBy, setSortBy] = useState({ az: null, price: null });
   const [searchFor, setSearchFor] = useState('');
 
   useEffect(() => {
@@ -101,29 +101,29 @@ function App() {
     );
   }
 
-  if (sortBy.price === false) {
+  if (sortBy.price !== null) {
     brands.sort((a, b) => {
       const priceA = a.fields.price || 0;
       const priceB = b.fields.price || 0;
       if (priceA < priceB) {
-        return 1;
+        return sortBy.price === 'asc' ? 1 : -1;
       }
       if (priceA >= priceB) {
-        return -1;
+        return sortBy.price === 'asc' ? -1 : 1;
       }
       return 0;
     });
   }
 
-  if (sortBy.az === false) {
+  if (sortBy.az !== null) {
     brands.sort((a, b) => {
       const titleA = a.fields.title || 0;
       const titleB = b.fields.title || 0;
       if (titleA < titleB) {
-        return 1;
+        return sortBy.az === 'asc' ? 1 : -1;
       }
       if (titleA >= titleB) {
-        return -1;
+        return sortBy.az === 'asc' ? -1 : 1;
       }
       return 0;
     });
