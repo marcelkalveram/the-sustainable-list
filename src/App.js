@@ -15,14 +15,19 @@ const client = contentful.createClient({
 
 const criteriaMap = [
   { name: 'category', title: 'Category', contentfulField: 'category' },
-  { name: 'location', title: 'Location', contentfulField: 'location' },
-  { name: 'type', title: 'Type', contentfulField: 'clothingTypes' },
-  { name: 'style', title: 'Style', contentfulField: 'clothingStyles' },
+  { name: 'type', title: 'Clothing type', contentfulField: 'clothingTypes' },
+  { name: 'style', title: 'Clothing style', contentfulField: 'clothingStyles' },
+  {
+    name: 'sustainabilityType',
+    title: 'Characteristics',
+    contentfulField: 'sustainabilityType',
+  },
   {
     name: 'certificates',
     title: 'Certificates',
     contentfulField: 'certificates',
   },
+  { name: 'location', title: 'Location', contentfulField: 'location' },
 ];
 
 const reducerFunction = (acc, cur) => ({ [cur.name]: [], ...acc });
@@ -52,12 +57,17 @@ function App() {
       setBrandsCount(brands.length);
 
       const filters = { category: ['Men', 'Women', 'Kids'] };
-      ['style', 'type', 'certificates', 'location'].forEach(model => {
+      [
+        'style',
+        'type',
+        'certificates',
+        'location',
+        'sustainabilityType',
+      ].forEach(model => {
         filters[model] = entries.items.filter(
           entry => entry.sys.contentType.sys.id === model,
         );
       });
-
       setFilters(filters);
     });
   }, []);
@@ -86,7 +96,10 @@ function App() {
             if (selected[criteria.name].includes(field)) {
               matches[index] = true;
             }
-          } else if (selected[criteria.name].includes(field.fields.slug)) {
+          } else if (
+            field.fields &&
+            selected[criteria.name].includes(field.fields.slug)
+          ) {
             matches[index] = true;
           }
         });
