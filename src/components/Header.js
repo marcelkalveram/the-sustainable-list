@@ -52,7 +52,7 @@ export function Header(props) {
           <Link href="/about">About the project</Link>
         </ListItem>
         <ListItem>
-          <Link href="/list">
+          <Link href="https://thesustainablelist.typeform.com/to/PnaHPh">
             <Button>Not listed yet?</Button>
           </Link>
         </ListItem>
