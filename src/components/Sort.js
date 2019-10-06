@@ -65,7 +65,7 @@ export function Sort(props) {
           value={props.searchFor}
           height={31}
           width={150}
-          placeholder="Search by name..."
+          placeholder="Search..."
         />
       </div>
     </div>

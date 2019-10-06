@@ -112,8 +112,8 @@ export function Filters(props) {
       </div>
       {props.showFilters && (
         <Pane
-          className="filters-container__cta"
           style={{
+            display: 'flex',
             position: 'fixed',
             bottom: 0,
             left: 0,
@@ -123,6 +123,7 @@ export function Filters(props) {
             padding: '8px',
             justifyContent: 'center',
             alignItems: 'center',
+            zIndex: 5,
           }}
         >
           <Button
