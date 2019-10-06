@@ -117,7 +117,7 @@ a:hover {
   }
   .filters-container {
     display: none;
-    position: absolute;
+    position: fixed;
     width: calc(100vw - 32px);
     height: calc(100vh - 80px);
     margin-top: 0;

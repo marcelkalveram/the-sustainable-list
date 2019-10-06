@@ -47,88 +47,94 @@ export function Filters(props) {
   }, []);
 
   return (
-    <div
-      className={`filters-container${
-        props.showFilters ? ' filters-container--visible' : ''
-      }`}
-      style={props.style}
-    >
-      <IconButton
-        appearance="minimal"
-        className="menu-icon"
-        icon="cross"
-        onClick={() => props.setShowFilters(false)}
-        style={{
-          position: 'absolute',
-          right: '16px',
-          top: '16px',
-          lineHeight: '38px',
-        }}
-      />
-      {props.criteriaMap.map(criteria => (
-        <React.Fragment key={criteria.title}>
-          <Heading
-            cursor="pointer"
-            size={400}
-            onClick={() => toggleHidden(criteria.name)}
-            paddingBottom={hidden.includes(criteria.name) ? majorScale(1) : 0}
-          >
-            {criteria.title}
-            <Icon
-              position="relative"
-              top={minorScale(1)}
-              icon={hidden.includes(criteria.name) ? 'caret-up' : 'caret-down'}
-            />
-          </Heading>
-
-          <Pane display={hidden.includes(criteria.name) ? 'none' : 'block'}>
-            {criteria.name !== 'location'
-              ? props.filters[criteria.name].map(i => (
-                  <Checkbox
-                    key={getFieldProp(i, 'slug')}
-                    checked={props.selected[criteria.name].includes(
-                      getFieldProp(i, 'slug'),
-                    )}
-                    label={getFieldProp(i, 'title')}
-                    onChange={e =>
-                      toggleFilter(getFieldProp(i, 'slug'), criteria.name)
-                    }
-                  />
-                ))
-              : countries.map(country => (
-                  <Checkbox
-                    key={country}
-                    checked={props.selected[criteria.name].includes(country)}
-                    label={country}
-                    onChange={e => toggleFilter(country, criteria.name)}
-                  />
-                ))}
-          </Pane>
-        </React.Fragment>
-      ))}
-      <Pane
-        className="filters-container__cta"
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          width: '100%',
-          height: '56px',
-          backgroundColor: '#F9F9FB',
-          padding: '8px',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
+    <>
+      <div
+        className={`filters-container${
+          props.showFilters ? ' filters-container--visible' : ''
+        }`}
+        style={props.style}
       >
-        <Button
-          appearance="primary"
-          backgroundImage="linear-gradient(to bottom, #425A70, #234361)"
-          height={40}
+        <IconButton
+          appearance="minimal"
+          className="menu-icon"
+          icon="cross"
           onClick={() => props.setShowFilters(false)}
+          style={{
+            position: 'absolute',
+            right: '16px',
+            top: '16px',
+            lineHeight: '38px',
+          }}
+        />
+        {props.criteriaMap.map(criteria => (
+          <React.Fragment key={criteria.title}>
+            <Heading
+              cursor="pointer"
+              size={400}
+              onClick={() => toggleHidden(criteria.name)}
+              paddingBottom={hidden.includes(criteria.name) ? majorScale(1) : 0}
+            >
+              {criteria.title}
+              <Icon
+                position="relative"
+                top={minorScale(1)}
+                icon={
+                  hidden.includes(criteria.name) ? 'caret-up' : 'caret-down'
+                }
+              />
+            </Heading>
+
+            <Pane display={hidden.includes(criteria.name) ? 'none' : 'block'}>
+              {criteria.name !== 'location'
+                ? props.filters[criteria.name].map(i => (
+                    <Checkbox
+                      key={getFieldProp(i, 'slug')}
+                      checked={props.selected[criteria.name].includes(
+                        getFieldProp(i, 'slug'),
+                      )}
+                      label={getFieldProp(i, 'title')}
+                      onChange={e =>
+                        toggleFilter(getFieldProp(i, 'slug'), criteria.name)
+                      }
+                    />
+                  ))
+                : countries.map(country => (
+                    <Checkbox
+                      key={country}
+                      checked={props.selected[criteria.name].includes(country)}
+                      label={country}
+                      onChange={e => toggleFilter(country, criteria.name)}
+                    />
+                  ))}
+            </Pane>
+          </React.Fragment>
+        ))}
+      </div>
+      {props.showFilters && (
+        <Pane
+          className="filters-container__cta"
+          style={{
+            position: 'fixed',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            height: '56px',
+            backgroundColor: '#F9F9FB',
+            padding: '8px',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
         >
-          Apply filters
-        </Button>
-      </Pane>
-    </div>
+          <Button
+            appearance="primary"
+            backgroundImage="linear-gradient(to bottom, #425A70, #234361)"
+            height={40}
+            onClick={() => props.setShowFilters(false)}
+          >
+            Apply filters
+          </Button>
+        </Pane>
+      )}
+    </>
   );
 }
