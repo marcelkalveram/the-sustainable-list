@@ -10,7 +10,9 @@ ul li:last-child {
   margin-right: 0;
 }
 
-ul li a, ul li a:link, ul li a:visited {
+ul li a,
+ul li a:link,
+ul li a:visited {
   color: #f9f9fb;
   text-decoration: none;
 }
@@ -19,7 +21,10 @@ ul li a:hover {
   text-decoration: none;
 }
 
-a, a:visited, a:link, a:hover {
+a,
+a:visited,
+a:link,
+a:hover {
   text-decoration: none;
   color: #425a70;
 }
@@ -47,10 +52,11 @@ a:hover {
   background: #f9f9fb;
   height: calc(100vh - 30px);
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
-.filters-container label :checked+.📦bblr_3px {
-  background-image: linear-gradient(to bottom, #425A70, #234361) !important;
+.filters-container label :checked + .📦bblr_3px {
+  background-image: linear-gradient(to bottom, #425a70, #234361) !important;
 }
 
 .filters-container__cta {
@@ -130,10 +136,10 @@ a:hover {
   .sort-container {
     margin: 0;
     padding: 8px;
-    background-color: #425A70;
+    background-color: #425a70;
   }
   .sort-container button {
-    color: #F9F9FB;
+    color: #f9f9fb;
   }
   .sort-container button:hover {
     background-color: #234361;
