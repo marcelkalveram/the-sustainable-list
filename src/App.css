@@ -119,7 +119,7 @@ a:hover {
     display: none;
     position: absolute;
     width: calc(100vw - 32px);
-    height: calc(100vh - 64px);
+    height: calc(100vh - 80px);
     margin-top: 0;
     top: 0;
     left: 0;
