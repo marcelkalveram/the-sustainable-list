@@ -4,6 +4,7 @@ import {
   Heading,
   Icon,
   IconButton,
+  Button,
   Checkbox,
   minorScale,
   majorScale,
@@ -57,7 +58,12 @@ export function Filters(props) {
         className="menu-icon"
         icon="cross"
         onClick={() => props.setShowFilters(false)}
-        style={{ position: 'absolute', right: '16px', top: '16px' }}
+        style={{
+          position: 'absolute',
+          right: '16px',
+          top: '16px',
+          lineHeight: '38px',
+        }}
       />
       {props.criteriaMap.map(criteria => (
         <React.Fragment key={criteria.title}>
@@ -100,6 +106,29 @@ export function Filters(props) {
           </Pane>
         </React.Fragment>
       ))}
+      <Pane
+        className="filters-container__cta"
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: '56px',
+          backgroundColor: '#F9F9FB',
+          padding: '8px',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Button
+          appearance="primary"
+          backgroundImage="linear-gradient(to bottom, #425A70, #234361)"
+          height={40}
+          onClick={() => props.setShowFilters(false)}
+        >
+          Apply filters
+        </Button>
+      </Pane>
     </div>
   );
 }

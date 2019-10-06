@@ -49,6 +49,14 @@ a:hover {
   overflow-y: scroll;
 }
 
+.filters-container label :checked+.📦bblr_3px {
+  background-image: linear-gradient(to bottom, #425A70, #234361) !important;
+}
+
+.filters-container__cta {
+  display: none;
+}
+
 .main-container {
   margin-left: 200px;
 }
@@ -105,7 +113,7 @@ a:hover {
     display: none;
     position: absolute;
     width: calc(100vw - 32px);
-    height: calc(100vh - 32px);
+    height: calc(100vh - 64px);
     margin-top: 0;
     top: 0;
     left: 0;
@@ -116,9 +124,19 @@ a:hover {
   .filters-container--visible {
     display: block;
   }
+  .filters-container__cta {
+    display: flex;
+  }
   .sort-container {
     margin: 0;
     padding: 8px;
+    background-color: #425A70;
+  }
+  .sort-container button {
+    color: #F9F9FB;
+  }
+  .sort-container button:hover {
+    background-color: #234361;
   }
   .sort-container .📦h_31px.📦dspl_inline-flex {
     display: none;
@@ -126,8 +144,15 @@ a:hover {
   .sort-container .mobile-filter-search {
     display: block;
   }
+  .sort-container .mobile-filter-search .📦h_32px.📦dspl_inline-flex {
+    margin-right: 8px;
+  }
   .sort-container .mobile-filter-search .📦h_31px.📦dspl_inline-flex {
     display: inline-flex;
+    margin-right: 8px;
+  }
+  .sort-container .📦w_150px {
+    width: 95px;
   }
   .brands-container {
     display: block;
@@ -138,13 +163,11 @@ a:hover {
     margin: 8px 0;
   }
   .header-logo {
-    padding: 16px;
+    padding: 8px;
     padding-left: 0;
     text-align: center;
-  }
-  .header-logo h2 {
     margin-bottom: 0 !important;
-    line-height: 20 !important;
+    line-height: 22px !important;
   }
   .header-logo span {
     display: inline-block;
