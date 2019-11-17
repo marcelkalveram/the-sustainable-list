@@ -6,6 +6,7 @@ import { Header } from './components/Header';
 import { Sort } from './components/Sort';
 import { Brands } from './components/Brands';
 import { Filters } from './components/Filters';
+import { InstaGrid } from './components/InstaGrid';
 
 const client = contentful.createClient({
   space: 'hfvaxsztohci',
@@ -154,6 +155,7 @@ function App() {
         setShowFilters={setShowFilters}
       />
       <div className="main-container">
+        <InstaGrid account="thesustainablelist" numberOfMediaElements={32} />
         <Sort
           searchFor={searchFor}
           setSearchFor={setSearchFor}

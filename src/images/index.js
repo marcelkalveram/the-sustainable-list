@@ -8,6 +8,7 @@ import badgePta from './badges-pta.png';
 import badgeOne from './badges-one.png';
 import badgeCoc from './badges-coc.png';
 import badgeEnv from './badges-env.png';
+import Instagram from './instagram.png';
 
 export {
   badgeGrs,
@@ -20,4 +21,5 @@ export {
   badgeOne,
   badgeCoc,
   badgeEnv,
+  Instagram,
 };
