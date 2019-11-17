@@ -26,12 +26,12 @@ a:visited,
 a:link,
 a:hover {
   text-decoration: none;
-  color: #425a70;
+  color: #234361;
 }
 
-a:hover {
+/* a:hover {
   color: #e4e7eb !important;
-}
+} */
 
 .menu-icon {
   display: none !important;

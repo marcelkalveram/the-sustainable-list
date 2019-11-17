@@ -1,169 +1,80 @@
-import React, { useState, useEffect } from 'react';
-import * as contentful from 'contentful';
+import React, { useMemo, useReducer } from 'react';
 import './App.css';
 
+// data
+import data from './data';
+import { criteriaMap } from './config/criteriaMap';
+import { filterBrands } from './helpers/filter';
+import { sortByAz, sortByPrice } from './helpers/sort';
+import { actions, initialState, reducer } from './store/';
+
+// UI
 import { Header } from './components/Header';
 import { Sort } from './components/Sort';
 import { Brands } from './components/Brands';
 import { Filters } from './components/Filters';
 
-const client = contentful.createClient({
-  space: 'hfvaxsztohci',
-  accessToken:
-    'be01c9a3fbc1d2fdc2e018a979db97ce9a90b3cfeab7f64e7ba70ba5d878a597',
-});
-
-const criteriaMap = [
-  { name: 'category', title: 'Category', contentfulField: 'category' },
-  { name: 'type', title: 'Clothing type', contentfulField: 'clothingTypes' },
-  { name: 'style', title: 'Clothing style', contentfulField: 'clothingStyles' },
-  {
-    name: 'sustainabilityType',
-    title: 'Characteristics',
-    contentfulField: 'sustainabilityType',
-  },
-  {
-    name: 'certificates',
-    title: 'Certificates',
-    contentfulField: 'certificates',
-  },
-  { name: 'location', title: 'Location', contentfulField: 'location' },
-];
-
-const reducerFunction = (acc, cur) => ({ [cur.name]: [], ...acc });
-
 function App() {
-  let [brands, setBrands] = useState([]);
-  let [brandsCount, setBrandsCount] = useState(0);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  const [filters, setFilters] = useState(
-    criteriaMap.reduce(reducerFunction, {}),
-  );
-  const [selected, setSelected] = useState(
-    criteriaMap.reduce(reducerFunction, {}),
+  // massive filter function
+  let brands = useMemo(
+    () => data.brands.filter(brands => filterBrands(brands, state.selected)),
+    [state.selected],
   );
 
-  const [showFilters, setShowFilters] = useState(false);
-
-  const [sortBy, setSortBy] = useState({ az: null, price: null });
-  const [searchFor, setSearchFor] = useState('');
-
-  useEffect(() => {
-    client.getEntries({ limit: 1000 }).then(function(entries) {
-      let brands = entries.items.filter(
-        entry => entry.sys.contentType.sys.id === 'category',
-      );
-      setBrands(brands);
-      setBrandsCount(brands.length);
-
-      const filters = { category: ['Men', 'Women', 'Kids'] };
-      [
-        'style',
-        'type',
-        'certificates',
-        'location',
-        'sustainabilityType',
-      ].forEach(model => {
-        filters[model] = entries.items.filter(
-          entry => entry.sys.contentType.sys.id === model,
-        );
-      });
-      setFilters(filters);
-    });
-  }, []);
-
-  brands = brands.filter(brand => {
-    const matches = [];
-
-    criteriaMap.forEach((criteria, index) => {
-      matches[index] = selected[criteria.name].length === 0;
-      if (!brand.fields[criteria.contentfulField]) {
-        return;
-      }
-      if (criteria.name === 'location') {
-        if (
-          brand.fields[criteria.contentfulField].fields &&
-          selected[criteria.name].includes(
-            brand.fields[criteria.contentfulField].fields.country,
-          )
-        ) {
-          matches[index] = true;
-        }
-      }
-      if (criteria.name !== 'location') {
-        brand.fields[criteria.contentfulField].forEach(field => {
-          if (typeof field === 'string') {
-            if (selected[criteria.name].includes(field)) {
-              matches[index] = true;
-            }
-          } else if (
-            field.fields &&
-            selected[criteria.name].includes(field.fields.slug)
-          ) {
-            matches[index] = true;
-          }
-        });
-      }
-    });
-    return matches.every(match => match);
-  });
-
-  if (searchFor !== '') {
+  // search for filter
+  if (state.searchFor !== '') {
     brands = brands.filter(brand =>
-      brand.fields.title.toLowerCase().includes(searchFor.toLowerCase()),
+      brand.fields.title.toLowerCase().includes(state.searchFor.toLowerCase()),
     );
   }
-
-  if (sortBy.price !== null) {
-    brands.sort((a, b) => {
-      const priceA = a.fields.price || 0;
-      const priceB = b.fields.price || 0;
-      if (priceA < priceB) {
-        return sortBy.price === 'asc' ? 1 : -1;
-      }
-      if (priceA >= priceB) {
-        return sortBy.price === 'asc' ? -1 : 1;
-      }
-      return 0;
-    });
+  // sort by price
+  if (state.sortBy.price !== null) {
+    brands.sort((a, b) => sortByPrice(state, a, b));
   }
 
-  if (sortBy.az !== null) {
-    brands.sort((a, b) => {
-      const titleA = a.fields.title || 0;
-      const titleB = b.fields.title || 0;
-      if (titleA < titleB) {
-        return sortBy.az === 'asc' ? 1 : -1;
-      }
-      if (titleA >= titleB) {
-        return sortBy.az === 'asc' ? -1 : 1;
-      }
-      return 0;
-    });
+  // sort by az
+  if (state.sortBy.az !== null) {
+    brands.sort((a, b) => sortByAz(state, a, b));
   }
 
   return (
-    <div style={showFilters ? { position: 'fixed' } : {}}>
+    <div style={state.showFilters ? { position: 'fixed' } : {}}>
       <Header />
       <Filters
         criteriaMap={criteriaMap}
-        filters={filters}
-        selected={selected}
-        setSelected={setSelected}
-        showFilters={showFilters}
-        setShowFilters={setShowFilters}
+        filters={state.filters}
+        selected={state.selected}
+        setSelected={selected =>
+          dispatch({ type: actions.SET_SELECTED, payload: selected })
+        }
+        showFilters={state.showFilters}
+        setShowFilters={show =>
+          dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })
+        }
       />
       <div className="main-container">
         <Sort
-          searchFor={searchFor}
-          setSearchFor={setSearchFor}
-          totalCount={brandsCount}
-          count={brands.length}
-          sortBy={sortBy}
-          setSortBy={setSortBy}
-          setShowFilters={setShowFilters}
+          searchFor={state.searchFor}
+          setSearchFor={searchTerm =>
+            dispatch({ type: actions.SET_SEARCH_FOR, payload: searchTerm })
+          }
+          totalCount={state.brandsCount}
+          count={state.brands.length}
+          sortBy={state.sortBy}
+          setSortBy={sortBy =>
+            dispatch({ type: actions.SET_SORT_BY, payload: sortBy })
+          }
+          setShowFilters={show =>
+            dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })
+          }
         />
-        <Brands criteriaMap={criteriaMap} brands={brands} selected={selected} />
+        <Brands
+          criteriaMap={criteriaMap}
+          brands={brands}
+          selected={state.selected}
+        />
       </div>
     </div>
   );
