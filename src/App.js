@@ -9,15 +9,15 @@ import { sortByAz, sortByPrice } from './helpers/sort';
 import { actions, initialState, reducer } from './store/';
 
 // UI
-import { Header } from './components/Header';
-import { Sort } from './components/Sort';
-import { Brands } from './components/Brands';
-import { Filters } from './components/Filters';
+import { Header } from './components/Header/Header';
+import { Sort } from './components/Sort/Sort';
+import { Brands } from './components/Brands/Brands';
+import { Filters } from './components/Filters/Filters';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // massive filter function
+  // filter
   let brands = useMemo(
     () => data.brands.filter(brands => filterBrands(brands, state.selected)),
     [state.selected],
