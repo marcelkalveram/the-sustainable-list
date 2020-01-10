@@ -1,0 +1,18 @@
+.filter__mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .filter__mobile {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  /* make search box visible */
+  .filter__mobile .📦dspl_inline-flex {
+    display: inline-flex !important;
+  }
+  /* hide desktop search field */
+  .sort .📦h_31px.📦dspl_inline-flex {
+    display: none;
+  }
+}

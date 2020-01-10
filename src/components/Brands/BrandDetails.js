@@ -9,6 +9,7 @@ import {
   minorScale,
 } from 'evergreen-ui';
 import { colors, fontSizes } from '../../config/constants';
+import './BrandDetails.css';
 
 const getLocation = location => {
   let locationString = 'Unknown location';
@@ -75,12 +76,13 @@ export const BrandDetails = ({
       flexDirection="column"
       overflow="hidden"
       paddingTop="8"
+      className="brand-details"
     >
       <Link textDecoration="none" target="_blank" href={website}>
         <Heading color={colors.secondary}>{title}</Heading>
       </Link>
       <Pane display="flex" flexDirection="row">
-        <Pane marginTop={minorScale(2)}>
+        <Pane marginTop={minorScale(2)} className="brand-details__styles">
           {clothingStyles &&
             clothingStyles.map(style => (
               <Badge
@@ -94,7 +96,11 @@ export const BrandDetails = ({
               </Badge>
             ))}
         </Pane>
-        <Pane marginTop={minorScale(2)} marginLeft={majorScale(1)}>
+        <Pane
+          marginTop={minorScale(2)}
+          marginLeft={majorScale(1)}
+          className="brand-details__price"
+        >
           {getPrice(price)}
           <Text
             color={colors.secondary}

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Pane, Button } from 'evergreen-ui';
+import { colors } from '../../config/constants';
+import { majorScale } from 'evergreen-ui/commonjs/scales';
 
 export const ApplyButtonMobile = ({ setShowFilters }) => (
   <Pane
@@ -10,8 +12,8 @@ export const ApplyButtonMobile = ({ setShowFilters }) => (
       left: 0,
       width: '100%',
       height: '56px',
-      backgroundColor: '#F9F9FB',
-      padding: '8px',
+      backgroundColor: colors.white,
+      padding: majorScale(1),
       justifyContent: 'center',
       alignItems: 'center',
       zIndex: 5,
@@ -19,7 +21,7 @@ export const ApplyButtonMobile = ({ setShowFilters }) => (
   >
     <Button
       appearance="primary"
-      backgroundImage="linear-gradient(to bottom, #425A70, #234361)"
+      backgroundImage={`linear-gradient(to bottom, #425A70, #234361)`}
       height={40}
       onClick={() => setShowFilters(false)}
     >

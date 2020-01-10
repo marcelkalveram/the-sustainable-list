@@ -1,0 +1,13 @@
+.brand-details {
+  width: 100%;
+}
+
+.brand-details__styles,
+.brand-details__price {
+  white-space: nowrap;
+}
+
+.brand-details__styles {
+  overflow: hidden;
+  /* overflow-x: auto; */
+}

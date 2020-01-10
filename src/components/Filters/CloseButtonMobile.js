@@ -1,5 +1,6 @@
 import React from 'react';
 import { IconButton } from 'evergreen-ui';
+import './CloseButtonMobile.css';
 
 export const CloseButtonMobile = ({ setShowFilters }) => (
   <IconButton
@@ -7,11 +8,5 @@ export const CloseButtonMobile = ({ setShowFilters }) => (
     className="menu-icon"
     icon="cross"
     onClick={() => setShowFilters(false)}
-    style={{
-      position: 'absolute',
-      right: '16px',
-      top: '16px',
-      lineHeight: '38px',
-    }}
   />
 );

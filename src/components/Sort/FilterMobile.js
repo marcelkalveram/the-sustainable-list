@@ -1,21 +1,22 @@
 import React from 'react';
-import { Button, SearchInput } from 'evergreen-ui';
+import { IconButton, SearchInput } from 'evergreen-ui';
 import { colors, iconSizes, SEARCH_INPUT_HEIGHT } from '../../config/constants';
+import './FilterMobile.css';
+import { majorScale } from 'evergreen-ui/commonjs/scales';
 
 const SEARCH_INPUT_WIDTH = 150;
 
-export const SortMobile = ({ setShowFilters, setSearchFor, searchFor }) => {
+export const FilterMobile = ({ setShowFilters, setSearchFor, searchFor }) => {
   return (
-    <div className="mobile-filter-search">
-      <Button
+    <div className="filter__mobile">
+      <IconButton
+        marginLeft={majorScale(1)}
         color={colors.secondary}
         appearance="minimal"
-        iconBefore="filter"
+        icon="settings"
         iconSize={iconSizes.small}
         onClick={() => setShowFilters(true)}
-      >
-        Filter
-      </Button>
+      />
       <SearchInput
         onChange={e => setSearchFor(e.target.value)}
         value={searchFor}

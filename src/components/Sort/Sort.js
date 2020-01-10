@@ -1,9 +1,10 @@
 import React from 'react';
-import { Paragraph, SearchInput } from 'evergreen-ui';
+import { Pane, Paragraph, SearchInput } from 'evergreen-ui';
 import { majorScale } from 'evergreen-ui/commonjs/scales';
 import { colors, fontSizes, SEARCH_INPUT_HEIGHT } from '../../config/constants';
 import { SortButton } from './SortButton';
-import { SortMobile } from './SortMobile';
+import { FilterMobile } from './FilterMobile';
+import './Sort.css';
 
 export function Sort(props) {
   const {
@@ -17,9 +18,9 @@ export function Sort(props) {
   } = props;
 
   return (
-    <div className="sort-container">
+    <div className="sort">
       <Paragraph
-        className="brands-count"
+        className="sort__brands-count"
         size={fontSizes.base}
         padding={majorScale(1)}
         marginRight={majorScale(1)}
@@ -27,7 +28,7 @@ export function Sort(props) {
       >
         Showing <b>{count}</b> out of {totalCount} sustainable brands
       </Paragraph>
-      <div>
+      <Pane>
         <SortButton
           onToggle={() =>
             setSortBy({
@@ -39,7 +40,7 @@ export function Sort(props) {
           {sortBy.az !== 'asc' ? 'A-Z' : 'Z-A'}
         </SortButton>
         <SortButton
-          onClick={() =>
+          onToggle={() =>
             setSortBy({
               az: null,
               price: sortBy.price === 'asc' ? 'desc' : 'asc',
@@ -50,13 +51,14 @@ export function Sort(props) {
         </SortButton>
 
         <SearchInput
+          marginLeft={majorScale(1)}
           onChange={e => setSearchFor(e.target.value)}
           value={searchFor}
           height={SEARCH_INPUT_HEIGHT}
           placeholder="Search by name..."
         />
-      </div>
-      <SortMobile
+      </Pane>
+      <FilterMobile
         setShowFilters={setShowFilters}
         setSearchFor={setSearchFor}
         searchFor={searchFor}

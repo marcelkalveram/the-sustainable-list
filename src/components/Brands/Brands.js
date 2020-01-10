@@ -4,10 +4,11 @@ import { BrandCertificates } from './BrandCertificates';
 import { BrandImage } from './BrandImage';
 import { BrandLogo } from './BrandLogo';
 import { BrandDetails } from './BrandDetails';
+import './Brands.css';
 
 export function Brands({ brands }) {
   return (
-    <div className="brands-container">
+    <div className="brands">
       {brands.map(brand => {
         const {
           image,
@@ -21,7 +22,7 @@ export function Brands({ brands }) {
 
         return (
           <Pane
-            className="brand"
+            className="brands__brand"
             key={brand.sys.id}
             display="flex"
             flexDirection="column"
@@ -33,6 +34,7 @@ export function Brands({ brands }) {
             </BrandImage>
 
             <Pane
+              position="relative"
               display="flex"
               flexDirection="row-reverse"
               justifyContent="space-between"

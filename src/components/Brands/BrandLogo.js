@@ -1,6 +1,7 @@
 import React from 'react';
 import { Pane, majorScale } from 'evergreen-ui';
 import { colors } from '../../config/constants';
+import './BrandLogo.css';
 
 const LOGO_SIZE = 76;
 const OFFSET = -54;
@@ -8,6 +9,7 @@ const OFFSET = -54;
 export const BrandLogo = ({ logo, title }) => {
   return (
     <Pane
+      className="brands__brand__logo"
       display="flex"
       justifyContent="center"
       alignItems="center"

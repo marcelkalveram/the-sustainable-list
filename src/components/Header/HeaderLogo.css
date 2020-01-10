@@ -1,0 +1,23 @@
+@media only screen and (max-width: 860px) {
+  .header__logo__subtitle {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header__logo__subtitle {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header__logo {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .header__logo__subtitle {
+    margin-left: 37px;
+    margin-top: 3px;
+  }
+}
