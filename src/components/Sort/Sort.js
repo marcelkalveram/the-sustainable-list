@@ -18,7 +18,18 @@ export function Sort(props) {
   } = props;
 
   return (
-    <div className="sort">
+    <Pane
+      className="sort"
+      zIndex={1}
+      position="sticky"
+      top={0}
+      background="#ffffff"
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      margin="0 16px 0 40px"
+      padding="16px 0"
+    >
       <Paragraph
         className="sort__brands-count"
         size={fontSizes.base}
@@ -63,6 +74,6 @@ export function Sort(props) {
         setSearchFor={setSearchFor}
         searchFor={searchFor}
       />
-    </div>
+    </Pane>
   );
 }

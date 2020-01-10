@@ -5,19 +5,14 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .header__logo {
+    flex-direction: column !important;
+    width: 100%;
+    align-items: flex-start !important;
+  }
   .header__logo__subtitle {
     display: block;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .header__logo {
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-start;
-  }
-  .header__logo__subtitle {
-    margin-left: 37px;
-    margin-top: 3px;
+    margin-left: 37px !important;
+    margin-top: 3px !important;
   }
 }

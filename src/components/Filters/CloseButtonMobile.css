@@ -1,13 +1,13 @@
-.menu-icon {
+.filters__menu-icon {
   display: none !important;
-  position: fixed;
+  position: fixed !important;
   right: 16px;
   top: 16px;
   line-height: 38px;
 }
 
 @media only screen and (max-width: 768px) {
-  .menu-icon {
+  .filters__menu-icon {
     display: block !important;
   }
 }

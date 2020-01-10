@@ -46,7 +46,7 @@ export function Filters({
             />
           </React.Fragment>
         ))}
-        <Pane height={106} />
+        <Pane height={56} />
       </div>
       {showFilters && <ApplyButtonMobile setShowFilters={setShowFilters} />}
     </>

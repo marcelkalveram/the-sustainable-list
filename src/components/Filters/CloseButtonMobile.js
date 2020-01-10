@@ -5,7 +5,7 @@ import './CloseButtonMobile.css';
 export const CloseButtonMobile = ({ setShowFilters }) => (
   <IconButton
     appearance="minimal"
-    className="menu-icon"
+    className="filters__menu-icon"
     icon="cross"
     onClick={() => setShowFilters(false)}
   />
