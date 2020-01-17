@@ -1,11 +1,12 @@
 import css from 'styled-jsx/css';
+import { majorScale } from 'evergreen-ui';
 
 export const { className, styles } = css.resolve`
   .filters__close-button-mobile {
     display: none !important;
     position: fixed !important;
-    right: 16px;
-    top: 16px;
+    right: ${majorScale(1) - 1}px;
+    top: ${majorScale(2) + 5}px;
     line-height: 38px;
   }
 

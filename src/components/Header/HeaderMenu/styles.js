@@ -5,7 +5,7 @@ import { majorScale } from 'evergreen-ui';
 export const { styles, className } = css.resolve`
   @media only screen and (max-width: 768px) {
     .header__menu {
-      /* display: none !important; */
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
@@ -13,6 +13,9 @@ export const { styles, className } = css.resolve`
       height: 100vh;
       background-color: ${colors.primarySoft};
       z-index: 2;
+    }
+    .header__menu--isVisible {
+      display: block;
     }
     .header__menu :global(.header__menu__ul) {
       display: flex;

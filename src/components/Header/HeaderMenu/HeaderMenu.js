@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Pane, Link, UnorderedList, ListItem, majorScale } from 'evergreen-ui';
 import { className, styles } from './styles.js';
 import { MobileMenuIcon } from './MobileMenuIcon/MobileMenuIcon';
 
 export const HeaderMenu = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  console.log(showMobileMenu);
   return (
     <>
-      <MobileMenuIcon />
-      <Pane className={`header__menu ${className}`}>
+      <Pane
+        className={`header__menu ${className} ${
+          showMobileMenu ? 'header__menu--isVisible' : ''
+        }`}
+      >
         <UnorderedList
           className="header__menu__ul"
           display="flex"
@@ -28,6 +33,14 @@ export const HeaderMenu = () => {
         </UnorderedList>
         {styles}
       </Pane>
+      <MobileMenuIcon
+        showCloseButton={showMobileMenu}
+        onToggle={() => {
+          console.log('toggle');
+          console.log(!showMobileMenu);
+          setShowMobileMenu(!showMobileMenu);
+        }}
+      />
     </>
   );
 };
