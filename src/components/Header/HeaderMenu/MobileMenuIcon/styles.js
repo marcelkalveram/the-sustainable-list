@@ -11,6 +11,7 @@ export const { styles, className } = css.resolve`
   @media only screen and (max-width: 768px) {
     .header__menu__mobile-menu-icon {
       display: flex !important;
+      z-index: 3;
     }
   }
 `;
