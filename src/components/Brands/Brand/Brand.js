@@ -28,7 +28,7 @@ export const Brand = ({
       alignItems="center"
       textAlign="left"
     >
-      <BrandImage image={image}>
+      <BrandImage image={image} website={website}>
         <BrandCertificates certificates={certificates} />
       </BrandImage>
 

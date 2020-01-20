@@ -1,12 +1,14 @@
 import css from 'styled-jsx/css';
+import { majorScale } from 'evergreen-ui/commonjs/scales';
+import { colors } from '../../config/constants';
 
 export const filtersStyles = css`
   .filters {
     float: left;
     width: 200px;
     text-align: left;
-    padding: 16px;
-    margin-top: 8px;
+    padding: ${majorScale(2)}px;
+    margin-top: ${majorScale(1)}px;
   }
 
   .filters :global(.filters__cta) {
@@ -17,11 +19,11 @@ export const filtersStyles = css`
     .filters {
       display: none;
       position: fixed;
-      background: #fff;
+      background: ${colors.white};
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
-      width: calc(100vw - 32px);
-      height: calc(100vh - 32px);
+      width: calc(100vw - ${majorScale(4)}px);
+      height: calc(100vh - ${majorScale(4)}px);
       margin-top: 0;
       top: 0;
       left: 0;

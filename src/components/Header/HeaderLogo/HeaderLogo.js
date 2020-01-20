@@ -19,11 +19,13 @@ export const HeaderLogo = () => {
         alignItems="flex-end"
       >
         <Link href="/">
-          <img
-            alt="The Sustainable List logo"
-            src="/logo.png"
-            height={LOGO_HEIGHT}
-          />
+          <a style={{ display: 'inherit' }}>
+            <img
+              alt="The Sustainable List logo"
+              src="/logo.png"
+              height={LOGO_HEIGHT}
+            />
+          </a>
         </Link>
         <Heading
           className="header__logo__subtitle"

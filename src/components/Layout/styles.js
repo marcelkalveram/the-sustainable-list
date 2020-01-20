@@ -38,5 +38,6 @@ export const body = css.global`
   a:hover {
     text-decoration: none;
     color: #df704b !important;
+    cursor: pointer;
   }
 `;
