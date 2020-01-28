@@ -5,7 +5,6 @@ import { MobileMenuIcon } from './MobileMenuIcon/MobileMenuIcon';
 
 export const HeaderMenu = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  console.log(showMobileMenu);
   return (
     <>
       <Pane
@@ -36,8 +35,6 @@ export const HeaderMenu = () => {
       <MobileMenuIcon
         showCloseButton={showMobileMenu}
         onToggle={() => {
-          console.log('toggle');
-          console.log(!showMobileMenu);
           setShowMobileMenu(!showMobileMenu);
         }}
       />

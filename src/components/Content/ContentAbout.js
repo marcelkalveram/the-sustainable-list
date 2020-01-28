@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Heading, Paragraph, Pane, minorScale, majorScale } from 'evergreen-ui';
 import { colors } from '../../config/constants';
 
@@ -10,23 +11,28 @@ export const ContentAbout = () => (
       About the project
     </Heading>
     <Pane color={colors.secondary} marginBottom={majorScale(4)}>
-      <Paragraph marginBottom={minorScale(4)}>
-        the sustainable list is a platform that showcases ethical fashion brand
-        from all over the world. The fashion industry is one of the
-        most-polluting sectors on the planet.
+      <Paragraph fontWeight={700} marginBottom={minorScale(4)}>
+        the sustainable list is a curated list of ethical fashion brands from
+        all over the world. These brands produce good-looking, quality products
+        while doing less harm to the planet.
       </Paragraph>
-      <Paragraph marginBottom={minorScale(5)}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet.
+      <Paragraph marginBottom={minorScale(4)}>
+        We choose brands that work with recycled materials, work towards a more
+        responsible supply chain and contribute to a more sustainable, greener
+        future.
+      </Paragraph>
+      <Paragraph marginBottom={minorScale(7)}>
+        Many of them have been recognised for their work towards sustainability
+        and certificed by associations like{' '}
+        <a href="">GOTS (Global Organic Textile Standard)</a>. Others
+        participate in movements like <a href="">1% For The Planet</a> to give
+        back part of their margins to non-profit organisations.
       </Paragraph>
 
-      <Paragraph marginBottom={minorScale(4)}>
+      <Paragraph marginBottom={minorScale(5)}>
         {Object.keys(certificatesMap).map(certificate => (
           <img
-            alt="Certificate badge"
+            alt={`${certificate.title} badge`}
             width={50}
             style={{
               marginRight: majorScale(2),
@@ -36,15 +42,14 @@ export const ContentAbout = () => (
         ))}
       </Paragraph>
 
-      <Paragraph marginBottom={minorScale(4)}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua.
-      </Paragraph>
+      <Paragraph marginBottom={minorScale(4)}> </Paragraph>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore.
+        With this project, we want to help increase visibility of these brands
+        to make it easier for people to make the right choice the next time they
+        want to go shopping. Keep in mind though that the best choice as a
+        responsible consumer is to not buy at all .
       </Paragraph>
+      <Paragraph></Paragraph>
     </Pane>
   </Pane>
 );
