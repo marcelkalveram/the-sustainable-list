@@ -9,12 +9,12 @@ import { ContentTeam } from '../components/Content/ContentTeam/ContentTeam';
 export default function About() {
   return (
     <>
-      <BackgroundImage />
       <Layout>
         <Container>
           <ContentAbout />
           <ContentTeam />
         </Container>
+        <BackgroundImage />
       </Layout>
     </>
   );

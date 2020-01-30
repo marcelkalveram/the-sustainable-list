@@ -38,14 +38,18 @@ export const ContentAbout = () => (
           back part of their margins to non-profit organisations.
         </Paragraph>
 
-        <Paragraph marginBottom={minorScale(5)}>
+        <Paragraph
+          marginBottom={minorScale(5)}
+          display="flex"
+          flexWrap="wrap"
+          justifyContent="space-between"
+        >
           {Object.keys(certificatesMap).map(certificate => (
             <img
               alt={`${certificate.title} badge`}
-              width={50}
-              style={{
-                marginRight: majorScale(2),
-              }}
+              width={52}
+              height={52}
+              style={{ marginBottom: minorScale(3) }}
               src={certificatesMap[certificate].image}
             />
           ))}

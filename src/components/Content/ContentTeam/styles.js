@@ -6,7 +6,6 @@ export const { className, styles } = css.resolve`
     .content-team {
       width: 100%;
       padding-right: 0;
-      margin-bottom: ${majorScale(7)}px;
     }
   }
 `;

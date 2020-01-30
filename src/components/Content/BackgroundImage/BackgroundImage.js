@@ -7,12 +7,11 @@ export const BackgroundImage = () => (
       className={`background-image ${className}`}
       src="./forest-silhouette.jpg"
       style={{
-        position: 'absolute',
+        position: 'relative',
         zIndex: '-1',
-        bottom: '-42%',
-        left: 0,
         width: '100%',
         opacity: 0.75,
+        marginTop: '-10vw',
       }}
     />
     {styles}
