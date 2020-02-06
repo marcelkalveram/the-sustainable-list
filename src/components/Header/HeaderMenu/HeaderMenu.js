@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Pane, Link, UnorderedList, ListItem, majorScale } from 'evergreen-ui';
 import { className, styles } from './styles.js';
 import { MobileMenuIcon } from './MobileMenuIcon/MobileMenuIcon';
+import { useRouter } from 'next/router';
 
 export const HeaderMenu = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const router = useRouter();
+  console.log(router.pathname);
   return (
     <>
       <Pane
@@ -19,15 +22,28 @@ export const HeaderMenu = () => {
           marginRight={majorScale(2)}
         >
           <ListItem className="header__menu__li">
-            <Link href="https://thesustainablelist.typeform.com/to/PnaHPh">
-              <strong>Add a brand</strong>
+            <Link
+              href="https://thesustainablelist.typeform.com/to/PnaHPh"
+              style={{ opacity: router.pathname === '/add-a-brand' ? 0.5 : 1 }}
+            >
+              Add a brand
             </Link>
           </ListItem>
           <ListItem className="header__menu__li">
-            <Link href="/about">About</Link>
+            <Link
+              href="/about"
+              style={{ opacity: router.pathname === '/about' ? 0.5 : 1 }}
+            >
+              About
+            </Link>
           </ListItem>
           <ListItem className="header__menu__li">
-            <Link href="/contact">Contact Us</Link>
+            <Link
+              href="/contact"
+              style={{ opacity: router.pathname === '/contact' ? 0.5 : 1 }}
+            >
+              Contact Us
+            </Link>
           </ListItem>
         </UnorderedList>
         {styles}
