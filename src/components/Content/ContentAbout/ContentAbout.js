@@ -32,14 +32,18 @@ export const ContentAbout = () => (
         marginBottom={minorScale(5)}
         display="flex"
         flexWrap="wrap"
-        justifyContent="space-between"
+        justifyContent="flex-start"
       >
         {Object.keys(certificatesMap).map(certificate => (
           <img
             alt={`${certificate.title} badge`}
             width={52}
             height={52}
-            style={{ marginBottom: minorScale(3) }}
+            style={{
+              display: 'inline-block',
+              marginBottom: minorScale(3),
+              marginRight: minorScale(3),
+            }}
             src={certificatesMap[certificate].image}
           />
         ))}

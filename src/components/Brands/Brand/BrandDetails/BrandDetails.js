@@ -44,19 +44,40 @@ const getPrice = price => {
 const getStyleColor = style => {
   switch (style) {
     case 'casual':
-      return '#D2EEF3';
+      return '#FFFAD2';
     case 'sporty':
-      return '#FAE2E2';
-    case 'surf':
-      return '#DDEBF7';
-    case 'yoga':
-      return '#EAE7F8';
-    case 'activewear':
-      return '#D4EEE2';
+      return '#FEE3C9';
+    case 'swim':
+      return '#E7F9FF';
+    case 'lingerie':
+      return '#FFF6F6';
     case 'wedding':
-      return '#FFFFFF';
+      return '#FAF5FF';
     case 'elegant':
-      return '#FFFFFF';
+      return '#F3F3F3';
+    case 'business':
+      return '#D4E1E6';
+    default:
+      return '#EDF0F2';
+  }
+};
+
+const getStyleColorText = style => {
+  switch (style) {
+    case 'casual':
+      return '#E2AD38';
+    case 'sporty':
+      return '#E58B6D';
+    case 'swim':
+      return '#788E90';
+    case 'lingerie':
+      return '#E4A3A1';
+    case 'wedding':
+      return '#AF95C8';
+    case 'elegant':
+      return '#8F8F8F';
+    case 'business':
+      return '#7190AA';
     default:
       return '#EDF0F2';
   }
@@ -81,7 +102,7 @@ export const BrandDetails = ({
         <Heading color={colors.secondary}>{title}</Heading>
       </Link>
       <Pane display="flex" flexDirection="row">
-        <Pane marginTop={minorScale(2)} whiteSpace="nowrap" overflow="hidden">
+        <Pane marginTop={minorScale(2)} overflow="hidden">
           {clothingStyles &&
             clothingStyles.map(style => (
               <Badge
@@ -89,10 +110,17 @@ export const BrandDetails = ({
                 className="badge"
                 marginRight={minorScale(1)}
                 backgroundColor={getStyleColor(
-                  style.fields.title.toLowerCase(),
+                  style.fields.title.toLowerCase().trim(),
                 )}
               >
-                {style.fields.title.toLowerCase()}
+                <Text
+                  size={100}
+                  color={getStyleColorText(
+                    style.fields.title.toLowerCase().trim(),
+                  )}
+                >
+                  {style.fields.title.toLowerCase()}
+                </Text>
               </Badge>
             ))}
         </Pane>

@@ -22,6 +22,7 @@ export const BrandImage = ({ children, image, website }) => {
         href={website}
         style={{
           position: 'absolute',
+          maxWidth: '100%',
           width: '100%',
           height: '100%',
           top: '0',

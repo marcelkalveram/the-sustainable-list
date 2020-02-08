@@ -60,7 +60,7 @@ export default function Index() {
             dispatch({ type: actions.SET_SEARCH_FOR, payload: searchTerm })
           }
           totalCount={state.brandsCount}
-          count={state.brands.length}
+          count={brands.length}
           sortBy={state.sortBy}
           setSortBy={sortBy =>
             dispatch({ type: actions.SET_SORT_BY, payload: sortBy })

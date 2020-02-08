@@ -16,7 +16,7 @@ export const brandsStyles = css`
     }
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 960px) {
     .brands {
       grid-template-columns: repeat(1, 1fr);
     }
