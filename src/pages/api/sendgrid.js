@@ -16,7 +16,6 @@ export const sendMail = async ({ name, email, message }) => {
     from: 'mail@thesustainablelist.com',
     subject: 'New message by ' + name + '(' + email + ')',
     text: message,
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
   };
   try {
     await sgMail.send(msg);
