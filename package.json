@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "build": "npm run contentful:pull && next build",
+    "start": "next start",
+    "contentful:pull": "cd scripts && node -r esm contentful.js"
   },
   "keywords": [],
   "author": "",
