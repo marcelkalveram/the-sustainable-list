@@ -1,7 +1,7 @@
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-export const sendMail = ({ name, email, message }) => {
+export const sendMail = async ({ name, email, message }) => {
   if (!process.env.SENDGRID_API_KEY) {
     throw new Error('now API key defined');
   }
@@ -18,5 +18,9 @@ export const sendMail = ({ name, email, message }) => {
     text: message,
     html: '<strong>and easy to do anywhere, even with Node.js</strong>',
   };
-  sgMail.send(msg);
+  try {
+    await sgMail.send(msg);
+  } catch (error) {
+    console.log('ERROR', error);
+  }
 };
