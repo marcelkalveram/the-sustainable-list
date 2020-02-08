@@ -114,7 +114,8 @@ export const BrandDetails = ({
                 )}
               >
                 <Text
-                  size={100}
+                  size={300}
+                  fontWeight={700}
                   color={getStyleColorText(
                     style.fields.title.toLowerCase().trim(),
                   )}

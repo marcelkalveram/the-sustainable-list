@@ -1,15 +1,45 @@
 import React from 'react';
+import { Paragraph, Pane, Icon, majorScale } from 'evergreen-ui';
 import { brandsStyles } from './styles.js';
 import { Brand } from './Brand/Brand';
+import { colors } from '../../config/constants.js';
 
 export function Brands({ brands }) {
   return (
     <>
-      <section className="brands">
-        {brands.map(brand => {
-          return <Brand key={brand.sys.id} brand={brand} />;
-        })}
-      </section>
+      {brands.length === 0 && (
+        <Pane
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          height="calc(100vh - 160px)"
+          padding={majorScale(3)}
+          textAlign="center"
+        >
+          <Icon
+            size={48}
+            icon="path-search"
+            color={colors.secondarySoft}
+            marginBottom={majorScale(1)}
+          />
+          <Paragraph size={500} fontWeight={500} color={colors.secondarySoft}>
+            We're sorry!
+          </Paragraph>
+          <Paragraph size={500} fontWeight={300} color={colors.secondarySoft}>
+            Unfortunately, no brands matched your search.
+            <br />
+            Please try broadening your search a bit.
+          </Paragraph>
+        </Pane>
+      )}
+      {brands.length > 0 && (
+        <section className="brands">
+          {brands.map(brand => {
+            return <Brand key={brand.sys.id} brand={brand} />;
+          })}
+        </section>
+      )}
       <style jsx>{brandsStyles}</style>
     </>
   );

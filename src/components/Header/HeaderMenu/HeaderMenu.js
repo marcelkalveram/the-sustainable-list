@@ -23,6 +23,14 @@ export const HeaderMenu = () => {
         >
           <ListItem className="header__menu__li">
             <Link
+              href="/"
+              style={{ opacity: router.pathname === '/' ? 0.5 : 1 }}
+            >
+              Home
+            </Link>
+          </ListItem>
+          <ListItem className="header__menu__li">
+            <Link
               href="https://thesustainablelist.typeform.com/to/PnaHPh"
               style={{ opacity: router.pathname === '/add-a-brand' ? 0.5 : 1 }}
             >

@@ -39,8 +39,8 @@ export default function Index() {
     brands.sort((a, b) => sortByAz(state, a, b));
   }
 
-  return (
-    <Layout fixed={state.showFilters}>
+  const filters = useMemo(
+    () => (
       <Filters
         criteriaMap={criteriaMap}
         filters={state.filters}
@@ -53,27 +53,37 @@ export default function Index() {
           dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })
         }
       />
+    ),
+    [state.selected, state.showFilters],
+  );
+
+  const sort = useMemo(
+    () => (
+      <Sort
+        searchFor={state.searchFor}
+        setSearchFor={searchTerm =>
+          dispatch({ type: actions.SET_SEARCH_FOR, payload: searchTerm })
+        }
+        totalCount={state.brandsCount}
+        count={brands.length}
+        sortBy={state.sortBy}
+        setSortBy={sortBy =>
+          dispatch({ type: actions.SET_SORT_BY, payload: sortBy })
+        }
+        setShowFilters={show =>
+          dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })
+        }
+      />
+    ),
+    [brands.length, state.searchFor, state.brandsCounct, state.sortBy],
+  );
+
+  return (
+    <Layout fixed={state.showFilters}>
+      {filters}
       <Main>
-        <Sort
-          searchFor={state.searchFor}
-          setSearchFor={searchTerm =>
-            dispatch({ type: actions.SET_SEARCH_FOR, payload: searchTerm })
-          }
-          totalCount={state.brandsCount}
-          count={brands.length}
-          sortBy={state.sortBy}
-          setSortBy={sortBy =>
-            dispatch({ type: actions.SET_SORT_BY, payload: sortBy })
-          }
-          setShowFilters={show =>
-            dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })
-          }
-        />
-        <Brands
-          criteriaMap={criteriaMap}
-          brands={brands}
-          selected={state.selected}
-        />
+        {sort}
+        <Brands brands={brands} />
       </Main>
     </Layout>
   );
