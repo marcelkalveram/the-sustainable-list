@@ -1,13 +1,20 @@
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-export const sendMail = async ({ name, email, message }) => {
+export const sendMail = async ({ name, email, message }, response) => {
   if (!process.env.SENDGRID_API_KEY) {
-    throw new Error('now API key defined');
+    response.status = 'error';
+    response.type = 'invalid sendgrid API key';
   }
   if (!email || !message) {
-    throw new Error('insufficient form data');
+    response.status = 'error';
+    response.type = 'insufficient form data';
   }
+
+  if (response.status === 'error') {
+    return response;
+  }
+
   if (!name) {
     name = 'unknown';
   }
@@ -19,7 +26,11 @@ export const sendMail = async ({ name, email, message }) => {
   };
   try {
     await sgMail.send(msg);
+    response.status = 'success';
+    response.type = 'mail sent';
   } catch (error) {
-    console.log('ERROR', error);
+    response.status = 'error';
+    response.type = 'sendgrid error:, ' + error;
   }
+  return response;
 };
