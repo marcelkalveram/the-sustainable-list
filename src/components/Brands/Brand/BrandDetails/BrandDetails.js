@@ -9,6 +9,7 @@ import {
   minorScale,
 } from 'evergreen-ui';
 import { colors, fontSizes } from '../../../../config/constants';
+import { className, styles } from './styles.js';
 
 const getLocation = location => {
   let locationString = 'Unknown location';
@@ -91,62 +92,75 @@ export const BrandDetails = ({
   website,
 }) => {
   return (
-    <Pane
-      display="flex"
-      flexDirection="column"
-      overflow="hidden"
-      paddingTop="8"
-      width="100%"
-    >
-      <Link textDecoration="none" target="_blank" href={website}>
-        <Heading color={colors.secondary}>{title}</Heading>
-      </Link>
-      <Pane display="flex" flexDirection="row">
-        <Pane marginTop={minorScale(2)} overflow="hidden">
-          {clothingStyles &&
-            clothingStyles.map(style => (
-              <Badge
-                key={style.sys.id}
-                className="badge"
-                marginRight={minorScale(1)}
-                backgroundColor={getStyleColor(
-                  style.fields.title.toLowerCase().trim(),
-                )}
-              >
-                <Text
-                  size={300}
-                  fontWeight={700}
-                  color={getStyleColorText(
+    <>
+      <Pane
+        className={`${className} brand-details`}
+        display="flex"
+        flexDirection="column"
+        overflow="hidden"
+        paddingTop="8"
+        width="100%"
+      >
+        <Link textDecoration="none" target="_blank" href={website}>
+          <Heading color={colors.secondary}>{title}</Heading>
+        </Link>
+        <Pane
+          display="flex"
+          flexDirection="row"
+          className="brand-details__meta"
+        >
+          <Pane
+            marginTop={minorScale(2)}
+            overflow="hidden"
+            className="brand-details__meta__styles"
+          >
+            {clothingStyles &&
+              clothingStyles.map(style => (
+                <Badge
+                  key={style.sys.id}
+                  className="badge"
+                  marginRight={minorScale(1)}
+                  backgroundColor={getStyleColor(
                     style.fields.title.toLowerCase().trim(),
                   )}
                 >
-                  {style.fields.title.toLowerCase()}
-                </Text>
-              </Badge>
-            ))}
-        </Pane>
-        <Pane
-          marginTop={minorScale(2)}
-          marginLeft={majorScale(1)}
-          whiteSpace="nowrap"
-        >
-          {getPrice(price)}
-          <Text
-            color={colors.secondary}
-            size={fontSizes.base}
-            paddingLeft={majorScale(1)}
+                  <Text
+                    size={300}
+                    fontWeight={700}
+                    color={getStyleColorText(
+                      style.fields.title.toLowerCase().trim(),
+                    )}
+                  >
+                    {style.fields.title.toLowerCase()}
+                  </Text>
+                </Badge>
+              ))}
+          </Pane>
+          <Pane
+            className="brand-details__meta__location"
+            marginTop={minorScale(2)}
+            marginLeft={majorScale(1)}
+            whiteSpace="nowrap"
           >
-            ·
-          </Text>
-          <Text
-            size={fontSizes.base}
-            paddingLeft={majorScale(1)}
-            color={colors.secondary}
-          >
-            {getLocation(location)}
-          </Text>
+            {getPrice(price)}
+            <Text
+              color={colors.secondary}
+              size={fontSizes.base}
+              paddingLeft={majorScale(1)}
+            >
+              ·
+            </Text>
+            <Text
+              size={fontSizes.base}
+              paddingLeft={majorScale(1)}
+              color={colors.secondary}
+            >
+              {getLocation(location)}
+            </Text>
+          </Pane>
         </Pane>
       </Pane>
-    </Pane>
+      {styles}
+    </>
   );
 };
