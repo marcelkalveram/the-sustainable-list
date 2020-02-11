@@ -9,6 +9,7 @@ export const body = css.global`
       'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior-y: contain;
   }
   ul li {
     list-style: none;

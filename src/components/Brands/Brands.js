@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paragraph, Pane, Icon, majorScale } from 'evergreen-ui';
+import { Paragraph, Pane, Icon, majorScale, minorScale } from 'evergreen-ui';
 import { brandsStyles } from './styles.js';
 import { Brand } from './Brand/Brand';
 import { colors } from '../../config/constants.js';
@@ -23,13 +23,17 @@ export function Brands({ brands }) {
             color={colors.secondarySoft}
             marginBottom={majorScale(1)}
           />
-          <Paragraph size={500} fontWeight={500} color={colors.secondarySoft}>
+          <Paragraph
+            size={500}
+            fontWeight={500}
+            color={colors.secondarySoft}
+            marginBotto={minorScale(1)}
+          >
             We're sorry!
           </Paragraph>
           <Paragraph size={500} fontWeight={300} color={colors.secondarySoft}>
-            Unfortunately, no brands matched your search.
-            <br />
-            Please try broadening your search a bit.
+            Unfortunately, no brands matched your search. Please try broadening
+            your search a bit.
           </Paragraph>
         </Pane>
       )}

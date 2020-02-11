@@ -17,12 +17,14 @@ export const filtersStyles = css`
 
   @media only screen and (max-width: 768px) {
     .filters {
+      -webkit-transform: translate3d(0, 0, 0);
+      float: none;
       display: none;
       position: fixed;
       background: ${colors.white};
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
-      width: calc(100vw - ${majorScale(4)}px);
+      width: 100%;
       height: calc(100vh - ${majorScale(4)}px);
       margin-top: 0;
       top: 0;
@@ -40,6 +42,9 @@ export const filtersStyles = css`
   }
 
   /* checkbox gradient */
+  .filters :global(label div) {
+    background-image: none;
+  }
   .filters :global(label :checked + .📦bblr_3px) {
     background-image: linear-gradient(to bottom, #509195, #3c6e71) !important;
   }

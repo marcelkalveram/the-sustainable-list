@@ -46,7 +46,7 @@ export function Filters({
             />
           </React.Fragment>
         ))}
-        <Pane height={56} />
+        <Pane height={108} />
       </div>
       <style jsx>{filtersStyles}</style>
       {showFilters && (

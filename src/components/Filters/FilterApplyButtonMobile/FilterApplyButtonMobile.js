@@ -13,6 +13,7 @@ export const FilterApplyButtonMobile = ({ setShowFilters }) => (
       width: '100%',
       height: '56px',
       backgroundColor: colors.white,
+      borderTop: `1px solid #EEEEEE`,
       padding: majorScale(1),
       justifyContent: 'center',
       alignItems: 'center',
