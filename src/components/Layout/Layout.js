@@ -40,7 +40,7 @@ export const Layout = ({ children, title = DEFAULT_TITLE, fixed = false }) => {
         <meta name="theme-color" content="#ffffff" />
       </Head>
 
-      <div style={fixed ? { position: 'fixed' } : {}}>
+      <div style={fixed ? { position: 'fixed', overflow: 'hidden' } : {}}>
         <Header />
         {children}
       </div>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Pane } from 'evergreen-ui';
 import { toggleHiddenFn, toggleFilterFn } from '../../helpers/toggle';
 import { FilterHeading } from './FilterHeading/FilterHeading';
 import { FilterCheckboxes } from './FilterCheckboxes/FilterCheckboxes';
@@ -23,11 +22,13 @@ export function Filters({
 
   return (
     <>
+      {showFilters && (
+        <FilterCloseButtonMobile setShowFilters={setShowFilters} />
+      )}
       <div
         className={`filters${showFilters ? ' filters--visible' : ''}`}
         style={style}
       >
-        <FilterCloseButtonMobile setShowFilters={setShowFilters} />
         {criteriaMap.map(criteria => (
           <React.Fragment key={criteria.title}>
             <FilterHeading
@@ -46,12 +47,12 @@ export function Filters({
             />
           </React.Fragment>
         ))}
-        <Pane height={108} />
       </div>
-      <style jsx>{filtersStyles}</style>
       {showFilters && (
         <FilterApplyButtonMobile setShowFilters={setShowFilters} />
       )}
+
+      <style jsx>{filtersStyles}</style>
     </>
   );
 }

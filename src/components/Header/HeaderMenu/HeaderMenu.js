@@ -7,7 +7,6 @@ import { useRouter } from 'next/router';
 export const HeaderMenu = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const router = useRouter();
-  console.log(router.pathname);
   return (
     <>
       <Pane

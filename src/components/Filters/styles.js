@@ -25,7 +25,7 @@ export const filtersStyles = css`
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
       width: 100%;
-      height: calc(100vh - ${majorScale(4)}px);
+      height: calc(100vh - ${majorScale(4)}px - 114px);
       margin-top: 0;
       top: 0;
       left: 0;
