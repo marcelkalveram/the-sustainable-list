@@ -11,6 +11,7 @@ export const body = css.global`
     -moz-osx-font-smoothing: grayscale;
     overscroll-behavior-y: contain;
   }
+
   ul li {
     list-style: none;
     padding: 0;

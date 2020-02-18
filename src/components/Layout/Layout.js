@@ -57,11 +57,12 @@ export const Layout = ({
       </div>
       <style jsx global>
         {`
-          ${body}
           body {
             overflow: ${fixed ? 'hidden' : 'auto'};
-          }
-        `}
+          `}
+      </style>
+      <style jsx global>
+        {body}
       </style>
     </>
   );
