@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Pane, Link, UnorderedList, ListItem, majorScale } from 'evergreen-ui';
 import { className, styles } from './styles.js';
 import { MobileMenuIcon } from './MobileMenuIcon/MobileMenuIcon';
 import { useRouter } from 'next/router';
 
-export const HeaderMenu = () => {
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
+export const HeaderMenu = ({
+  showFilters,
+  showMobileMenu,
+  setShowMobileMenu,
+}) => {
   const router = useRouter();
   return (
     <>
@@ -53,14 +56,16 @@ export const HeaderMenu = () => {
             </Link>
           </ListItem>
         </UnorderedList>
-        {styles}
       </Pane>
-      <MobileMenuIcon
-        showCloseButton={showMobileMenu}
-        onToggle={() => {
-          setShowMobileMenu(!showMobileMenu);
-        }}
-      />
+      {!showFilters && (
+        <MobileMenuIcon
+          showCloseButton={showMobileMenu}
+          onToggle={() => {
+            setShowMobileMenu(!showMobileMenu);
+          }}
+        />
+      )}
+      {styles}
     </>
   );
 };

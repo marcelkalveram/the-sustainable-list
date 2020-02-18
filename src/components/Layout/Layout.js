@@ -6,7 +6,14 @@ import { body } from './styles';
 const DEFAULT_TITLE =
   'the sustainable list - all the good fashion brands at a glance';
 
-export const Layout = ({ children, title = DEFAULT_TITLE, fixed = false }) => {
+export const Layout = ({
+  children,
+  title = DEFAULT_TITLE,
+  fixed = false,
+  showFilters,
+  showMobileMenu,
+  setShowMobileMenu,
+}) => {
   return (
     <>
       <Head>
@@ -41,11 +48,20 @@ export const Layout = ({ children, title = DEFAULT_TITLE, fixed = false }) => {
       </Head>
 
       <div style={fixed ? { position: 'fixed', overflow: 'hidden' } : {}}>
-        <Header />
+        <Header
+          showFilters={showFilters}
+          showMobileMenu={showMobileMenu}
+          setShowMobileMenu={setShowMobileMenu}
+        />
         {children}
       </div>
       <style jsx global>
-        {body}
+        {`
+          ${body}
+          body {
+            overflow: ${fixed ? 'hidden' : 'auto'};
+          }
+        `}
       </style>
     </>
   );

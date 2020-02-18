@@ -79,7 +79,14 @@ export default function Index() {
   );
 
   return (
-    <Layout fixed={state.showFilters}>
+    <Layout
+      fixed={state.showFilters || state.showMobileMenu}
+      showFilters={state.showFilters}
+      showMobileMenu={state.showMobileMenu}
+      setShowMobileMenu={show =>
+        dispatch({ type: actions.SET_SHOW_MOBILE_MENU, payload: show })
+      }
+    >
       {filters}
       <Main>
         {sort}

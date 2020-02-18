@@ -5,19 +5,24 @@ import { colors } from '../../config/constants';
 import { HeaderLogo } from './HeaderLogo/HeaderLogo';
 import { HeaderMenu } from './HeaderMenu/HeaderMenu';
 
-export function Header() {
+export function Header({ showFilters, showMobileMenu, setShowMobileMenu }) {
   return (
     <Pane
-      width="100%"
+      width="100vw"
       display="flex"
       justifyContent="space-between"
       alignItems="center"
       borderBottom={`1px solid ${colors.primary}`}
       backgroundColor={colors.primarySoft}
       padding={majorScale(2)}
+      position="relative"
     >
       <HeaderLogo />
-      <HeaderMenu />
+      <HeaderMenu
+        showFilters={showFilters}
+        showMobileMenu={showMobileMenu}
+        setShowMobileMenu={setShowMobileMenu}
+      />
     </Pane>
   );
 }
