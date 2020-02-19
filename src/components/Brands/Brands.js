@@ -4,7 +4,7 @@ import { brandsStyles } from './styles.js';
 import { Brand } from './Brand/Brand';
 import { colors } from '../../config/constants.js';
 
-export function Brands({ brands }) {
+export const Brands = ({ brands }) => {
   return (
     <>
       {brands.length === 0 && (
@@ -47,4 +47,4 @@ export function Brands({ brands }) {
       <style jsx>{brandsStyles}</style>
     </>
   );
-}
+};

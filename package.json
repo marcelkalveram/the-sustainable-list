@@ -21,7 +21,8 @@
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.1.7",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-lazy-load-image-component": "^1.4.1"
   },
   "devDependencies": {
     "contentful": "^7.6.0",

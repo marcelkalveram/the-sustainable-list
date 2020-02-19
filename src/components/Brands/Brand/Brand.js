@@ -30,7 +30,7 @@ export const Brand = React.memo(function Brand({
         textAlign="left"
       >
         <BrandImage image={image} website={website}>
-          <BrandCertificates certificates={certificates} />)
+          <BrandCertificates certificates={certificates} />
         </BrandImage>
 
         <Pane
