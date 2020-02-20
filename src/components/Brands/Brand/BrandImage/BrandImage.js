@@ -30,7 +30,7 @@ export const BrandImage = ({ children, image, website }) => {
         }}
       >
         <LazyLoadImage
-          src={imageUrl}
+          src={`${imageUrl}?fm=jpg&w=750&q=75`}
           alt="Brand: TODO"
           style={{ maxWidth: '100%' }}
           width="100%"

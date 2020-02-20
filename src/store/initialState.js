@@ -9,7 +9,6 @@ export const initialState = {
   filters: data.filters,
   selected: criteriaMap.reduce(reducerFunction, {}),
   showFilters: false,
-  showMobileMenu: false,
   sortBy: { az: null, price: null },
   searchFor: '',
 };

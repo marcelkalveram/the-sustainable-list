@@ -2,6 +2,7 @@ import React from 'react';
 import { Pane, majorScale } from 'evergreen-ui';
 import { colors } from '../../../../config/constants';
 import { className, styles } from './styles.js';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const LOGO_SIZE = 76;
 const OFFSET = 38;
@@ -31,7 +32,11 @@ export const BrandLogo = ({ logo, title }) => {
         borderColor={colors.greyedOut}
       >
         {logo && logo.fields && (
-          <img alt={`${title} logo`} src={logo.fields.file.url} width="64px" />
+          <LazyLoadImage
+            alt={`${title} logo`}
+            src={`${logo.fields.file.url}?fm=jpg&w=196&q=100`}
+            width="64px"
+          />
         )}
       </Pane>
       {styles}

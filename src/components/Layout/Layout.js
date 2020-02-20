@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import { Header } from '../Header/Header';
 import { body } from './styles';
+import { colors } from '../../config/constants';
 
 const DEFAULT_TITLE =
   'the sustainable list - all the good fashion brands at a glance';
@@ -11,9 +12,11 @@ export const Layout = ({
   title = DEFAULT_TITLE,
   fixed = false,
   showFilters,
-  showMobileMenu,
-  setShowMobileMenu,
 }) => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  const lockViewport = fixed || showMobileMenu;
+
   return (
     <>
       <Head>
@@ -42,12 +45,18 @@ export const Layout = ({
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
+        <link
+          rel="mask-icon"
+          href="/safari-pinned-tab.svg"
+          color={colors.primary}
+        />
+        <meta name="msapplication-TileColor" content={colors.primary} />
+        <meta name="theme-color" content={colors.white} />
       </Head>
 
-      <div style={fixed ? { position: 'fixed', overflow: 'hidden' } : {}}>
+      <div
+        style={lockViewport ? { position: 'fixed', overflow: 'hidden' } : {}}
+      >
         <Header
           showFilters={showFilters}
           showMobileMenu={showMobileMenu}
@@ -58,7 +67,7 @@ export const Layout = ({
       <style jsx global>
         {`
           body {
-            overflow: ${fixed ? 'hidden' : 'auto'};
+            overflow: ${lockViewport ? 'hidden' : 'auto'};
           `}
       </style>
       <style jsx global>
