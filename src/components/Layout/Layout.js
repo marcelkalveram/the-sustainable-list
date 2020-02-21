@@ -54,9 +54,7 @@ export const Layout = ({
         <meta name="theme-color" content={colors.white} />
       </Head>
 
-      <div
-        style={lockViewport ? { position: 'fixed', overflow: 'hidden' } : {}}
-      >
+      <div style={lockViewport ? { position: 'fixed' } : {}}>
         <Header
           showFilters={showFilters}
           showMobileMenu={showMobileMenu}
