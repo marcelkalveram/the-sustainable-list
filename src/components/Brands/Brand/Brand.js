@@ -21,6 +21,7 @@ export const Brand = React.memo(function Brand({
   },
   index,
 }) {
+  const visibleByDefault = index < 3;
   return (
     <>
       <Pane
@@ -33,7 +34,7 @@ export const Brand = React.memo(function Brand({
         <BrandImage
           image={image}
           website={website}
-          visibleByDefault={index < 4}
+          visibleByDefault={visibleByDefault}
         >
           <BrandCertificates certificates={certificates} />
         </BrandImage>
@@ -46,7 +47,11 @@ export const Brand = React.memo(function Brand({
           alignItems="center"
           width="100%"
         >
-          <BrandLogo logo={logo} title={title} visibleByDefault={index < 4} />
+          <BrandLogo
+            logo={logo}
+            title={title}
+            visibleByDefault={visibleByDefault}
+          />
           <BrandDetails
             title={title}
             clothingStyles={clothingStyles}
