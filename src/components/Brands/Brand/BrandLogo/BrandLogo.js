@@ -7,7 +7,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 const LOGO_SIZE = 76;
 const OFFSET = 38;
 
-export const BrandLogo = ({ logo, title }) => {
+export const BrandLogo = ({ logo, title, visibleByDefault }) => {
   return (
     <>
       <Pane
@@ -36,6 +36,7 @@ export const BrandLogo = ({ logo, title }) => {
             alt={`${title} logo`}
             src={`${logo.fields.file.url}?fm=jpg&w=196&q=100`}
             width="64px"
+            visibleByDefault={visibleByDefault}
           />
         )}
       </Pane>

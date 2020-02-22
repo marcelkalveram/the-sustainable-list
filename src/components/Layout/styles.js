@@ -42,4 +42,14 @@ export const body = css.global`
     color: #df704b !important;
     cursor: pointer;
   }
+
+  .lazy-load-image-background.opacity {
+    background-image: none !important;
+    opacity: 0;
+  }
+
+  .lazy-load-image-background.opacity.lazy-load-image-loaded {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
 `;

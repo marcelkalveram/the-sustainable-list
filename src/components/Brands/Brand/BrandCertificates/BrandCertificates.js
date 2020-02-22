@@ -9,9 +9,13 @@ export const BrandCertificates = ({ certificates }) => {
   if (!certificates) {
     return null;
   }
+
   return (
     <Pane position="absolute" right={6} top={14} zIndex={1}>
       {certificates.map(cert => {
+        if (!cert.fields) {
+          return null;
+        }
         const certificate = certificatesMap[cert.fields.slug];
         if (!certificate) {
           return null;

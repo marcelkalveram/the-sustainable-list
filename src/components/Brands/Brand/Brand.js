@@ -19,6 +19,7 @@ export const Brand = React.memo(function Brand({
       website,
     },
   },
+  index,
 }) {
   return (
     <>
@@ -29,7 +30,11 @@ export const Brand = React.memo(function Brand({
         alignItems="center"
         textAlign="left"
       >
-        <BrandImage image={image} website={website}>
+        <BrandImage
+          image={image}
+          website={website}
+          visibleByDefault={index < 4}
+        >
           <BrandCertificates certificates={certificates} />
         </BrandImage>
 
@@ -41,7 +46,7 @@ export const Brand = React.memo(function Brand({
           alignItems="center"
           width="100%"
         >
-          <BrandLogo logo={logo} title={title} />
+          <BrandLogo logo={logo} title={title} visibleByDefault={index < 4} />
           <BrandDetails
             title={title}
             clothingStyles={clothingStyles}

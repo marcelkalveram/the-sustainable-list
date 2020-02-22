@@ -5,7 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 const DEFAULT_IMAGE =
   '//images.ctfassets.net/hfvaxsztohci/5F8GCHPzqNPyyFyRBt8Z34/7639bd473a33e5e8515dc27dbc53f241/70911900_243466726561461_1687436012864667648_o.jpg';
 
-export const BrandImage = ({ children, image, website }) => {
+export const BrandImage = ({ children, image, website, visibleByDefault }) => {
   const imageUrl = image ? image.fields.file.url : DEFAULT_IMAGE;
   return (
     <Pane
@@ -34,6 +34,8 @@ export const BrandImage = ({ children, image, website }) => {
           alt="Brand: TODO"
           style={{ maxWidth: '100%' }}
           width="100%"
+          visibleByDefault={visibleByDefault}
+          effect="opacity"
         />
       </Link>
       {children}

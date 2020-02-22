@@ -42,12 +42,28 @@ export const certificatesMap = {
     image: '/badges-one.png',
     website: 'https://www.onepercentfortheplanet.org/',
   },
-  'certified-organic-cotton': {
-    title: 'Certified Organic Cotton',
-    image: '/badges-coc.png',
+  'b-corporation': {
+    title: 'B Corporation',
+    image: '/badges-bco.png',
   },
-  'supports-environmental-organisation': {
-    title: 'Supports Environmental Organizations',
-    image: '/badges-env.png',
+  'the-world-fair-trade-organization-wfto': {
+    title: 'The World Fair Trade Organization (WFTO)',
+    image: '/badges-wft.png',
+  },
+  'fairtrade-international-flo': {
+    title: 'Fairtrade International (FLO)',
+    image: '/badges-fti.png',
+  },
+  'fair-trade-certified': {
+    title: 'Fair Trade Certified',
+    image: '/badges-ftc.png',
+  },
+  'econyl-r': {
+    title: 'Econyl',
+    image: '/badges-enl.png',
+  },
+  'fashion-revolution': {
+    title: 'Fashion Revolution',
+    image: '/badges-fre.png',
   },
 };

@@ -39,8 +39,8 @@ export const Brands = ({ brands }) => {
       )}
       {brands.length > 0 && (
         <section className="brands">
-          {brands.map(brand => {
-            return <Brand key={brand.sys.id} brand={brand} />;
+          {brands.map((brand, index) => {
+            return <Brand key={brand.sys.id} brand={brand} index={index} />;
           })}
         </section>
       )}
