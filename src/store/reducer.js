@@ -1,9 +1,12 @@
 import { actions } from './';
+import { initSelected } from './helper';
 
 export const reducer = (state, action) => {
   switch (action.type) {
     case actions.SET_SELECTED:
       return { ...state, selected: action.payload };
+    case actions.CLEAR_SELECTED:
+      return { ...state, selected: initSelected() };
     case actions.SET_SHOW_FILTERS:
       return { ...state, showFilters: action.payload };
     case actions.SET_SEARCH_FOR:

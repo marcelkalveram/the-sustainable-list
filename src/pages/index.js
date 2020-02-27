@@ -48,6 +48,7 @@ export default function Index() {
         setSelected={selected =>
           dispatch({ type: actions.SET_SELECTED, payload: selected })
         }
+        clearSelected={() => dispatch({ type: actions.CLEAR_SELECTED })}
         showFilters={state.showFilters}
         setShowFilters={show =>
           dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })

@@ -1,5 +1,6 @@
 /* styles.js */
 import css from 'styled-jsx/css';
+import { colors } from '../../config/constants';
 
 export const body = css.global`
   body {
@@ -41,6 +42,11 @@ export const body = css.global`
     text-decoration: none;
     color: #df704b !important;
     cursor: pointer;
+  }
+
+  .buttonPrimary {
+    background-image: linear-gradient(to top, ${colors.secondary}, ${colors.secondarySoft}) !important;
+    border-color: ${colors.secondary} !important;
   }
 
   .lazy-load-image-background.opacity {

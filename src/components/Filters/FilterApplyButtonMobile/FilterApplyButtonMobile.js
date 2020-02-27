@@ -3,7 +3,7 @@ import { Pane, Button } from 'evergreen-ui';
 import { colors } from '../../../config/constants';
 import { majorScale } from 'evergreen-ui/commonjs/scales';
 
-export const FilterApplyButtonMobile = ({ setShowFilters }) => (
+export const FilterApplyButtonMobile = ({ setShowFilters, clearSelected }) => (
   <Pane
     style={{
       display: 'flex',
@@ -13,16 +13,23 @@ export const FilterApplyButtonMobile = ({ setShowFilters }) => (
       width: '100%',
       height: '56px',
       backgroundColor: colors.white,
-      borderTop: `1px solid #EEEEEE`,
+      borderTop: `1px solid ${colors.grey}`,
       padding: majorScale(1),
-      justifyContent: 'center',
+      justifyContent: 'space-around',
       alignItems: 'center',
       zIndex: 5,
     }}
   >
     <Button
+      appearance="secondary"
+      height={40}
+      onClick={() => clearSelected()}
+    >
+      Clear filters
+    </Button>
+    <Button
+      className="buttonPrimary"
       appearance="primary"
-      backgroundImage={`linear-gradient(to bottom, #425A70, #234361)`}
       height={40}
       onClick={() => setShowFilters(false)}
     >

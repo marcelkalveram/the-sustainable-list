@@ -11,6 +11,7 @@ export function Filters({
   filters,
   selected,
   setSelected,
+  clearSelected,
   showFilters,
   setShowFilters,
   style,
@@ -49,7 +50,10 @@ export function Filters({
         ))}
       </div>
       {showFilters && (
-        <FilterApplyButtonMobile setShowFilters={setShowFilters} />
+        <FilterApplyButtonMobile
+          setShowFilters={setShowFilters}
+          clearSelected={clearSelected}
+        />
       )}
 
       <style jsx>{filtersStyles}</style>
