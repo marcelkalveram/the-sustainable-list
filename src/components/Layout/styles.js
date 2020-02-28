@@ -11,6 +11,7 @@ export const body = css.global`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overscroll-behavior-y: contain;
+    overflow-x: hidden;
   }
 
   ul li {
@@ -45,7 +46,11 @@ export const body = css.global`
   }
 
   .buttonPrimary {
-    background-image: linear-gradient(to top, ${colors.secondary}, ${colors.secondarySoft}) !important;
+    background-image: linear-gradient(
+      to top,
+      ${colors.secondary},
+      ${colors.secondarySoft}
+    ) !important;
     border-color: ${colors.secondary} !important;
   }
 
