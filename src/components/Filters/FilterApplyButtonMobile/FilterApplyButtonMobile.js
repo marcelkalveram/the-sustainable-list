@@ -15,12 +15,14 @@ export const FilterApplyButtonMobile = ({ setShowFilters, clearSelected }) => (
       backgroundColor: colors.white,
       borderTop: `1px solid ${colors.grey}`,
       padding: majorScale(1),
-      justifyContent: 'space-around',
+      justifyContent: 'space-between',
       alignItems: 'center',
       zIndex: 5,
     }}
   >
     <Button
+      width="49%"
+      justifyContent="center"
       appearance="secondary"
       height={40}
       onClick={() => clearSelected()}
@@ -28,6 +30,8 @@ export const FilterApplyButtonMobile = ({ setShowFilters, clearSelected }) => (
       Clear filters
     </Button>
     <Button
+      width="49%"
+      justifyContent="center"
       className="buttonPrimary"
       appearance="primary"
       height={40}
