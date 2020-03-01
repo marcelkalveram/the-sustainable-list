@@ -6,19 +6,25 @@ import { certificatesMap } from '../../../data/certificates';
 
 export const ContentAbout = () => (
   <Section>
-    <Heading size={700} color={colors.secondary} paddingBottom={minorScale(6)}>
+    <Heading
+      size={700}
+      color={colors.secondary}
+      paddingBottom={minorScale(7)}
+      borderBottom={`1px solid ${colors.grey}`}
+      marginBottom={majorScale(3)}
+    >
       About the project
     </Heading>
     <Pane color={colors.secondary} marginBottom={majorScale(4)}>
       <Paragraph fontWeight={700} marginBottom={minorScale(4)}>
         the sustainable list is a curated list of ethical fashion brands from
-        all over the world. These brands produce good-looking, quality products
-        while doing less harm to the planet.
+        all over the world. Brands that produce good-looking, high-quality
+        products while doing less harm to the planet.
       </Paragraph>
       <Paragraph marginBottom={minorScale(4)}>
-        We choose brands that work with recycled materials, work towards a more
-        responsible supply chain and contribute to a more sustainable, greener
-        future.
+        We choose fashion brands that work with recycled materials, strive for a
+        more responsible supply chain and contribute to a greener and more
+        sustainable lifespan of their products.
       </Paragraph>
       <Paragraph marginBottom={minorScale(7)}>
         Many of them have been recognised for their work towards sustainability
@@ -27,7 +33,9 @@ export const ContentAbout = () => (
         participate in movements like <a href="">1% For The Planet</a> to give
         back part of their margins to non-profit organisations.
       </Paragraph>
-
+      <Paragraph marginBottom={minorScale(7)}>
+        The following certificates and endorsements appear throughout our list:
+      </Paragraph>
       <Paragraph
         marginBottom={minorScale(5)}
         display="flex"
@@ -48,15 +56,11 @@ export const ContentAbout = () => (
           />
         ))}
       </Paragraph>
-
-      <Paragraph marginBottom={minorScale(4)}> </Paragraph>
-      <Paragraph>
-        With this project, we want to help increase visibility of these brands
-        to make it easier for people to make the right choice the next time they
-        want to go shopping. Keep in mind though that the best choice as a
-        responsible consumer is to not buy at all .
+      <Paragraph marginBottom={minorScale(4)}>
+        With this list list, we want to make it easier for people to find good
+        fashion brands by providing a growing list of sustainabel alternatives
+        to the world's most established fashion brands.
       </Paragraph>
-      <Paragraph></Paragraph>
     </Pane>
   </Section>
 );

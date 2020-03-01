@@ -93,12 +93,16 @@ export default function About() {
                   paddingRight={majorScale(1)}
                 />
               </Link>
-              <Pane display="inline" marginRight={majorScale(1)}>
+              {/* <Pane display="inline" marginRight={majorScale(1)}>
                 <img src="./social-twitter.png" width="48" />
-              </Pane>
-              <Pane display="inline" marginRight={majorScale(1)}>
+              </Pane> */}
+              <Link
+                display="inline-block"
+                marginRight={majorScale(1)}
+                href="https://www.facebook.com/thesustainablelist"
+              >
                 <img src="./social-facebook.png" width="48" />
-              </Pane>
+              </Link>
             </Paragraph>
           </Section>
           <Section>

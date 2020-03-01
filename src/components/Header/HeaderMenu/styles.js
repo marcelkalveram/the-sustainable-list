@@ -3,6 +3,14 @@ import { colors } from '../../../config/constants';
 import { majorScale } from 'evergreen-ui';
 
 export const { styles, className } = css.resolve`
+  .header__menu :global(ul li a, ul li a:link, ul li a:visited) {
+    color: #df704b;
+  }
+
+  .header__menu :global(a, a:visited, a:link, a:hover) {
+    color: #df704b !important;
+  }
+
   @media only screen and (max-width: 768px) {
     .header__menu {
       display: none;

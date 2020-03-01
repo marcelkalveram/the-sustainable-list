@@ -13,6 +13,7 @@ import { Main } from '../components/Main/Main';
 import { Sort } from '../components/Sort/Sort';
 import { Brands } from '../components/Brands/Brands';
 import { Filters } from '../components/Filters/Filters';
+import { BackgroundImage } from '../components/Content/BackgroundImage/BackgroundImage';
 
 import { NextSeo } from 'next-seo';
 
@@ -94,6 +95,7 @@ export default function Index() {
           {sort}
           <Brands brands={brands} />
         </Main>
+        <BackgroundImage />
       </Layout>
     </>
   );

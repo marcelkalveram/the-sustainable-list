@@ -18,7 +18,7 @@ export const HeaderMenu = ({
         }`}
       >
         <UnorderedList
-          className="header__menu__ul"
+          className="header__menu__ul ul"
           display="flex"
           alignItems="center"
           marginRight={majorScale(2)}

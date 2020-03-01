@@ -14,25 +14,24 @@ export const body = css.global`
     overflow-x: hidden;
   }
 
-  ul li {
+  ul.ul li {
     list-style: none;
     padding: 0;
     float: left;
     margin-right: 24px;
   }
 
-  ul li:last-child {
+  ul.ul li:last-child {
     margin-right: 0;
   }
 
-  ul li a,
-  ul li a:link,
-  ul li a:visited {
-    color: #df704b;
+  ul.ul li a,
+  ul.ul li a:link,
+  ul.ul li a:visited {
     text-decoration: none;
   }
 
-  ul li a:hover {
+  ul.ul li a:hover {
     text-decoration: none;
   }
 
@@ -41,7 +40,6 @@ export const body = css.global`
   a:link,
   a:hover {
     text-decoration: none;
-    color: #df704b !important;
     cursor: pointer;
   }
 
