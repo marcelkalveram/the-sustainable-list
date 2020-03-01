@@ -14,6 +14,8 @@ import { Sort } from '../components/Sort/Sort';
 import { Brands } from '../components/Brands/Brands';
 import { Filters } from '../components/Filters/Filters';
 
+import { NextSeo } from 'next-seo';
+
 export default function Index() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -80,12 +82,19 @@ export default function Index() {
   );
 
   return (
-    <Layout fixed={state.showFilters} showFilters={state.showFilters}>
-      {filters}
-      <Main>
-        {sort}
-        <Brands brands={brands} />
-      </Main>
-    </Layout>
+    <>
+      <NextSeo
+        title="the sustainable list - all the good fashion brands at a glance"
+        description="the sustainable list is a curated list of ethical fashion brands from all over the world."
+        canonical="https://thesustainablelist.com/"
+      />
+      <Layout fixed={state.showFilters} showFilters={state.showFilters}>
+        {filters}
+        <Main>
+          {sort}
+          <Brands brands={brands} />
+        </Main>
+      </Layout>
+    </>
   );
 }

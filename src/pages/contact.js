@@ -21,6 +21,8 @@ import { Section } from '../components/Content/Section/Section';
 import { colors } from '../config/constants';
 import { Formik } from 'formik';
 
+import { NextSeo } from 'next-seo';
+
 const validateForm = values => {
   const errors = {};
   if (!values.email) {
@@ -58,6 +60,11 @@ const submitForm = async (values, { setSubmitting, setStatus }) => {
 export default function About() {
   return (
     <>
+      <NextSeo
+        title="the sustainable list - contact us"
+        description="We'd love to hear from you and know your thoughts! If you have any feedback, ideas or criticism, please don't hesitate to get in touch with us."
+        canonical="https://thesustainablelist.com/contact"
+      />
       <Layout>
         <Container>
           <Section>
