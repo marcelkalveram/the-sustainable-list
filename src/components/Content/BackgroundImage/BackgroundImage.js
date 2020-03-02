@@ -38,8 +38,17 @@ export const BackgroundImage = () => {
             <ListItem color={colors.grey}>
               {' '}
               <Link
+                href="/terms"
+                style={{ opacity: router.pathname === '/terms' ? 0.5 : 1 }}
+              >
+                Terms & Conditions
+              </Link>
+            </ListItem>
+            <ListItem color={colors.grey}>
+              {' '}
+              <Link
                 href="/privacy"
-                style={{ opacity: router.pathname === '/' ? 0.5 : 1 }}
+                style={{ opacity: router.pathname === '/privacy' ? 0.5 : 1 }}
               >
                 Privacy policy
               </Link>
