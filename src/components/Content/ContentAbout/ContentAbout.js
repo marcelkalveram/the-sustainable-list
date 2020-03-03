@@ -58,8 +58,8 @@ export const ContentAbout = () => (
       </Paragraph>
       <Paragraph marginBottom={minorScale(4)}>
         With this list list, we want to make it easier for people to find good
-        fashion brands by providing a growing list of sustainabel alternatives
-        to the world's most established fashion brands.
+        fashion brands by providing a growing list of sustainable alternatives
+        to the world's established fashion brands.
       </Paragraph>
     </Pane>
   </Section>
