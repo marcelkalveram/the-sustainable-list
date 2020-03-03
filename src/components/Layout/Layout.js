@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import { Header } from '../Header/Header';
 import { body } from './styles';
@@ -14,23 +14,7 @@ export const Layout = ({
   showFilters,
 }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-
   const lockViewport = fixed || showMobileMenu;
-
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-147040881-1', {
-        page_location: window.location.href,
-        page_path: window.location.pathname,
-        page_title: window.document.title,
-      });
-    }
-  }, []);
 
   return (
     <>
@@ -67,11 +51,6 @@ export const Layout = ({
         />
         <meta name="msapplication-TileColor" content={colors.primary} />
         <meta name="theme-color" content={colors.white} />
-
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-147040881-1"
-        ></script>
       </Head>
 
       <div style={lockViewport ? { position: 'fixed' } : {}}>
