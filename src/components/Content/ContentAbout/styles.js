@@ -48,7 +48,7 @@ export const { className, styles } = css.resolve`
   @media only screen and (max-width: 574px) {
     :global(.certificates-grid) {
       max-width: 500px;
-      justify-content: center;
+      justify-content: center !important;
     }
     :global(.certificates-grid img) {
       width: 45px;
