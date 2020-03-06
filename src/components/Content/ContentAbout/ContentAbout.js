@@ -3,9 +3,10 @@ import { Heading, Paragraph, Pane, minorScale, majorScale } from 'evergreen-ui';
 import { colors } from '../../../config/constants';
 import { Section } from '../Section/Section';
 import { certificatesMap } from '../../../data/certificates';
+import { className, styles } from './styles';
 
 export const ContentAbout = () => (
-  <Section>
+  <Section className={`${className} content-about`}>
     <Heading
       size={700}
       color={colors.secondary}
@@ -41,6 +42,8 @@ export const ContentAbout = () => (
         display="flex"
         flexWrap="wrap"
         justifyContent="flex-start"
+        maxWidth={540}
+        className="certificates-grid"
       >
         {Object.keys(certificatesMap).map(certificate => (
           <img
@@ -49,8 +52,8 @@ export const ContentAbout = () => (
             height={52}
             style={{
               display: 'inline-block',
-              marginBottom: minorScale(3),
-              marginRight: minorScale(3),
+              marginBottom: minorScale(4),
+              marginRight: minorScale(4),
             }}
             src={certificatesMap[certificate].image}
           />
@@ -62,5 +65,6 @@ export const ContentAbout = () => (
         to the world's established fashion brands.
       </Paragraph>
     </Pane>
+    {styles}
   </Section>
 );
