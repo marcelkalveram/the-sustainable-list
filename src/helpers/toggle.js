@@ -18,5 +18,6 @@ export const toggleFilterFn = (selected, setSelected) => (
   } else {
     newSelected[type].push(toggledItem);
   }
+  window.scrollTo(0, 0);
   setSelected({ ...newSelected });
 };
