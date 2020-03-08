@@ -42,7 +42,7 @@ export const ContentAbout = () => (
         display="flex"
         flexWrap="wrap"
         justifyContent="flex-start"
-        maxWidth={540}
+        // maxWidth={540}
         className="certificates-grid"
       >
         {Object.keys(certificatesMap).map(certificate => (

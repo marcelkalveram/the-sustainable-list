@@ -29,7 +29,7 @@ export const { className, styles } = css.resolve`
   }
   @media only screen and (max-width: 1024px) {
     :global(.certificates-grid) {
-      max-width: 500px;
+      /* max-width: 500px; */
     }
     :global(.certificates-grid img) {
       margin-right: ${minorScale(4)}px !important;
