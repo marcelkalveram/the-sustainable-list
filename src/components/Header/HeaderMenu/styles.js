@@ -5,10 +5,15 @@ import { majorScale } from 'evergreen-ui';
 export const { styles, className } = css.resolve`
   .header__menu :global(ul li a, ul li a:link, ul li a:visited) {
     color: #df704b;
+    font-weight: 500;
   }
 
   .header__menu :global(a, a:visited, a:link, a:hover) {
     color: #df704b !important;
+  }
+
+  .header__menu :global(.header__menu__li--newsletter) {
+    color: #fff !important;
   }
 
   @media only screen and (max-width: 768px) {

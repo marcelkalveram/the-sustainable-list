@@ -14,6 +14,7 @@ import { Sort } from '../components/Sort/Sort';
 import { Brands } from '../components/Brands/Brands';
 import { Filters } from '../components/Filters/Filters';
 import { BackgroundImage } from '../components/Content/BackgroundImage/BackgroundImage';
+import { Newsletter } from '../components/Newsletter/Newsletter';
 
 import { NextSeo } from 'next-seo';
 
