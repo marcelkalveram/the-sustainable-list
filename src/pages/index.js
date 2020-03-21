@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useReducer } from 'react';
+import cookies from 'next-cookies';
 
 // data
 import data from '../data';
@@ -17,7 +18,7 @@ import { BackgroundImage } from '../components/Content/BackgroundImage/Backgroun
 
 import { NextSeo } from 'next-seo';
 
-export default function Index() {
+function Index(props) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // filter
@@ -85,7 +86,13 @@ export default function Index() {
   useEffect(() => {
     const vw = window.innerWidth || 0;
     if (vw <= 768) {
-      setTimeout(() => showMailingPopUp(), 10000);
+      const { MCPopupSubscribed, MCPopupClosed } = props.allCookies;
+      if (MCPopupClosed === 'yes' || MCPopupSubscribed === 'yes') {
+        return;
+      }
+      setTimeout(() => {
+        showMailingPopUp();
+      }, 1000);
     }
   }, []);
 
@@ -107,3 +114,10 @@ export default function Index() {
     </>
   );
 }
+
+Index.getInitialProps = async ctx => {
+  const allCookies = cookies(ctx);
+  return { allCookies };
+};
+
+export default Index;
