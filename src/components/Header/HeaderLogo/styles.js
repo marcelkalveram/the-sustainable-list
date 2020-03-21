@@ -1,7 +1,7 @@
 import css from 'styled-jsx/css';
 
 export const { styles, className } = css.resolve`
-  @media only screen and (max-width: 860px) {
+  @media only screen and (max-width: 1024px) {
     .header__logo :global(.header__logo__subtitle) {
       display: none;
     }

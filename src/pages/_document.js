@@ -120,6 +120,25 @@ export default class MyDocument extends Document {
           <Main />
           {hydrationScript}
           <NextScript />
+
+          <script
+            type="text/javascript"
+            src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js"
+            data-dojo-config="usePlainJson: true, isDebug: false"
+          ></script>
+
+          <script
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: `
+              function showMailingPopUp() {
+                window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us4.list-manage.com","uuid":"8055fef5a87aa785b5bdee0b6","lid":"f995028b3f","uniqueMethods":true}) })
+                document.cookie = 'MCPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+                document.cookie = 'MCPopupSubscribed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+              }
+              `,
+            }}
+          />
         </body>
       </html>
     );

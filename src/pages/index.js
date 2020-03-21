@@ -1,4 +1,4 @@
-import React, { useMemo, useReducer } from 'react';
+import React, { useEffect, useMemo, useReducer } from 'react';
 
 // data
 import data from '../data';
@@ -14,7 +14,6 @@ import { Sort } from '../components/Sort/Sort';
 import { Brands } from '../components/Brands/Brands';
 import { Filters } from '../components/Filters/Filters';
 import { BackgroundImage } from '../components/Content/BackgroundImage/BackgroundImage';
-import { Newsletter } from '../components/Newsletter/Newsletter';
 
 import { NextSeo } from 'next-seo';
 
@@ -82,6 +81,13 @@ export default function Index() {
     ),
     [brands.length, state.searchFor, state.brandsCounct, state.sortBy],
   );
+
+  useEffect(() => {
+    const vw = window.innerWidth || 0;
+    if (vw <= 768) {
+      setTimeout(() => showMailingPopUp(), 10000);
+    }
+  }, []);
 
   return (
     <>

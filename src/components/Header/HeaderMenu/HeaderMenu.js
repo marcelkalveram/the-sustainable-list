@@ -50,7 +50,7 @@ export const HeaderMenu = ({
           <ListItem className="header__menu__li">
             <Link
               className="header__menu__li--newsletter"
-              href="/newsletter"
+              onClick={() => showMailingPopUp()}
               style={{
                 backgroundColor: colors.primary,
                 padding: minorScale(2),
@@ -60,7 +60,7 @@ export const HeaderMenu = ({
                 opacity: router.pathname === '/newsletter' ? 0.75 : 1,
               }}
             >
-              Newsletter
+              Subscribe now
             </Link>
           </ListItem>
           <ListItem className="header__menu__li">
