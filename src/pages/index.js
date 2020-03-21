@@ -92,7 +92,7 @@ function Index(props) {
       }
       setTimeout(() => {
         showMailingPopUp();
-      }, 1000);
+      }, 10000);
     }
   }, []);
 
