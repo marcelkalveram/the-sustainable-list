@@ -112,8 +112,8 @@ function Index(props) {
             {
               url:
                 'https://thesustainablelist.com/og-sustainable-fashion-image.jpg',
-              width: 960,
-              height: 540,
+              width: 1220,
+              height: 420,
               alt: 'sustainable fashion shirts on hangers',
             },
           ],
