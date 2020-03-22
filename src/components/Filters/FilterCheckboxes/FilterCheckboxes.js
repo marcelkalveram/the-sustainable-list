@@ -25,26 +25,50 @@ export const FilterCheckboxes = ({
   let checkboxes = [];
 
   if (name === 'location') {
-    checkboxes = countries.map(country => (
-      <CheckboxCountry
-        key={country}
-        selected={selected}
-        country={country}
-        toggleFilter={toggleFilter}
-      />
-    ));
+    checkboxes = countries
+      .sort(function(a, b) {
+        if (a < b) {
+          return -1;
+        }
+        if (a > b) {
+          return 1;
+        }
+        return 0;
+      })
+      .map(country => (
+        <CheckboxCountry
+          key={country}
+          selected={selected}
+          country={country}
+          toggleFilter={toggleFilter}
+        />
+      ))
+      .sort();
   }
 
   if (name !== 'location') {
-    checkboxes = filters[name].map(element => (
-      <CheckboxGeneric
-        key={element.fields ? element.fields.slug : element}
-        selected={selected}
-        name={name}
-        element={element}
-        toggleFilter={toggleFilter}
-      />
-    ));
+    checkboxes = filters[name]
+      .sort(function(a, b) {
+        if (!a.fields || !b.fields) {
+          return 0;
+        }
+        if (a.fields.title < b.fields.title) {
+          return -1;
+        }
+        if (a.fields.title > b.fields.title) {
+          return 1;
+        }
+        return 0;
+      })
+      .map(element => (
+        <CheckboxGeneric
+          key={element.fields ? element.fields.slug : element}
+          selected={selected}
+          name={name}
+          element={element}
+          toggleFilter={toggleFilter}
+        />
+      ));
   }
 
   return (
