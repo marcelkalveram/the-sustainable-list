@@ -100,8 +100,24 @@ function Index(props) {
     <>
       <NextSeo
         title="the sustainable list - all the good fashion brands at a glance"
-        description="the sustainable list is a curated list of ethical fashion brands from all over the world."
+        description="A curated list of ethical fashion brands from all over the world. We support companies that produce good looking products while doing less harm to the planet."
         canonical="https://thesustainablelist.com/"
+        openGraph={{
+          type: 'website',
+          url: 'https://thesustainablelist.com/',
+          title: 'the sustainable list',
+          description:
+            'A curated list of ethical fashion brands from all over the world. We support companies that produce good looking products while doing less harm to the planet.',
+          images: [
+            {
+              url:
+                'https://thesustainablelist.com/og-sustainable-fashion-image.jpg',
+              width: 960,
+              height: 540,
+              alt: 'sustainable fashion shirts on hangers',
+            },
+          ],
+        }}
       />
       <Layout fixed={state.showFilters} showFilters={state.showFilters}>
         {filters}

@@ -22,7 +22,7 @@ export const { className, styles } = css.resolve`
     }
 
     .footer :global(.footer__menu) {
-      flex-direction: column !important;
+      flex-direction: column-reverse !important;
       text-align: center;
       justify-content: center;
       align-items: center;
