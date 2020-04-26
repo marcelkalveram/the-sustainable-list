@@ -60,7 +60,7 @@ export const HeaderMenu = ({
                 opacity: router.pathname === '/newsletter' ? 0.75 : 1,
               }}
             >
-              Subscribe now
+              Subscribe
             </Link>
           </ListItem>
           <ListItem className="header__menu__li">
