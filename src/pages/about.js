@@ -13,9 +13,7 @@ export default function About() {
     <>
       <NextSeo
         title="the sustainable list - about the project"
-        description="We choose brands that work with recycled materials, work towards a more
-        responsible supply chain and contribute to a more sustainable, greener
-        future."
+        description="A curated online list of ethical fashion brands from all over the world, featuring feature brands that do less harm to the planet."
         canonical="https://thesustainablelist.com/about"
       />
       <Layout>

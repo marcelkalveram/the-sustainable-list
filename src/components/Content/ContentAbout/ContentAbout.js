@@ -18,24 +18,24 @@ export const ContentAbout = () => (
     </Heading>
     <Pane color={colors.secondary} marginBottom={majorScale(4)}>
       <Paragraph fontWeight={700} marginBottom={minorScale(4)}>
-        the sustainable list is a curated list of ethical fashion brands from
-        all over the world. Brands that produce good-looking, high-quality
-        products while doing less harm to the planet.
+        the sustainable list is a curated online list of ethical fashion brands
+        from all over the world. We feature brands that produce good-looking,
+        high-quality products, and do less harm to the planet.
       </Paragraph>
       <Paragraph marginBottom={minorScale(4)}>
-        We choose fashion brands that work with recycled materials, strive for a
-        more responsible supply chain and contribute to a greener and more
-        sustainable lifespan of their products.
+        We choose fashion brands that aim to work more sustainably by providing
+        or developing a more responsible supply chain, fostering local
+        production and fighting for decent worker conditions.
       </Paragraph>
       <Paragraph marginBottom={minorScale(7)}>
         Many of them have been recognised for their work towards sustainability
-        and certificed by associations like{' '}
+        and certified by associations like the{' '}
         <a href="">GOTS (Global Organic Textile Standard)</a>. Others
         participate in movements like <a href="">1% For The Planet</a> to give
         back part of their margins to non-profit organisations.
       </Paragraph>
       <Paragraph marginBottom={minorScale(7)}>
-        The following certificates and endorsements appear throughout our list:
+        The following certificates appear throughout our list:
       </Paragraph>
       <Paragraph
         marginBottom={minorScale(5)}
@@ -45,7 +45,7 @@ export const ContentAbout = () => (
         // maxWidth={540}
         className="certificates-grid"
       >
-        {Object.keys(certificatesMap).map(certificate => (
+        {Object.keys(certificatesMap).map((certificate) => (
           <img
             alt={`${certificate.title} badge`}
             width={52}
@@ -60,9 +60,9 @@ export const ContentAbout = () => (
         ))}
       </Paragraph>
       <Paragraph marginBottom={minorScale(4)}>
-        With this list list, we want to make it easier for people to find good
-        fashion brands by providing a growing list of sustainable alternatives
-        to the world's established fashion brands.
+        With this platform, we want to make it easier for people interested in
+        fashion and sustainability to find brands that do good and contribute to
+        the development of a more responsible and sustainable fashion industry.
       </Paragraph>
     </Pane>
     {styles}
