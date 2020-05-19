@@ -23,7 +23,7 @@ export const ContentTeam = () => (
       description="Noah is our main source of inspiration. Though he doesn't actively contribute to the project yet, he has reinforced our thinking about the future of his generation and why we want to contribute to becoming a more sustainable society."
     />
     <TeamMember
-      image="/who-we-are-andreea.png"
+      image="/who-we-are-andreea.jpg"
       name="Andreea"
       role="Strategy & Content"
       description="Andreea has always loved fashion. With the fashion industry's bad practices becoming more apparent though, she started turning her attention towards sustainability and creating positive change. As the main initiator of the project, she's continuously filling this site with new content."
