@@ -3,10 +3,6 @@ import css from 'styled-jsx/css';
 import { colors } from '../../config/constants';
 
 export const body = css.global`
-  html,
-  body {
-    overflow-x: hidden;
-  }
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
@@ -15,6 +11,7 @@ export const body = css.global`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overscroll-behavior-y: contain;
+    overflow-x: hidden;
   }
 
   .mc-modal {

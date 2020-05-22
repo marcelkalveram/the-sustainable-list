@@ -6,6 +6,7 @@ import { majorScale } from 'evergreen-ui/commonjs/scales';
 export const SortButton = ({ onToggle, children }) => {
   return (
     <Button
+      fontWeight={600}
       color={colors.secondary}
       appearance="minimal"
       onClick={onToggle}

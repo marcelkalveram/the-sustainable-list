@@ -23,7 +23,6 @@ export const FilterApplyButtonMobile = ({ setShowFilters, clearSelected }) => (
     <Button
       width="49%"
       justifyContent="center"
-      appearance="secondary"
       height={40}
       onClick={() => clearSelected()}
     >

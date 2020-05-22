@@ -8,7 +8,6 @@ import { HeaderMenu } from './HeaderMenu/HeaderMenu';
 export function Header({ showFilters, showMobileMenu, setShowMobileMenu }) {
   return (
     <Pane
-      width="100vw"
       display="flex"
       justifyContent="space-between"
       alignItems="center"

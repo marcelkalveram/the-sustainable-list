@@ -23,13 +23,13 @@ function Index(props) {
 
   // filter
   let brands = useMemo(
-    () => data.brands.filter(brands => filterBrands(brands, state.selected)),
+    () => data.brands.filter((brands) => filterBrands(brands, state.selected)),
     [state.selected],
   );
 
   // search for filter
   if (state.searchFor !== '') {
-    brands = brands.filter(brand =>
+    brands = brands.filter((brand) =>
       brand.fields.title.toLowerCase().includes(state.searchFor.toLowerCase()),
     );
   }
@@ -49,12 +49,12 @@ function Index(props) {
         criteriaMap={criteriaMap}
         filters={state.filters}
         selected={state.selected}
-        setSelected={selected =>
+        setSelected={(selected) =>
           dispatch({ type: actions.SET_SELECTED, payload: selected })
         }
         clearSelected={() => dispatch({ type: actions.CLEAR_SELECTED })}
         showFilters={state.showFilters}
-        setShowFilters={show =>
+        setShowFilters={(show) =>
           dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })
         }
       />
@@ -66,16 +66,16 @@ function Index(props) {
     () => (
       <Sort
         searchFor={state.searchFor}
-        setSearchFor={searchTerm =>
+        setSearchFor={(searchTerm) =>
           dispatch({ type: actions.SET_SEARCH_FOR, payload: searchTerm })
         }
         totalCount={state.brandsCount}
         count={brands.length}
         sortBy={state.sortBy}
-        setSortBy={sortBy =>
+        setSortBy={(sortBy) =>
           dispatch({ type: actions.SET_SORT_BY, payload: sortBy })
         }
-        setShowFilters={show =>
+        setShowFilters={(show) =>
           dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })
         }
       />
@@ -131,7 +131,7 @@ function Index(props) {
   );
 }
 
-Index.getInitialProps = async ctx => {
+Index.getInitialProps = async (ctx) => {
   const allCookies = cookies(ctx);
   return { allCookies };
 };
