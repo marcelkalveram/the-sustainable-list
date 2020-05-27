@@ -105,8 +105,8 @@ export default function About() {
               </Link>
             </Paragraph>
             <Paragraph marginBottom={minorScale(4)}>
-              If you're interested in helping us move this initative forward,
-              feel free join us on Product Hunt:
+              If you want to help us move this project forward, feel free to
+              join the discussion on Product Hunt:
             </Paragraph>
             <Paragraph marginBottom={minorScale(4)}>
               <a
