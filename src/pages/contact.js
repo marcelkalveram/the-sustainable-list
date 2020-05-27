@@ -23,7 +23,7 @@ import { Formik } from 'formik';
 
 import { NextSeo } from 'next-seo';
 
-const validateForm = values => {
+const validateForm = (values) => {
   const errors = {};
   if (!values.email) {
     errors.email = 'Please type in an email address';
@@ -81,7 +81,7 @@ export default function About() {
               touch with us. You can also follow us on social media to get the
               latest news.
             </Paragraph>
-            <Paragraph>
+            <Paragraph marginBottom={minorScale(4)}>
               <Link
                 display="inline-block"
                 marginRight={majorScale(1)}
@@ -89,7 +89,7 @@ export default function About() {
               >
                 <img
                   src="./social-instagram.png"
-                  width="48"
+                  width="54"
                   paddingRight={majorScale(1)}
                 />
               </Link>
@@ -101,8 +101,26 @@ export default function About() {
                 marginRight={majorScale(1)}
                 href="https://www.facebook.com/thesustainablelist"
               >
-                <img src="./social-facebook.png" width="48" />
+                <img src="./social-facebook.png" width="54" />
               </Link>
+            </Paragraph>
+            <Paragraph marginBottom={minorScale(4)}>
+              If you're interested in helping us move this initative forward,
+              feel free join us on Product Hunt:
+            </Paragraph>
+            <Paragraph marginBottom={minorScale(4)}>
+              <a
+                href="https://www.producthunt.com/posts/the-sustainable-list?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-the-sustainable-list"
+                target="_blank"
+              >
+                <img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=203103&theme=light"
+                  alt="the sustainable list - a curated list of sustainable fashion brands | Product Hunt Embed"
+                  style={{ width: 250, height: 54 }}
+                  width="250px"
+                  height="54px"
+                />
+              </a>
             </Paragraph>
           </Section>
           <Section>
