@@ -15,6 +15,7 @@ export const TeamMember = ({ image, name, role, description }) => (
         width={128}
         style={{
           maxHeight: '128px',
+          minWidth: '128px',
           borderRadius: '50%',
           marginRight: majorScale(3),
         }}
