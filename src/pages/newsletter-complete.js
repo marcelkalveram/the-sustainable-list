@@ -26,7 +26,7 @@ export default function Newsletter() {
   return (
     <>
       <NextSeo
-        title="the sustainable list - newsletter"
+        title="The Sustainable List - newsletter"
         description="We choose brands that work with recycled materials, work towards a more
         responsible supply chain and contribute to a more sustainable, greener
         future."

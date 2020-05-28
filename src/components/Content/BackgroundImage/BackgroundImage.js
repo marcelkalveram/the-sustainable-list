@@ -31,7 +31,7 @@ export const BackgroundImage = () => {
         >
           <UnorderedList className="ul" display="flex" marginLeft={0}>
             <ListItem color={colors.grey}>
-              © Copyright 2020 the sustainable list
+              © Copyright 2020 The Sustainable List
             </ListItem>
           </UnorderedList>
           <UnorderedList className="ul" display="flex">

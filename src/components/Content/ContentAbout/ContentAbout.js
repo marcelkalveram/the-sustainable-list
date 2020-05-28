@@ -18,7 +18,7 @@ export const ContentAbout = () => (
     </Heading>
     <Pane color={colors.secondary} marginBottom={majorScale(4)}>
       <Paragraph fontWeight={700} marginBottom={minorScale(4)}>
-        the sustainable list is a curated online list of ethical fashion brands
+        The Sustainable List is a curated online list of ethical fashion brands
         from all over the world. We feature brands that produce good-looking,
         high-quality products, and do less harm to the planet.
       </Paragraph>

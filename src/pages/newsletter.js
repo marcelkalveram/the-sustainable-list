@@ -26,7 +26,7 @@ export default function Newsletter() {
   return (
     <>
       <NextSeo
-        title="the sustainable list - newsletter"
+        title="The Sustainable List - newsletter"
         description="We choose brands that work with recycled materials, work towards a more
         responsible supply chain and contribute to a more sustainable, greener
         future."
@@ -117,7 +117,7 @@ export default function Newsletter() {
                       Marketing Permissions
                     </Heading>
                     <Paragraph>
-                      the sustainable list will use the information you provide
+                      The Sustainable List will use the information you provide
                       on this form to be in touch with you and to provide
                       updates and marketing. Please confirm that you want to
                       receive our newsletter:
@@ -134,7 +134,9 @@ export default function Newsletter() {
                         name="gdpr[42720]"
                         value={consent}
                         checked={consent === 'Y'}
-                        onChange={e => setConsent(consent === 'N' ? 'Y' : 'N')}
+                        onChange={(e) =>
+                          setConsent(consent === 'N' ? 'Y' : 'N')
+                        }
                       />
                     </fieldset>
                     <Paragraph>

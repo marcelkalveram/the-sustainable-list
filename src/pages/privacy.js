@@ -11,7 +11,7 @@ function Privacy({ content }) {
   return (
     <>
       <NextSeo
-        title="the sustainable list - about the project"
+        title="The Sustainable List - about the project"
         description="We choose brands that work with recycled materials, work towards a more
         responsible supply chain and contribute to a more sustainable, greener
         future."
@@ -27,7 +27,7 @@ function Privacy({ content }) {
   );
 }
 
-Privacy.getInitialProps = async ctx => {
+Privacy.getInitialProps = async (ctx) => {
   const res = await fetch(
     'https://www.iubenda.com/api/privacy-policy/68845143/only-legal',
   );

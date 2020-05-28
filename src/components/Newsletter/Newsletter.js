@@ -72,7 +72,7 @@ export const Newsletter = () => {
             flexDirection="row"
             alignItems="center"
           >
-            Want to receive the latest news from the sustainable list, brand
+            Want to receive the latest news from The Sustainable List, brand
             updates and discounts in the future?
           </Paragraph>
         </Pane>

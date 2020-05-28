@@ -61,7 +61,7 @@ export default function About() {
   return (
     <>
       <NextSeo
-        title="the sustainable list - contact us"
+        title="The Sustainable List - contact us"
         description="We'd love to hear from you and know your thoughts! If you have any feedback, ideas or criticism, please don't hesitate to get in touch with us."
         canonical="https://thesustainablelist.com/contact"
       />

@@ -5,7 +5,7 @@ import { body } from './styles';
 import { colors } from '../../config/constants';
 
 const DEFAULT_TITLE =
-  'the sustainable list - all the good fashion brands at a glance';
+  'The Sustainable List - all the good fashion brands at a glance';
 
 export const Layout = ({
   children,

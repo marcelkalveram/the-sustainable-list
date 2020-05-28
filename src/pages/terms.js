@@ -11,7 +11,7 @@ function Terms({ content }) {
   return (
     <>
       <NextSeo
-        title="the sustainable list - about the project"
+        title="The Sustainable List - about the project"
         description="We choose brands that work with recycled materials, work towards a more
         responsible supply chain and contribute to a more sustainable, greener
         future."
@@ -27,7 +27,7 @@ function Terms({ content }) {
   );
 }
 
-Terms.getInitialProps = async ctx => {
+Terms.getInitialProps = async (ctx) => {
   const res = await fetch(
     'https://www.iubenda.com/api/terms-and-conditions/68845143',
   );
