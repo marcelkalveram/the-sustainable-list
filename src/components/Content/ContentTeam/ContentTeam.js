@@ -19,7 +19,7 @@ export const ContentTeam = () => (
     <TeamMember
       image="/who-we-are-noah.jpg"
       name="Noah"
-      role="Visionary"
+      role="CEO & Visionary"
       description="Noah is our main source of inspiration. Though he doesn't actively contribute to the project yet, he has reinforced our thinking about the future of his generation and why we want to contribute to becoming a more sustainable society."
     />
     <TeamMember
