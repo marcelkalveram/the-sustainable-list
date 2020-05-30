@@ -19,7 +19,7 @@ export const BrandImage = ({ children, image, website, visibleByDefault }) => {
       <Link
         textDecoration="none"
         target="_blank"
-        href={website}
+        href={`${website}?ref=thesustainablelist`}
         style={{
           position: 'absolute',
           maxWidth: '100%',
