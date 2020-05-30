@@ -35,30 +35,32 @@ export default function Newsletter() {
       <Layout>
         <Container>
           <Section>
-            <Heading
-              size={700}
-              color={colors.secondary}
-              paddingBottom={minorScale(7)}
-              borderBottom={`1px solid ${colors.grey}`}
-              marginBottom={majorScale(3)}
-            >
-              Thanks for signing up!
-            </Heading>
-            <Section>
-              <Pane id="mc_embed_signup">
-                <Heading
-                  size="400"
-                  color={colors.secondary}
-                  paddingBottom={minorScale(2)}
-                >
-                  We need to confirm your email address.
-                </Heading>
-                <Paragraph>
-                  To complete the subscription process, please click the link in
-                  the email we just sent you.
-                </Paragraph>
-              </Pane>
-            </Section>
+            <Pane minHeight={335}>
+              <Heading
+                size={700}
+                color={colors.secondary}
+                paddingBottom={minorScale(7)}
+                borderBottom={`1px solid ${colors.grey}`}
+                marginBottom={majorScale(3)}
+              >
+                Thanks for signing up!
+              </Heading>
+              <Section>
+                <Pane id="mc_embed_signup">
+                  <Heading
+                    size="400"
+                    color={colors.secondary}
+                    paddingBottom={minorScale(2)}
+                  >
+                    We need to confirm your email address.
+                  </Heading>
+                  <Paragraph>
+                    To complete the subscription process, please click the link
+                    in the email we just sent you.
+                  </Paragraph>
+                </Pane>
+              </Section>
+            </Pane>
           </Section>
         </Container>
         <BackgroundImage />

@@ -50,6 +50,7 @@ export const HeaderMenu = ({
           <ListItem className="header__menu__li">
             <Link
               className="header__menu__li--newsletter"
+              href="https://thesustainablelist.us4.list-manage.com/subscribe?u=8055fef5a87aa785b5bdee0b6&id=f995028b3f"
               onClick={() => showMailingPopUp()}
               style={{
                 backgroundColor: colors.primary,

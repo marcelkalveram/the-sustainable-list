@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useReducer } from 'react';
+import React, { useMemo, useReducer } from 'react';
 import cookies from 'next-cookies';
 
 // data
@@ -18,7 +18,7 @@ import { BackgroundImage } from '../components/Content/BackgroundImage/Backgroun
 
 import { NextSeo } from 'next-seo';
 
-function Index(props) {
+function Index() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // filter
@@ -82,19 +82,6 @@ function Index(props) {
     ),
     [brands.length, state.searchFor, state.brandsCounct, state.sortBy],
   );
-
-  useEffect(() => {
-    const vw = window.innerWidth || 0;
-    if (vw <= 768) {
-      const { MCPopupSubscribed, MCPopupClosed } = props.allCookies;
-      if (MCPopupClosed === 'yes' || MCPopupSubscribed === 'yes') {
-        return;
-      }
-      setTimeout(() => {
-        showMailingPopUp();
-      }, 10000);
-    }
-  }, []);
 
   return (
     <>

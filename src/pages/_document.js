@@ -132,9 +132,19 @@ export default class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `
               function showMailingPopUp() {
+
+                const vw = window.innerWidth || 0;
+                if (vw <= 768) {
+                  return true;
+                }
+
+                event.preventDefault && event.preventDefault();
+
                 window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us4.list-manage.com","uuid":"8055fef5a87aa785b5bdee0b6","lid":"f995028b3f","uniqueMethods":true}) })
                 document.cookie = 'MCPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
                 document.cookie = 'MCPopupSubscribed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+                
+                return false;
               }
               `,
             }}
