@@ -30,9 +30,22 @@ export const ContentAbout = () => (
       <Paragraph marginBottom={minorScale(7)}>
         Many of them have been recognised for their work towards sustainability
         and certified by associations like the{' '}
-        <a href="">GOTS (Global Organic Textile Standard)</a>. Others
-        participate in movements like <a href="">1% For The Planet</a> to give
-        back part of their margins to non-profit organisations.
+        <a
+          href="https://global-standard.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GOTS (Global Organic Textile Standard)
+        </a>
+        . Others participate in movements like{' '}
+        <a
+          href="https://www.onepercentfortheplanet.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          1% For The Planet
+        </a>{' '}
+        to give back part of their margins to non-profit organisations.
       </Paragraph>
       <Paragraph marginBottom={minorScale(7)}>
         The following certificates appear throughout our list:
@@ -45,19 +58,28 @@ export const ContentAbout = () => (
         // maxWidth={540}
         className="certificates-grid"
       >
-        {Object.keys(certificatesMap).map((certificate) => (
-          <img
-            alt={`${certificate.title} badge`}
-            width={52}
-            height={52}
-            style={{
-              display: 'inline-block',
-              marginBottom: minorScale(4),
-              marginRight: minorScale(4),
-            }}
-            src={certificatesMap[certificate].image}
-          />
-        ))}
+        {Object.keys(certificatesMap).map((certificate) => {
+          return (
+            <a
+              key={certificate}
+              href={certificatesMap[certificate].website}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                alt={`${certificatesMap[certificate].title} badge`}
+                width={52}
+                height={52}
+                style={{
+                  display: 'inline-block',
+                  marginBottom: minorScale(4),
+                  marginRight: minorScale(4),
+                }}
+                src={certificatesMap[certificate].image}
+              />
+            </a>
+          );
+        })}
       </Paragraph>
       <Paragraph marginBottom={minorScale(4)}>
         With this platform, we want to make it easier for people interested in

@@ -90,7 +90,7 @@ export default function About() {
                 <img
                   src="./social-instagram.png"
                   width="54"
-                  paddingRight={majorScale(1)}
+                  paddingright={majorScale(1)}
                 />
               </Link>
               {/* <Pane display="inline" marginRight={majorScale(1)}>

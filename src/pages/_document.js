@@ -102,7 +102,7 @@ export default class MyDocument extends Document {
           <script
             type="text/javascript"
             src="//cdn.iubenda.com/cs/iubenda_cs.js"
-            charset="UTF-8"
+            charSet="UTF-8"
             async
           ></script>
         </Head>
