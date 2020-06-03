@@ -1,5 +1,4 @@
 import React, { useMemo, useReducer } from 'react';
-import cookies from 'next-cookies';
 
 // data
 import data from '../data';
@@ -117,10 +116,5 @@ function Index() {
     </>
   );
 }
-
-Index.getInitialProps = async (ctx) => {
-  const allCookies = cookies(ctx);
-  return { allCookies };
-};
 
 export default Index;
