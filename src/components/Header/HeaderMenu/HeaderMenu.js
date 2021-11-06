@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Pane,
   Link,
@@ -6,11 +6,11 @@ import {
   ListItem,
   majorScale,
   minorScale,
-} from 'evergreen-ui';
-import { className, styles } from './styles.js';
-import { MobileMenuIcon } from './MobileMenuIcon/MobileMenuIcon';
-import { useRouter } from 'next/router';
-import { colors } from '../../../config/constants.js';
+} from "evergreen-ui";
+import { className, styles } from "./styles.js";
+import { MobileMenuIcon } from "./MobileMenuIcon/MobileMenuIcon";
+import { useRouter } from "next/router";
+import { colors } from "../../../config/constants.js";
 
 export const HeaderMenu = ({
   showFilters,
@@ -22,7 +22,7 @@ export const HeaderMenu = ({
     <>
       <Pane
         className={`header__menu ${className} ${
-          showMobileMenu ? 'header__menu--isVisible' : ''
+          showMobileMenu ? "header__menu--isVisible" : ""
         }`}
       >
         <UnorderedList
@@ -34,15 +34,15 @@ export const HeaderMenu = ({
           <ListItem className="header__menu__li">
             <Link
               href="/"
-              style={{ opacity: router.pathname === '/' ? 0.75 : 1 }}
+              style={{ opacity: router.pathname === "/" ? 0.75 : 1 }}
             >
               Home
             </Link>
           </ListItem>
           <ListItem className="header__menu__li">
             <Link
-              href="https://thesustainablelist.typeform.com/to/PnaHPh"
-              style={{ opacity: router.pathname === '/add-a-brand' ? 0.75 : 1 }}
+              href="https://form.typeform.com/to/PnaHPh"
+              style={{ opacity: router.pathname === "/add-a-brand" ? 0.75 : 1 }}
             >
               Add a brand
             </Link>
@@ -58,7 +58,7 @@ export const HeaderMenu = ({
                 paddingRight: minorScale(3),
                 paddingLeft: minorScale(3),
                 borderRadius: 12,
-                opacity: router.pathname === '/newsletter' ? 0.75 : 1,
+                opacity: router.pathname === "/newsletter" ? 0.75 : 1,
               }}
             >
               Subscribe
@@ -67,7 +67,7 @@ export const HeaderMenu = ({
           <ListItem className="header__menu__li">
             <Link
               href="/about"
-              style={{ opacity: router.pathname === '/about' ? 0.75 : 1 }}
+              style={{ opacity: router.pathname === "/about" ? 0.75 : 1 }}
             >
               About
             </Link>
@@ -75,7 +75,7 @@ export const HeaderMenu = ({
           <ListItem className="header__menu__li">
             <Link
               href="/contact"
-              style={{ opacity: router.pathname === '/contact' ? 0.75 : 1 }}
+              style={{ opacity: router.pathname === "/contact" ? 0.75 : 1 }}
             >
               Contact Us
             </Link>
