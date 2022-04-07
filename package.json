@@ -23,7 +23,7 @@
     "next-seo": "^4.4.0",
     "react": "^16.14.0",
     "react-dom": "^16.13.0",
-    "react-lazy-load-image-component": "^1.4.1"
+    "react-lazy-load-image-component": "^1.5.4"
   },
   "devDependencies": {
     "contentful": "^7.6.0",
