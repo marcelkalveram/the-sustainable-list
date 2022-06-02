@@ -49,23 +49,6 @@ export const HeaderMenu = ({
           </ListItem>
           <ListItem className="header__menu__li">
             <Link
-              className="header__menu__li--newsletter"
-              href="https://thesustainablelist.us4.list-manage.com/subscribe?u=8055fef5a87aa785b5bdee0b6&id=f995028b3f"
-              onClick={() => showMailingPopUp()}
-              style={{
-                backgroundColor: colors.primary,
-                padding: minorScale(2),
-                paddingRight: minorScale(3),
-                paddingLeft: minorScale(3),
-                borderRadius: 12,
-                opacity: router.pathname === "/newsletter" ? 0.75 : 1,
-              }}
-            >
-              Subscribe
-            </Link>
-          </ListItem>
-          <ListItem className="header__menu__li">
-            <Link
               href="/about"
               style={{ opacity: router.pathname === "/about" ? 0.75 : 1 }}
             >

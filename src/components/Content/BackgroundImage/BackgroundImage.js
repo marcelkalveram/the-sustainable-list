@@ -1,8 +1,8 @@
-import React from 'react';
-import { className, styles } from './styles';
-import { Pane, Link, UnorderedList, ListItem, majorScale } from 'evergreen-ui';
-import { colors } from '../../../config/constants';
-import { useRouter } from 'next/router';
+import React from "react";
+import { className, styles } from "./styles";
+import { Pane, Link, UnorderedList, ListItem, majorScale } from "evergreen-ui";
+import { colors } from "../../../config/constants";
+import { useRouter } from "next/router";
 
 export const BackgroundImage = () => {
   const router = useRouter();
@@ -10,7 +10,7 @@ export const BackgroundImage = () => {
     <>
       <Pane
         background="url(./forest-silhouette.jpg) top center no-repeat"
-        style={{ backgroundSize: 'cover' }}
+        style={{ backgroundSize: "cover" }}
         width="100%"
         opacity={0.75}
         height="33vw"
@@ -31,24 +31,24 @@ export const BackgroundImage = () => {
         >
           <UnorderedList className="ul" display="flex" marginLeft={0}>
             <ListItem color={colors.grey}>
-              © Copyright 2020 The Sustainable List
+              © Copyright 2022 The Sustainable List
             </ListItem>
           </UnorderedList>
           <UnorderedList className="ul" display="flex">
             <ListItem color={colors.grey}>
-              {' '}
+              {" "}
               <Link
                 href="/terms"
-                style={{ opacity: router.pathname === '/terms' ? 0.5 : 1 }}
+                style={{ opacity: router.pathname === "/terms" ? 0.5 : 1 }}
               >
                 Terms & Conditions
               </Link>
             </ListItem>
             <ListItem color={colors.grey}>
-              {' '}
+              {" "}
               <Link
                 href="/privacy"
-                style={{ opacity: router.pathname === '/privacy' ? 0.5 : 1 }}
+                style={{ opacity: router.pathname === "/privacy" ? 0.5 : 1 }}
               >
                 Privacy policy
               </Link>
