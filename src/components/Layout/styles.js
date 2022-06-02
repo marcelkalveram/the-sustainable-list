@@ -1,13 +1,13 @@
 /* styles.js */
-import css from 'styled-jsx/css';
-import { colors } from '../../config/constants';
+import css from "styled-jsx/css";
+import { colors } from "../../config/constants";
 
 export const body = css.global`
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overscroll-behavior-y: contain;
@@ -67,7 +67,7 @@ export const body = css.global`
   }
 
   /* terms and conditions */
-  .iub_container h1 {
+  .tsl_container h1 {
     border-bottom-color: rgb(238, 238, 238);
     border-bottom-style: solid;
     border-bottom-width: 1px;
@@ -81,7 +81,7 @@ export const body = css.global`
     padding-bottom: 28px;
   }
 
-  .iub_container h2 {
+  .tsl_container h2 {
     color: rgb(60, 110, 113);
     font-size: 18px;
     font-weight: 500;
@@ -93,7 +93,7 @@ export const body = css.global`
     padding-top: 24px;
   }
 
-  .iub_container h3 {
+  .tsl_container h3 {
     color: rgb(60, 110, 113);
     font-size: 16px;
     font-weight: 600;
@@ -105,7 +105,7 @@ export const body = css.global`
     padding-top: 16px;
   }
 
-  .iub_container h4 {
+  .tsl_container h4 {
     color: rgb(60, 110, 113);
     font-size: 14px;
     font-weight: 600;
@@ -117,7 +117,7 @@ export const body = css.global`
     padding-top: 16px;
   }
 
-  .iub_container p {
+  .tsl_container p {
     box-sizing: border-box;
     color: rgb(66, 90, 112);
     font-size: 14px;
@@ -128,7 +128,7 @@ export const body = css.global`
     margin-top: 0px;
   }
 
-  .iub_container ul {
+  .tsl_container ul {
     list-style-image: none;
     list-style-position: outside;
     list-style-type: disc;
@@ -140,7 +140,7 @@ export const body = css.global`
     padding-top: 4px;
   }
 
-  .iub_container ul li {
+  .tsl_container ul li {
     color: rgb(66, 90, 112);
     display: list-item;
     font-size: 14px;
@@ -155,11 +155,11 @@ export const body = css.global`
     text-align: left;
   }
 
-  .iub_container hr {
+  .tsl_container hr {
     display: none;
   }
 
-  .iub_footer {
+  .tsl_footer {
     display: none;
   }
 `;

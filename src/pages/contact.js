@@ -1,5 +1,5 @@
-import React from 'react';
-import fetch from 'isomorphic-unfetch';
+import React from "react";
+import fetch from "isomorphic-unfetch";
 
 import {
   Heading,
@@ -13,36 +13,36 @@ import {
   Paragraph,
   Alert,
   Link,
-} from 'evergreen-ui';
-import { Layout } from '../components/Layout/Layout';
-import { BackgroundImage } from '../components/Content/BackgroundImage/BackgroundImage';
-import { Container } from '../components/Content/Container/Container';
-import { Section } from '../components/Content/Section/Section';
-import { colors } from '../config/constants';
-import { Formik } from 'formik';
+} from "evergreen-ui";
+import { Layout } from "../components/Layout/Layout";
+import { BackgroundImage } from "../components/Content/BackgroundImage/BackgroundImage";
+import { Container } from "../components/Content/Container/Container";
+import { Section } from "../components/Content/Section/Section";
+import { colors } from "../config/constants";
+import { Formik } from "formik";
 
-import { NextSeo } from 'next-seo';
+import { NextSeo } from "next-seo";
 
 const validateForm = (values) => {
   const errors = {};
   if (!values.email) {
-    errors.email = 'Please type in an email address';
+    errors.email = "Please type in an email address";
   }
   if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = "Invalid email address";
   }
   if (!values.message || !values.message.trim()) {
-    errors.message = 'Please type in a message';
+    errors.message = "Please type in a message";
   }
   return errors;
 };
 
 const submitForm = async (values, { setSubmitting, setStatus }) => {
-  const response = await fetch('/api/contact', {
-    method: 'post',
+  const response = await fetch("/api/contact", {
+    method: "post",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(values),
   });
@@ -51,7 +51,7 @@ const submitForm = async (values, { setSubmitting, setStatus }) => {
     return;
   }
   const responseValues = await response.json();
-  if (responseValues.status === 'success') {
+  if (responseValues.status === "success") {
     setSubmitting(false);
     setStatus({ success: true });
   }
@@ -112,6 +112,7 @@ export default function About() {
               <a
                 href="https://www.producthunt.com/posts/the-sustainable-list?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-the-sustainable-list"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img
                   src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=203103&theme=light"
@@ -133,7 +134,7 @@ export default function About() {
             </Heading>
 
             <Formik
-              initialValues={{ name: '', email: '', message: '' }}
+              initialValues={{ name: "", email: "", message: "" }}
               validate={validateForm}
               onSubmit={submitForm}
             >
@@ -153,7 +154,7 @@ export default function About() {
                       marginBottom={majorScale(3)}
                       intent="success"
                       title={
-                        'Your form has been submitted successfully. Thanks!'
+                        "Your form has been submitted successfully. Thanks!"
                       }
                     />
                   )}
