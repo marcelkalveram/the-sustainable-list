@@ -1,6 +1,6 @@
-# Project Name
+# The Sustainable List
 
-This is the README file for the project "Project Name". It provides instructions on how to set up and deploy the project on Vercel.
+This is the README file for the project "The Sustainable List". It provides instructions on how to set up and deploy the project on Vercel.
 
 ## Prerequisites
 
