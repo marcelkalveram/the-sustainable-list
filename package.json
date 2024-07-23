@@ -10,7 +10,7 @@
     "dev": "next",
     "build": "npm run contentful:pull && next build",
     "start": "next start",
-    "contentful:pull": "cd scripts && node -r esm contentful.js"
+    "contentful:pull": "node ./scripts/contentful.js"
   },
   "keywords": [],
   "author": "",

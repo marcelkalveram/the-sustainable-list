@@ -1,13 +1,23 @@
-import * as contentful from "contentful";
-import fse from "fs-extra";
-import { criteriaMap } from "../src/config/criteriaMap";
-import dotenv from "dotenv";
-import path from "path";
-dotenv.config({ path: path.join("..", ".env") });
+const contentful = require("contentful");
+const fse = require("fs-extra");
+const { criteriaMap } = require("./criteriaMap");
+
+const space = process.env.CONTENTFUL_SPACE_ID;
+const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
+
+if (!space) {
+  console.error("CONTENTFUL_SPACE_ID is not defined");
+  process.exit(1);
+}
+
+if (!accessToken) {
+  console.error("CONTENTFUL_ACCESS_TOKEN is not defined");
+  process.exit(1);
+}
 
 const client = contentful.createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  space,
+  accessToken,
 });
 
 client.getEntries({ limit: 1000 }).then(function (entries) {
