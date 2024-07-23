@@ -1,10 +1,10 @@
-import React from 'react';
-import { Heading, Pane } from 'evergreen-ui';
-import { minorScale } from 'evergreen-ui/commonjs/scales';
-import { colors, fontSizes } from '../../../config/constants';
-import { className, styles } from './styles';
+import React from "react";
+import { Heading, Pane } from "evergreen-ui";
+import { minorScale } from "evergreen-ui/commonjs/scales";
+import { colors, fontSizes } from "../../../config/constants";
+import { className, styles } from "./styles";
 
-import Link from 'next/link';
+import Link from "next/link";
 
 const LOGO_HEIGHT = 24;
 const SUBTITLE_FONTWEIGHT = 500;
@@ -18,15 +18,14 @@ export const HeaderLogo = () => {
         flexDirection="row"
         alignItems="flex-end"
       >
-        <Link href="/">
-          <a style={{ display: 'inherit' }}>
-            <img
-              alt="The Sustainable List logo"
-              src="/logo.png"
-              height={LOGO_HEIGHT}
-            />
-          </a>
+        <Link href="/" style={{ display: "inherit" }}>
+          <img
+            alt="The Sustainable List logo"
+            src="/logo.png"
+            height={LOGO_HEIGHT}
+          />
         </Link>
+
         <Heading
           className="header__logo__subtitle"
           size={fontSizes.base}

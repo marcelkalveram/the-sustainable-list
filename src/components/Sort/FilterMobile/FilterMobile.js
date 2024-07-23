@@ -1,8 +1,8 @@
-import React from 'react';
-import { IconButton, Pane, SearchInput, Text } from 'evergreen-ui';
-import { colors, SEARCH_INPUT_HEIGHT } from '../../../config/constants';
-import { majorScale } from 'evergreen-ui/commonjs/scales';
-import { filterMobileStyles } from './styles.js';
+import React from "react";
+import { SettingsIcon, Pane, SearchInput, Text } from "evergreen-ui";
+import { colors, SEARCH_INPUT_HEIGHT } from "../../../config/constants";
+import { majorScale } from "evergreen-ui/commonjs/scales";
+import { filterMobileStyles } from "./styles.js";
 
 const SEARCH_INPUT_WIDTH = 150;
 
@@ -18,11 +18,7 @@ export const FilterMobile = ({ setShowFilters, setSearchFor, searchFor }) => {
           marginRight={majorScale(1)}
           onClick={() => setShowFilters(true)}
         >
-          <IconButton
-            color={colors.secondary}
-            appearance="minimal"
-            icon="settings"
-          />
+          <SettingsIcon color={colors.secondary} marginX={majorScale(1)} />
           <Text fontWeight={600} color={colors.secondary}>
             FILTER
           </Text>

@@ -1,5 +1,5 @@
-import React from 'react';
-import { IconButton, Pane, majorScale } from 'evergreen-ui';
+import React from "react";
+import { CrossIcon, Pane, majorScale } from "evergreen-ui";
 
 export const FilterCloseButtonMobile = ({ setShowFilters }) => (
   <Pane
@@ -13,10 +13,6 @@ export const FilterCloseButtonMobile = ({ setShowFilters }) => (
     alignItems="center"
     zIndex={5}
   >
-    <IconButton
-      appearance="minimal"
-      icon="cross"
-      onClick={() => setShowFilters(false)}
-    />
+    <CrossIcon onClick={() => setShowFilters(false)} />
   </Pane>
 );

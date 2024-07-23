@@ -1,4 +1,4 @@
-import css from 'styled-jsx/css';
+import css from "styled-jsx/css";
 
 export const { styles, className } = css.resolve`
   .sort :global(a:hover) {
@@ -11,6 +11,10 @@ export const { styles, className } = css.resolve`
     border: 0;
     box-shadow: none;
     background: #f1f1f1;
+  }
+
+  .sort :global(.searchInput) {
+    display: inline;
   }
 
   @media only screen and (max-width: 768px) {
@@ -26,7 +30,7 @@ export const { styles, className } = css.resolve`
       background-color: #234361;
     }
     /* hide desktop search field */
-    .sort :global(.📦h_31px.📦dspl_inline-flex) {
+    .sort :global(.searchInput) {
       display: none;
     }
   }

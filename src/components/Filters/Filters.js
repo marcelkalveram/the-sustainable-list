@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { toggleHiddenFn, toggleFilterFn } from '../../helpers/toggle';
-import { FilterHeading } from './FilterHeading/FilterHeading';
-import { FilterCheckboxes } from './FilterCheckboxes/FilterCheckboxes';
-import { FilterCloseButtonMobile } from './FilterCloseButtonMobile/FilterCloseButtonMobile';
-import { FilterApplyButtonMobile } from './FilterApplyButtonMobile/FilterApplyButtonMobile';
-import { filtersStyles } from './styles.js';
+import React, { useState } from "react";
+import { toggleHiddenFn, toggleFilterFn } from "../../helpers/toggle";
+import { FilterHeading } from "./FilterHeading/FilterHeading";
+import { FilterCheckboxes } from "./FilterCheckboxes/FilterCheckboxes";
+import { FilterCloseButtonMobile } from "./FilterCloseButtonMobile/FilterCloseButtonMobile";
+import { FilterApplyButtonMobile } from "./FilterApplyButtonMobile/FilterApplyButtonMobile";
+import { filtersStyles } from "./styles.js";
 
 export function Filters({
   criteriaMap,
@@ -27,10 +27,10 @@ export function Filters({
         <FilterCloseButtonMobile setShowFilters={setShowFilters} />
       )}
       <div
-        className={`filters${showFilters ? ' filters--visible' : ''}`}
+        className={`filters${showFilters ? " filters--visible" : ""}`}
         style={style}
       >
-        {criteriaMap.map(criteria => (
+        {criteriaMap.map((criteria) => (
           <React.Fragment key={criteria.title}>
             <FilterHeading
               hidden={hidden}

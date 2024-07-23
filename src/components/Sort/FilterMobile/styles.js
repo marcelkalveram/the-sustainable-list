@@ -1,4 +1,4 @@
-import css from 'styled-jsx/css';
+import css from "styled-jsx/css";
 
 export const filterMobileStyles = css`
   .filter__mobile {
@@ -11,7 +11,7 @@ export const filterMobileStyles = css`
       flex-direction: row-reverse;
     }
     /* make search box visible */
-    .filter__mobile :global(.📦dspl_inline-flex) {
+    .filter__mobile :global(.ub-pst_relative.ub-f-wght_400) {
       display: inline-flex !important;
     }
   }

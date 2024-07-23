@@ -1,16 +1,8 @@
 import React from "react";
-import {
-  Pane,
-  Link,
-  UnorderedList,
-  ListItem,
-  majorScale,
-  minorScale,
-} from "evergreen-ui";
+import { Pane, Link, UnorderedList, ListItem, majorScale } from "evergreen-ui";
 import { className, styles } from "./styles.js";
 import { MobileMenuIcon } from "./MobileMenuIcon/MobileMenuIcon";
 import { useRouter } from "next/router";
-import { colors } from "../../../config/constants.js";
 
 export const HeaderMenu = ({
   showFilters,

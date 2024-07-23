@@ -1,18 +1,10 @@
 import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
 import { extractStyles } from "evergreen-ui";
-import flush from "styled-jsx/server";
 
 export default class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
-    const page = renderPage();
-    // `css` is a string with css from both glamor and ui-box.
-    // No need to get the glamor css manually if you are using it elsewhere in your app.
-    //
-    // `hydrationScript` is a script you should render on the server.
-    // It contains a stringified version of the glamor and ui-box caches.
-    // Evergreen will look for that script on the client and automatically hydrate
-    // both glamor and ui-box.
+  static async getInitialProps({ renderPage }) {
+    const page = await renderPage();
     const { css, hydrationScript } = extractStyles();
     return {
       ...page,
@@ -23,12 +15,10 @@ export default class MyDocument extends Document {
 
   render() {
     const { css, hydrationScript } = this.props;
-    const styles = flush();
     return (
       <html>
         <Head>
           <style dangerouslySetInnerHTML={{ __html: css }} />
-          {styles}
         </Head>
 
         <body>

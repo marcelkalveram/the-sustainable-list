@@ -1,11 +1,11 @@
-import React from 'react';
-import { Pane, SearchInput } from 'evergreen-ui';
-import { majorScale } from 'evergreen-ui/commonjs/scales';
-import { colors, SEARCH_INPUT_HEIGHT } from '../../config/constants';
-import { SortButton } from './SortButton/SortButton';
-import { FilterMobile } from './FilterMobile/FilterMobile';
-import { BrandsCount } from './BrandsCount/BrandsCount';
-import { styles, className } from './styles.js';
+import React from "react";
+import { Pane, SearchInput } from "evergreen-ui";
+import { majorScale } from "evergreen-ui/commonjs/scales";
+import { colors, SEARCH_INPUT_HEIGHT } from "../../config/constants";
+import { SortButton } from "./SortButton/SortButton";
+import { FilterMobile } from "./FilterMobile/FilterMobile";
+import { BrandsCount } from "./BrandsCount/BrandsCount";
+import { styles, className } from "./styles.js";
 
 export function Sort(props) {
   const {
@@ -39,31 +39,33 @@ export function Sort(props) {
           <SortButton
             onToggle={() =>
               setSortBy({
-                az: sortBy.az === 'asc' ? 'desc' : 'asc',
+                az: sortBy.az === "asc" ? "desc" : "asc",
                 price: null,
               })
             }
           >
-            {sortBy.az !== 'asc' ? 'A-Z' : 'Z-A'}
+            {sortBy.az !== "asc" ? "A-Z" : "Z-A"}
           </SortButton>
           <SortButton
             onToggle={() =>
               setSortBy({
                 az: null,
-                price: sortBy.price === 'asc' ? 'desc' : 'asc',
+                price: sortBy.price === "asc" ? "desc" : "asc",
               })
             }
           >
-            {sortBy.price === 'asc' ? '$$$' : '$'}
+            {sortBy.price === "asc" ? "$$$" : "$"}
           </SortButton>
 
-          <SearchInput
-            marginLeft={majorScale(1)}
-            onChange={e => setSearchFor(e.target.value)}
-            value={searchFor}
-            height={SEARCH_INPUT_HEIGHT}
-            placeholder="Search by name..."
-          />
+          <div className="searchInput">
+            <SearchInput
+              marginLeft={majorScale(1)}
+              onChange={(e) => setSearchFor(e.target.value)}
+              value={searchFor}
+              height={SEARCH_INPUT_HEIGHT}
+              placeholder="Search by name..."
+            />
+          </div>
         </Pane>
         <FilterMobile
           setShowFilters={setShowFilters}
