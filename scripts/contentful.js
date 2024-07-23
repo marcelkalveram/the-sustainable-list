@@ -21,29 +21,23 @@ const client = contentful.createClient({
 });
 
 client.getEntries({ limit: 1000 }).then(function (entries) {
-  console.log(entries);
   const brands = entries.items.filter(
     (entry) => entry.sys.contentType.sys.id === "category"
   );
-
   const filters = { category: ["Men", "Women", "Kids"] };
-
   const criteriaArray = criteriaMap
     .map((criteria) => criteria.name)
     .filter((criteria) => criteria !== "category");
-
   criteriaArray.forEach((model) => {
     filters[model] = entries.items.filter(
       (entry) => entry.sys.contentType.sys.id === model
     );
   });
-
   const json = {
     brands,
     filters,
   };
-
-  fse.outputFile("../src/data/index.json", JSON.stringify(json), (err) => {
+  fse.outputFile("./src/data/index.json", JSON.stringify(json), (err) => {
     if (err) {
       throw new Error("Error saving file");
     }
