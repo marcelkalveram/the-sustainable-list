@@ -1,9 +1,9 @@
-import React from 'react';
-import { Heading, Paragraph, Pane, minorScale, majorScale } from 'evergreen-ui';
-import { colors } from '../../../config/constants';
-import { Section } from '../Section/Section';
-import { certificatesMap } from '../../../data/certificates';
-import { className, styles } from './styles';
+import React from "react";
+import { Heading, Paragraph, Pane, minorScale, majorScale } from "evergreen-ui";
+import { colors } from "../../../config/constants";
+import { Section } from "../Section/Section";
+import { certificatesMap } from "../../../config/certificates";
+import { className, styles } from "./styles";
 
 export const ContentAbout = () => (
   <Section className={`${className} content-about`}>
@@ -29,7 +29,7 @@ export const ContentAbout = () => (
       </Paragraph>
       <Paragraph marginBottom={minorScale(7)}>
         Many of them have been recognised for their work towards sustainability
-        and certified by associations like the{' '}
+        and certified by associations like the{" "}
         <a
           href="https://global-standard.org/"
           target="_blank"
@@ -37,14 +37,14 @@ export const ContentAbout = () => (
         >
           GOTS (Global Organic Textile Standard)
         </a>
-        . Others participate in movements like{' '}
+        . Others participate in movements like{" "}
         <a
           href="https://www.onepercentfortheplanet.org/"
           target="_blank"
           rel="noopener noreferrer"
         >
           1% For The Planet
-        </a>{' '}
+        </a>{" "}
         to give back part of their margins to non-profit organisations.
       </Paragraph>
       <Paragraph marginBottom={minorScale(7)}>
@@ -71,7 +71,7 @@ export const ContentAbout = () => (
                 width={52}
                 height={52}
                 style={{
-                  display: 'inline-block',
+                  display: "inline-block",
                   marginBottom: minorScale(4),
                   marginRight: minorScale(4),
                 }}

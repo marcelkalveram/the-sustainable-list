@@ -1,5 +1,5 @@
 import React from "react";
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import { extractStyles } from "evergreen-ui";
 
 export default class MyDocument extends Document {
@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
   render() {
     const { css, hydrationScript } = this.props;
     return (
-      <html>
+      <Html>
         <Head>
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </Head>
@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
           {hydrationScript}
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

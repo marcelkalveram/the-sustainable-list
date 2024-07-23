@@ -1,21 +1,21 @@
-import React, { useMemo, useReducer } from 'react';
+import React, { useMemo, useReducer } from "react";
 
 // data
-import data from '../data';
-import { criteriaMap } from '../config/criteriaMap';
-import { filterBrands } from '../helpers/filter';
-import { sortByAz, sortByPrice } from '../helpers/sort';
-import { actions, initialState, reducer } from '../store';
+import data from "/public/data/index.json";
+import criteriaMap from "/public/shared/criteriaMap.json";
+import { filterBrands } from "../helpers/filter";
+import { sortByAz, sortByPrice } from "../helpers/sort";
+import { actions, initialState, reducer } from "../store";
 
 // UI
-import { Layout } from '../components/Layout/Layout';
-import { Main } from '../components/Main/Main';
-import { Sort } from '../components/Sort/Sort';
-import { Brands } from '../components/Brands/Brands';
-import { Filters } from '../components/Filters/Filters';
-import { BackgroundImage } from '../components/Content/BackgroundImage/BackgroundImage';
+import { Layout } from "../components/Layout/Layout";
+import { Main } from "../components/Main/Main";
+import { Sort } from "../components/Sort/Sort";
+import { Brands } from "../components/Brands/Brands";
+import { Filters } from "../components/Filters/Filters";
+import { BackgroundImage } from "../components/Content/BackgroundImage/BackgroundImage";
 
-import { NextSeo } from 'next-seo';
+import { NextSeo } from "next-seo";
 
 function Index() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -23,13 +23,13 @@ function Index() {
   // filter
   let brands = useMemo(
     () => data.brands.filter((brands) => filterBrands(brands, state.selected)),
-    [state.selected],
+    [state.selected]
   );
 
   // search for filter
-  if (state.searchFor !== '') {
+  if (state.searchFor !== "") {
     brands = brands.filter((brand) =>
-      brand.fields.title.toLowerCase().includes(state.searchFor.toLowerCase()),
+      brand.fields.title.toLowerCase().includes(state.searchFor.toLowerCase())
     );
   }
   // sort by price
@@ -45,7 +45,7 @@ function Index() {
   const filters = useMemo(
     () => (
       <Filters
-        criteriaMap={criteriaMap}
+        criteriaMap={criteriaMap.data}
         filters={state.filters}
         selected={state.selected}
         setSelected={(selected) =>
@@ -58,7 +58,7 @@ function Index() {
         }
       />
     ),
-    [state.selected, state.showFilters],
+    [state.selected, state.showFilters]
   );
 
   const sort = useMemo(
@@ -79,7 +79,7 @@ function Index() {
         }
       />
     ),
-    [brands.length, state.searchFor, state.brandsCounct, state.sortBy],
+    [brands.length, state.searchFor, state.brandsCounct, state.sortBy]
   );
 
   return (
@@ -89,18 +89,17 @@ function Index() {
         description="A curated list of ethical fashion brands from all over the world. We support companies that produce good looking products while doing less harm to the planet."
         canonical="https://thesustainablelist.com/"
         openGraph={{
-          type: 'website',
-          url: 'https://thesustainablelist.com/',
-          title: 'The Sustainable List',
+          type: "website",
+          url: "https://thesustainablelist.com/",
+          title: "The Sustainable List",
           description:
-            'A curated list of ethical fashion brands from all over the world. We support companies that produce good looking products while doing less harm to the planet.',
+            "A curated list of ethical fashion brands from all over the world. We support companies that produce good looking products while doing less harm to the planet.",
           images: [
             {
-              url:
-                'https://thesustainablelist.com/og-sustainable-fashion-image-man-woman.jpg',
+              url: "https://thesustainablelist.com/og-sustainable-fashion-image-man-woman.jpg",
               width: 1220,
               height: 420,
-              alt: 'sustainable fashion shirts on hangers',
+              alt: "sustainable fashion shirts on hangers",
             },
           ],
         }}

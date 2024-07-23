@@ -1,6 +1,6 @@
 const contentful = require("contentful");
 const fse = require("fs-extra");
-const { criteriaMap } = require("./criteriaMap");
+const criteriaMap = require("../public/shared/criteriaMap.json");
 
 const space = process.env.CONTENTFUL_SPACE_ID;
 const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
@@ -25,7 +25,7 @@ client.getEntries({ limit: 1000 }).then(function (entries) {
     (entry) => entry.sys.contentType.sys.id === "category"
   );
   const filters = { category: ["Men", "Women", "Kids"] };
-  const criteriaArray = criteriaMap
+  const criteriaArray = criteriaMap.data
     .map((criteria) => criteria.name)
     .filter((criteria) => criteria !== "category");
   criteriaArray.forEach((model) => {
@@ -37,7 +37,7 @@ client.getEntries({ limit: 1000 }).then(function (entries) {
     brands,
     filters,
   };
-  fse.outputFile("./src/data/index.json", JSON.stringify(json), (err) => {
+  fse.outputFile("./public/data/index.json", JSON.stringify(json), (err) => {
     if (err) {
       throw new Error("Error saving file");
     }

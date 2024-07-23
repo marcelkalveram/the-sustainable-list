@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link, Pane } from 'evergreen-ui';
-import { majorScale } from 'evergreen-ui/commonjs/scales';
-import { certificatesMap } from '../../../../data/certificates';
+import React from "react";
+import { Link, Pane } from "evergreen-ui";
+import { majorScale } from "evergreen-ui/commonjs/scales";
+import { certificatesMap } from "../../../../config/certificates";
 
 const CERTIFICATE_SIZE = 24;
 
@@ -12,7 +12,7 @@ export const BrandCertificates = ({ certificates }) => {
 
   return (
     <Pane position="absolute" right={6} top={14} zIndex={1}>
-      {certificates.map(cert => {
+      {certificates.map((cert) => {
         if (!cert.fields) {
           return null;
         }
@@ -27,7 +27,7 @@ export const BrandCertificates = ({ certificates }) => {
             target="_blank"
             href={certificate.website}
             style={{
-              display: 'inline-flex',
+              display: "inline-flex",
               marginRight: majorScale(1),
             }}
           >
