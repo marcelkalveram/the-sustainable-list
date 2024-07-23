@@ -1,6 +1,13 @@
+const path = require("path");
 const contentful = require("contentful");
 const fse = require("fs-extra");
-const criteriaMap = require("../public/shared/criteriaMap.json");
+
+const criteriaMap = require(path.resolve(
+  __dirname,
+  "..",
+  "public/shared",
+  "criteriaMap.json"
+));
 
 const space = process.env.CONTENTFUL_SPACE_ID;
 const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
@@ -37,9 +44,13 @@ client.getEntries({ limit: 1000 }).then(function (entries) {
     brands,
     filters,
   };
-  fse.outputFile("./public/data/index.json", JSON.stringify(json), (err) => {
-    if (err) {
-      throw new Error("Error saving file");
+  fse.outputFile(
+    path.resolve(__dirname, "..", "public/data/", "index.json"),
+    JSON.stringify(json),
+    (err) => {
+      if (err) {
+        throw new Error("Error saving file");
+      }
     }
-  });
+  );
 });
