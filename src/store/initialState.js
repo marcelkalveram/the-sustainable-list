@@ -1,5 +1,5 @@
-import data from '../data';
-import {initSelected} from './helper'
+import data from "/public/data/index.json";
+import { initSelected } from "./helper";
 
 export const initialState = {
   brands: data.brands,
@@ -8,5 +8,5 @@ export const initialState = {
   selected: initSelected(),
   showFilters: false,
   sortBy: { az: null, price: null },
-  searchFor: '',
+  searchFor: "",
 };
