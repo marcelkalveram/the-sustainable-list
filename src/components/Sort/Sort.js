@@ -41,7 +41,7 @@ export function Sort(props) {
           display="flex"
           justifyContent="flex-end"
         >
-          <div>
+          <Pane marginLeft={majorScale(2)}>
             <SortButton
               onToggle={() =>
                 setSortBy({
@@ -62,7 +62,7 @@ export function Sort(props) {
             >
               {sortBy.price === "asc" ? "$$$" : "$"}
             </SortButton>
-          </div>
+          </Pane>
           <Pane className="sortPane__searchInput" justifySelf="flex-end">
             <SearchInput
               marginLeft={majorScale(1)}

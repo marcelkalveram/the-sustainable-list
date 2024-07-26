@@ -11,6 +11,7 @@ export const SortButton = ({ onToggle, children }) => {
       appearance="minimal"
       onClick={onToggle}
       marginRight={majorScale(1)}
+      width={majorScale(5)}
     >
       {children}
     </Button>

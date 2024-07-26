@@ -1,3 +1,4 @@
+import { majorScale, minorScale } from "evergreen-ui";
 import css from "styled-jsx/css";
 import { colors } from "theme/constants";
 

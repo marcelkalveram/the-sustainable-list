@@ -4,7 +4,7 @@ import { colors, SEARCH_INPUT_HEIGHT } from "theme/constants";
 import { majorScale } from "evergreen-ui/commonjs/scales";
 import { filterMobileStyles } from "./styles.js";
 
-const SEARCH_INPUT_WIDTH = 150;
+const SEARCH_INPUT_WIDTH = 140;
 
 export const FilterMobile = ({ setShowFilters, setSearchFor, searchFor }) => {
   return (
