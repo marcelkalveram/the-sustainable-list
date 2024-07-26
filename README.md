@@ -1,6 +1,6 @@
 # The Sustainable List
 
-![Vercel](https://vercelbadge.vercel.app/api/[marcelkalveram]/[the-sustainable-list])
+![Vercel](https://vercelbadge.vercel.app/api/marcelkalveram/the-sustainable-list)
 
 This is the README file for the project "The Sustainable List". It provides instructions on how to set up and deploy the project on Vercel.
 
