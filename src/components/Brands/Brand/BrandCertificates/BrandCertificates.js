@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Pane } from "evergreen-ui";
+import { Link, Pane, Tooltip, Position } from "evergreen-ui";
 import { majorScale } from "evergreen-ui/commonjs/scales";
 import { certificatesMap } from "../../../../config/certificates";
 import Image from "next/image";
@@ -32,13 +32,15 @@ export const BrandCertificates = ({ certificates }) => {
               marginRight: majorScale(1),
             }}
           >
-            <Image
-              alt="Certificate badge"
-              data-tip={certificate.title}
-              width={CERTIFICATE_SIZE}
-              height={CERTIFICATE_SIZE}
-              src={certificate.image}
-            />
+            <Tooltip content={certificate.title} position={Position.TOP}>
+              <Image
+                alt="Certificate badge"
+                data-tip={certificate.title}
+                width={CERTIFICATE_SIZE}
+                height={CERTIFICATE_SIZE}
+                src={certificate.image}
+              />
+            </Tooltip>
           </Link>
         );
       })}
