@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react';
-import { Pane } from 'evergreen-ui';
-import { CheckboxCountry } from './CheckboxCountry';
-import { CheckboxGeneric } from './CheckboxGeneric';
+import React, { useMemo } from "react";
+import { Pane } from "evergreen-ui";
+import { CheckboxCountry } from "./CheckboxCountry";
+import { CheckboxGeneric } from "./CheckboxGeneric";
 
-const getLocation = val => val.fields.country;
+const getLocation = (val) => val.fields.country;
 
 export const FilterCheckboxes = ({
   hidden,
@@ -14,8 +14,8 @@ export const FilterCheckboxes = ({
 }) => {
   const countries = useMemo(
     () =>
-      filters['location'].reduce((unique, item) => {
-        return unique.filter(u => u === getLocation(item)).length
+      filters["location"].reduce((unique, item) => {
+        return unique.filter((u) => u === getLocation(item)).length
           ? unique
           : unique.concat(getLocation(item));
       }, []),
@@ -24,9 +24,9 @@ export const FilterCheckboxes = ({
 
   let checkboxes = [];
 
-  if (name === 'location') {
+  if (name === "location") {
     checkboxes = countries
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         if (a < b) {
           return -1;
         }
@@ -35,7 +35,7 @@ export const FilterCheckboxes = ({
         }
         return 0;
       })
-      .map(country => (
+      .map((country) => (
         <CheckboxCountry
           key={country}
           selected={selected}
@@ -46,9 +46,9 @@ export const FilterCheckboxes = ({
       .sort();
   }
 
-  if (name !== 'location') {
+  if (name !== "location") {
     checkboxes = filters[name]
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         if (!a.fields || !b.fields) {
           return 0;
         }
@@ -60,7 +60,7 @@ export const FilterCheckboxes = ({
         }
         return 0;
       })
-      .map(element => (
+      .map((element) => (
         <CheckboxGeneric
           key={element.fields ? element.fields.slug : element}
           selected={selected}
@@ -72,6 +72,6 @@ export const FilterCheckboxes = ({
   }
 
   return (
-    <Pane display={hidden.includes(name) ? 'none' : 'block'}>{checkboxes}</Pane>
+    <Pane display={hidden.includes(name) ? "none" : "block"}>{checkboxes}</Pane>
   );
 };

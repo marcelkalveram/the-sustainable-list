@@ -1,4 +1,4 @@
-import css from 'styled-jsx/css';
+import css from "styled-jsx/css";
 
 export const { styles, className } = css.resolve`
     .brand-details :global(.brand-details__meta__styles) {

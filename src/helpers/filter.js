@@ -3,7 +3,7 @@ import criteriaMap from "/public/shared/criteriaMap.json";
 const isLocationMatch = (brand, criteria, selected) =>
   brand.fields[criteria.contentfulField].fields &&
   selected[criteria.name].includes(
-    brand.fields[criteria.contentfulField].fields.country
+    brand.fields[criteria.contentfulField].fields.country,
   );
 
 export const filterBrands = (brand, selected) => {

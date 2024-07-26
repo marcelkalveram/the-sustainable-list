@@ -1,6 +1,6 @@
-import css from 'styled-jsx/css';
-import { majorScale } from 'evergreen-ui/commonjs/scales';
-import { colors } from '../../config/constants';
+import css from "styled-jsx/css";
+import { majorScale } from "evergreen-ui/commonjs/scales";
+import { colors } from "../../config/constants";
 
 export const filtersStyles = css`
   .filters {

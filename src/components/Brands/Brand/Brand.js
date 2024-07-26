@@ -1,10 +1,10 @@
-import React from 'react';
-import { Pane } from 'evergreen-ui';
-import { BrandCertificates } from './BrandCertificates/BrandCertificates';
-import { BrandImage } from './BrandImage/BrandImage';
-import { BrandLogo } from './BrandLogo/BrandLogo';
-import { BrandDetails } from './BrandDetails/BrandDetails';
-import { className, styles } from './styles.js';
+import React from "react";
+import { Pane } from "evergreen-ui";
+import { BrandCertificates } from "./BrandCertificates/BrandCertificates";
+import { BrandImage } from "./BrandImage/BrandImage";
+import { BrandLogo } from "./BrandLogo/BrandLogo";
+import { BrandDetails } from "./BrandDetails/BrandDetails";
+import { className, styles } from "./styles.js";
 
 export const Brand = React.memo(function Brand({
   brand: {

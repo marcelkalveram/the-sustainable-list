@@ -1,5 +1,5 @@
-import css from 'styled-jsx/css';
-import { majorScale, minorScale } from 'evergreen-ui';
+import css from "styled-jsx/css";
+import { majorScale, minorScale } from "evergreen-ui";
 
 export const { className, styles } = css.resolve`
   @media only screen and (max-width: 1316px) {

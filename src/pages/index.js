@@ -23,13 +23,13 @@ function Index() {
   // filter
   let brands = useMemo(
     () => data.brands.filter((brands) => filterBrands(brands, state.selected)),
-    [state.selected]
+    [state.selected],
   );
 
   // search for filter
   if (state.searchFor !== "") {
     brands = brands.filter((brand) =>
-      brand.fields.title.toLowerCase().includes(state.searchFor.toLowerCase())
+      brand.fields.title.toLowerCase().includes(state.searchFor.toLowerCase()),
     );
   }
   // sort by price
@@ -58,7 +58,7 @@ function Index() {
         }
       />
     ),
-    [state.selected, state.showFilters]
+    [state.selected, state.showFilters],
   );
 
   const sort = useMemo(
@@ -79,7 +79,7 @@ function Index() {
         }
       />
     ),
-    [brands.length, state.searchFor, state.brandsCounct, state.sortBy]
+    [brands.length, state.searchFor, state.brandsCounct, state.sortBy],
   );
 
   return (

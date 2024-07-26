@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import Head from 'next/head';
-import { Header } from '../Header/Header';
-import { body } from './styles';
-import { colors } from '../../config/constants';
+import React, { useState } from "react";
+import Head from "next/head";
+import { Header } from "../Header/Header";
+import { body } from "./styles";
+import { colors } from "../../config/constants";
 
 const DEFAULT_TITLE =
-  'The Sustainable List - all the good fashion brands at a glance';
+  "The Sustainable List - all the good fashion brands at a glance";
 
 export const Layout = ({
   children,
@@ -53,7 +53,7 @@ export const Layout = ({
         <meta name="theme-color" content={colors.white} />
       </Head>
 
-      <div style={lockViewport ? { position: 'fixed' } : {}}>
+      <div style={lockViewport ? { position: "fixed" } : {}}>
         <Header
           showFilters={showFilters}
           showMobileMenu={showMobileMenu}
@@ -64,7 +64,7 @@ export const Layout = ({
       <style jsx global>
         {`
           body {
-            overflow: ${lockViewport ? 'hidden' : 'auto'};
+            overflow: ${lockViewport ? "hidden" : "auto"};
           `}
       </style>
       <style jsx global>

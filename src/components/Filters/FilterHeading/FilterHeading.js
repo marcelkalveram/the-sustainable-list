@@ -1,6 +1,6 @@
-import React from 'react';
-import { Heading, Icon, minorScale, majorScale } from 'evergreen-ui';
-import { colors, fontSizes } from '../../../config/constants';
+import React from "react";
+import { Heading, Icon, minorScale, majorScale } from "evergreen-ui";
+import { colors, fontSizes } from "../../../config/constants";
 
 export const FilterHeading = ({ hidden, toggleHidden, name, title }) => {
   return (
@@ -15,7 +15,7 @@ export const FilterHeading = ({ hidden, toggleHidden, name, title }) => {
       <Icon
         position="relative"
         top={minorScale(1)}
-        icon={hidden.includes(name) ? 'caret-up' : 'caret-down'}
+        icon={hidden.includes(name) ? "caret-up" : "caret-down"}
       />
     </Heading>
   );

@@ -121,14 +121,14 @@ export const BrandDetails = ({
                   className="badge"
                   marginRight={minorScale(1)}
                   backgroundColor={getStyleColor(
-                    style.fields.title.toLowerCase().trim()
+                    style.fields.title.toLowerCase().trim(),
                   )}
                 >
                   <Text
                     size={300}
                     fontWeight={700}
                     color={getStyleColorText(
-                      style.fields.title.toLowerCase().trim()
+                      style.fields.title.toLowerCase().trim(),
                     )}
                   >
                     {style.fields.title.toLowerCase()}

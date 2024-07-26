@@ -13,7 +13,7 @@ export const toggleFilterFn =
     const newSelected = selected;
     if (newSelected[type].includes(toggledItem)) {
       newSelected[type] = newSelected[type].filter(
-        (item) => item !== toggledItem
+        (item) => item !== toggledItem,
       );
     } else {
       newSelected[type].push(toggledItem);

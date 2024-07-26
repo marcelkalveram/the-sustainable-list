@@ -1,6 +1,6 @@
-import React from 'react';
-import { Pane, majorScale } from 'evergreen-ui';
-import { className, styles } from './styles.js';
+import React from "react";
+import { Pane, majorScale } from "evergreen-ui";
+import { className, styles } from "./styles.js";
 
 export const Container = ({ children }) => (
   <>

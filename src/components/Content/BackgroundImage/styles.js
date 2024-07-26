@@ -1,6 +1,6 @@
-import css from 'styled-jsx/css';
-import { colors } from '../../../config/constants';
-import { minorScale } from 'evergreen-ui';
+import css from "styled-jsx/css";
+import { colors } from "../../../config/constants";
+import { minorScale } from "evergreen-ui";
 
 export const { className, styles } = css.resolve`
   .footer :global(ul li a),

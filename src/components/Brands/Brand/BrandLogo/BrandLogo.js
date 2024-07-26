@@ -1,8 +1,8 @@
-import React from 'react';
-import { Pane, majorScale } from 'evergreen-ui';
-import { colors } from '../../../../config/constants';
-import { className, styles } from './styles.js';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import React from "react";
+import { Pane, majorScale } from "evergreen-ui";
+import { colors } from "../../../../config/constants";
+import { className, styles } from "./styles.js";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const LOGO_SIZE = 76;
 const OFFSET = 38;
