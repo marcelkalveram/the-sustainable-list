@@ -2,7 +2,7 @@ import React from "react";
 import { Pane, majorScale } from "evergreen-ui";
 import { className, styles } from "./styles.js";
 
-export const Container = ({ children }) => (
+export const Container = ({ children, ...rest }) => (
   <>
     <Pane
       className={`content-container ${className}`}
@@ -11,6 +11,7 @@ export const Container = ({ children }) => (
       paddingTop={majorScale(6)}
       marginLeft="auto"
       marginRight="auto"
+      {...rest}
     >
       {children}
     </Pane>

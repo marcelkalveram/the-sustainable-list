@@ -67,7 +67,7 @@ export default function About() {
         canonical="https://thesustainablelist.com/contact"
       />
       <Layout>
-        <Container>
+        <Container minHeight="66vh">
           <Section>
             <Heading
               size={700}
@@ -90,7 +90,7 @@ export default function About() {
               >
                 <Image
                   alt="Instagram logo"
-                  src="./social-instagram.png"
+                  src="/social-instagram.png"
                   width="54"
                   height="54"
                   paddingright={majorScale(1)}
@@ -103,7 +103,7 @@ export default function About() {
               >
                 <Image
                   alt="Facebook logo"
-                  src="./social-facebook.png"
+                  src="/social-facebook.png"
                   width="54"
                   height="54"
                 />
@@ -119,12 +119,11 @@ export default function About() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Image
+                <img
                   src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=203103&theme=light"
                   alt="the sustainable list - a curated list of sustainable fashion brands | Product Hunt Embed"
-                  style={{ width: 250, height: 54 }}
-                  width="250px"
-                  height="54px"
+                  width="250"
+                  height="54"
                 />
               </a>
             </Paragraph>
