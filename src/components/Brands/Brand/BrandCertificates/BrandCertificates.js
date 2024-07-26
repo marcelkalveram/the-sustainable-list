@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Pane } from "evergreen-ui";
 import { majorScale } from "evergreen-ui/commonjs/scales";
 import { certificatesMap } from "../../../../config/certificates";
+import Image from "next/image";
 
 const CERTIFICATE_SIZE = 24;
 
@@ -31,7 +32,7 @@ export const BrandCertificates = ({ certificates }) => {
               marginRight: majorScale(1),
             }}
           >
-            <img
+            <Image
               alt="Certificate badge"
               data-tip={certificate.title}
               width={CERTIFICATE_SIZE}

@@ -1,6 +1,6 @@
 import { sendMail } from "./sendgrid";
 
-export default async (req, res) => {
+const handler = async (req, res) => {
   res.setHeader("Content-Type", "application/json");
   let response = { status: "", type: "unknown_error" };
   res.statusCode = 200;
@@ -33,3 +33,5 @@ export default async (req, res) => {
 
   res.end(JSON.stringify(response));
 };
+
+export default handler;

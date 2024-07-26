@@ -58,7 +58,7 @@ function Index() {
         }
       />
     ),
-    [state.selected, state.showFilters],
+    [state.filters, state.selected, state.showFilters],
   );
 
   const sort = useMemo(
@@ -79,7 +79,7 @@ function Index() {
         }
       />
     ),
-    [brands.length, state.searchFor, state.brandsCounct, state.sortBy],
+    [state.searchFor, state.brandsCount, state.sortBy, brands.length],
   );
 
   return (

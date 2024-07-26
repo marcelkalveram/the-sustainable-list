@@ -2,6 +2,7 @@ import React from "react";
 import { Heading, Paragraph, Pane, minorScale, majorScale } from "evergreen-ui";
 import { colors } from "../../../config/constants";
 import { className, styles } from "./styles";
+import Image from "next/image";
 
 export const TeamMember = ({ image, name, role, description }) => (
   <>
@@ -10,9 +11,11 @@ export const TeamMember = ({ image, name, role, description }) => (
       marginBottom={majorScale(4)}
       className={`team-member ${className}`}
     >
-      <img
+      <Image
+        alt={"Image of " + name}
         src={image}
         width={128}
+        height={128}
         style={{
           maxHeight: "128px",
           minWidth: "128px",

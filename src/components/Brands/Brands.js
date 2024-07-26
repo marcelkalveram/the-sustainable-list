@@ -29,7 +29,7 @@ export const Brands = ({ brands }) => {
             color={colors.secondarySoft}
             marginBotto={minorScale(1)}
           >
-            We're sorry!
+            We&apos;re sorry!
           </Paragraph>
           <Paragraph size={500} fontWeight={300} color={colors.secondarySoft}>
             Unfortunately, no brands matched your search. Please try broadening

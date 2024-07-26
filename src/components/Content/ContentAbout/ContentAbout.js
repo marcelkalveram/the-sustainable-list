@@ -4,6 +4,7 @@ import { colors } from "../../../config/constants";
 import { Section } from "../Section/Section";
 import { certificatesMap } from "../../../config/certificates";
 import { className, styles } from "./styles";
+import Image from "next/image";
 
 export const ContentAbout = () => (
   <Section className={`${className} content-about`}>
@@ -66,7 +67,7 @@ export const ContentAbout = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
+              <Image
                 alt={`${certificatesMap[certificate].title} badge`}
                 width={52}
                 height={52}

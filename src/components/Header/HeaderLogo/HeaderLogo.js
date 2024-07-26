@@ -5,7 +5,9 @@ import { colors, fontSizes } from "../../../config/constants";
 import { className, styles } from "./styles";
 
 import Link from "next/link";
+import Image from "next/image";
 
+const LOGO_WIDTH = 286;
 const LOGO_HEIGHT = 24;
 const SUBTITLE_FONTWEIGHT = 500;
 
@@ -19,9 +21,10 @@ export const HeaderLogo = () => {
         alignItems="flex-end"
       >
         <Link href="/" style={{ display: "inherit" }}>
-          <img
+          <Image
             alt="The Sustainable List logo"
             src="/logo.png"
+            width={LOGO_WIDTH}
             height={LOGO_HEIGHT}
           />
         </Link>

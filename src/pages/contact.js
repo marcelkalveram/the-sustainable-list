@@ -22,6 +22,7 @@ import { colors } from "../config/constants";
 import { Formik } from "formik";
 
 import { NextSeo } from "next-seo";
+import Image from "next/image";
 
 const validateForm = (values) => {
   const errors = {};
@@ -76,10 +77,10 @@ export default function About() {
               Contact us
             </Heading>
             <Paragraph marginBottom={minorScale(4)}>
-              We'd love to hear from you and know your thoughts! If you have any
-              feedback, ideas or criticism, please don't hesitate to get in
-              touch with us. You can also follow us on social media to get the
-              latest news.
+              We&apos;d love to hear from you and know your thoughts! If you
+              have any feedback, ideas or criticism, please don&apos;t hesitate
+              to get in touch with us. You can also follow us on social media to
+              get the latest news.
             </Paragraph>
             <Paragraph marginBottom={minorScale(4)}>
               <Link
@@ -87,21 +88,25 @@ export default function About() {
                 marginRight={majorScale(1)}
                 href="https://www.instagram.com/thesustainablelist/"
               >
-                <img
+                <Image
+                  alt="Instagram logo"
                   src="./social-instagram.png"
                   width="54"
+                  height="54"
                   paddingright={majorScale(1)}
                 />
               </Link>
-              {/* <Pane display="inline" marginRight={majorScale(1)}>
-                <img src="./social-twitter.png" width="48" />
-              </Pane> */}
               <Link
                 display="inline-block"
                 marginRight={majorScale(1)}
                 href="https://www.facebook.com/thesustainablelist"
               >
-                <img src="./social-facebook.png" width="54" />
+                <Image
+                  alt="Facebook logo"
+                  src="./social-facebook.png"
+                  width="54"
+                  height="54"
+                />
               </Link>
             </Paragraph>
             <Paragraph marginBottom={minorScale(4)}>
@@ -114,7 +119,7 @@ export default function About() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img
+                <Image
                   src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=203103&theme=light"
                   alt="the sustainable list - a curated list of sustainable fashion brands | Product Hunt Embed"
                   style={{ width: 250, height: 54 }}
