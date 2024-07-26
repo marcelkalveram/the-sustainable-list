@@ -1,5 +1,5 @@
-import { actions } from './';
-import { initSelected } from './helper';
+import { actions } from "./";
+import { initSelected } from "./helper";
 
 export const reducer = (state, action) => {
   switch (action.type) {

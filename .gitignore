@@ -5,3 +5,4 @@ node_modules/
 src/data/*
 .vercel
 public/data/
+.env*.local

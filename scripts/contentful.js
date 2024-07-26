@@ -40,6 +40,7 @@ client.getEntries({ limit: 1000 }).then(function (entries) {
       (entry) => entry.sys.contentType.sys.id === model
     );
   });
+
   const json = {
     brands,
     filters,
