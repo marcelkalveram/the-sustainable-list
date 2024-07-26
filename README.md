@@ -1,6 +1,10 @@
 # The Sustainable List
 
+![Vercel](https://vercelbadge.vercel.app/api/[marcelkalveram]/[the-sustainable-list])
+
 This is the README file for the project "The Sustainable List". It provides instructions on how to set up and deploy the project on Vercel.
+
+This project runs on the React framework [Next.js](https://nextjs.org/) and gets deployed on [Vercel](https://vercel.com/) for maximum performance and infrastructure efficiency.
 
 ## Prerequisites
 
@@ -9,20 +13,6 @@ Before getting started, make sure you have the following:
 - Vercel account
 - Node.js installed
 - Git installed
-
-## Environment variables
-
-Create an `.env` file in the root directory of the project and add the necessary environment variables. Using Vercel, this can be simplified, as Vercel allows us to pull the env variables from its configuration (see [Deployment](#deployment) below).
-
-```
-CONTENTFUL_ACCESS_TOKEN=""
-CONTENTFUL_SPACE_ID=""
-SENDGRID_API_KEY=""
-```
-
-These don't get loaded unless you use a bash plugin like https://github.com/johnhamelink/env-zsh to automatically load variables from an `.env` file in your project directory.
-
-Using the Vercel CLI simplifies this process.
 
 ## Getting Started
 
@@ -44,21 +34,49 @@ cd the-sustainable-list
 npm install
 ```
 
-4. Run the following to pull in the latest content from the Contentful API:
+## Environment variables
+
+Create an `.env.local` file in the root directory of the project and add the necessary environment variables:
+
+```bash
+CONTENTFUL_ACCESS_TOKEN=""
+CONTENTFUL_SPACE_ID=""
+SENDGRID_API_KEY=""
+```
+
+After logging in to Vercel (see [Deployment](#deployment) below), these can be pulled directly from there using the following command:
 
 ```
-npm run contentful:pull
+vercel env pull .env.local
 ```
 
-IMPORTANT: this requires the two `CONTENTFUL_...` keys above to pull content from this particular Contentful space. Ask the project owner for access.
+## Pulling content from Contentful
 
-5. Start the development server:
+Run the following to pull in the latest content from the Contentful API:
+
+```
+npm run contentful:pull:local
+```
+
+IMPORTANT: this requires the two `CONTENTFUL_...` keys above to be set to pull content from the Contentful space. Ask the project owner for access.
+
+This script saves the data consumed by the app in the public folder at `/public/data/index.json` so it can be access by the app at runtime.
+
+### Running this locally vs. Vercel
+
+The `contentful:pull:local` script only works on localhost and sets the environment variables for Contentful for local dev environments before running the node script.
+
+On Vercel, the `build` command runs the non-local version of this script (`contentful:pull`) since the environment variables are already available at build time.
+
+## Development
+
+1. Start the development server:
 
 ```bash
 npm run dev
 ```
 
-6. Open your browser and visit `http://localhost:3000` to see the project running locally.
+2. Open your browser and visit `http://localhost:3000` to see the project running locally.
 
 ## Deployment
 
