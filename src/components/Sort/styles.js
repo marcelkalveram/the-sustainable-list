@@ -23,6 +23,9 @@ export const { styles, className } = css.resolve`
     .sort :global(.sortPane) {
       justify-content: space-between;
     }
+    .sort :global(.sortPane__buttons) {
+      margin-left: 0;
+    }
   }
 
   @media only screen and (max-width: 768px) {
@@ -37,7 +40,10 @@ export const { styles, className } = css.resolve`
       color: ${colors.secondary};
     }
 
-    /* hide desktop search field */
+    .sort :global(.sortPane__buttons) {
+      margin-left: ${majorScale(2)}px;
+    }
+
     .sort :global(.sortPane__searchInput) {
       display: none;
     }

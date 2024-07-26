@@ -41,7 +41,7 @@ export function Sort(props) {
           display="flex"
           justifyContent="flex-end"
         >
-          <Pane marginLeft={majorScale(2)}>
+          <Pane className="sortPane__buttons">
             <SortButton
               onToggle={() =>
                 setSortBy({
