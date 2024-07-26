@@ -1,5 +1,5 @@
 import css from "styled-jsx/css";
-import { colors } from "../../../config/constants";
+import { colors } from "theme/constants";
 import { minorScale } from "evergreen-ui";
 
 export const { className, styles } = css.resolve`

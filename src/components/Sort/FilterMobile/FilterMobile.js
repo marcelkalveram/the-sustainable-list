@@ -1,6 +1,6 @@
 import React from "react";
 import { SettingsIcon, Pane, SearchInput, Text, Button } from "evergreen-ui";
-import { colors, SEARCH_INPUT_HEIGHT } from "../../../config/constants";
+import { colors, SEARCH_INPUT_HEIGHT } from "theme/constants";
 import { majorScale } from "evergreen-ui/commonjs/scales";
 import { filterMobileStyles } from "./styles.js";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Pane, Button } from "evergreen-ui";
-import { colors } from "../../../config/constants";
+import { colors } from "theme/constants";
 import { majorScale } from "evergreen-ui/commonjs/scales";
 
 export const FilterApplyButtonMobile = ({ setShowFilters, clearSelected }) => (

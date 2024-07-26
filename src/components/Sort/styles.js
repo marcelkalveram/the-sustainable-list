@@ -1,8 +1,9 @@
 import css from "styled-jsx/css";
+import { colors } from "theme/constants";
 
 export const { styles, className } = css.resolve`
   .sort :global(a:hover) {
-    color: #3c6e71 !important;
+    color: ${colors.secondary} !important;
     opacity: 0.75;
   }
 
@@ -10,7 +11,7 @@ export const { styles, className } = css.resolve`
     padding-bottom: 1px;
     border: 0;
     box-shadow: none;
-    background: #f1f1f1;
+    background: ${colors.grey};
   }
 
   .sort :global(.sortPane__searchInput) {
@@ -32,7 +33,7 @@ export const { styles, className } = css.resolve`
       padding-right: 0;
     }
     .sort :global(button) {
-      color: #3c6e71;
+      color: ${colors.secondary};
     }
 
     /* hide desktop search field */

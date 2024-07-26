@@ -8,7 +8,7 @@ import {
   majorScale,
   minorScale,
 } from "evergreen-ui";
-import { colors, fontSizes } from "../../../../config/constants";
+import { colors, fontSizes } from "theme/constants.js";
 import { className, styles } from "./styles.js";
 
 const getLocation = (location) => {

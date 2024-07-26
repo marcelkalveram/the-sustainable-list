@@ -1,7 +1,7 @@
 import React from "react";
 import { Heading, Pane } from "evergreen-ui";
 import { minorScale } from "evergreen-ui/commonjs/scales";
-import { colors, fontSizes } from "../../../config/constants";
+import { colors, fontSizes } from "theme/constants";
 import { className, styles } from "./styles";
 
 import Link from "next/link";

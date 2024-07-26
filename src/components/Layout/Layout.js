@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import { Header } from "../Header/Header";
 import { body } from "./styles";
-import { colors } from "../../config/constants";
+import { colors } from "theme/constants";
 
 const DEFAULT_TITLE =
   "The Sustainable List - all the good fashion brands at a glance";

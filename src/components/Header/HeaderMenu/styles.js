@@ -1,15 +1,15 @@
 import css from "styled-jsx/css";
-import { colors } from "../../../config/constants";
+import { colors } from "theme/constants";
 import { majorScale } from "evergreen-ui";
 
 export const { styles, className } = css.resolve`
   .header__menu :global(ul li a, ul li a:link, ul li a:visited) {
-    color: #df704b;
+    color: ${colors.primary};
     font-weight: 500;
   }
 
   .header__menu :global(a, a:visited, a:link, a:hover) {
-    color: #df704b !important;
+    color: ${colors.primary} !important;
   }
 
   @media only screen and (max-width: 768px) {

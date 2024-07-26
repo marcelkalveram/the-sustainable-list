@@ -1,7 +1,7 @@
 import React from "react";
 import { Pane, SearchInput } from "evergreen-ui";
 import { majorScale } from "evergreen-ui/commonjs/scales";
-import { colors, SEARCH_INPUT_HEIGHT } from "../../config/constants";
+import { colors, SEARCH_INPUT_HEIGHT } from "theme/constants";
 import { SortButton } from "./SortButton/SortButton";
 import { FilterMobile } from "./FilterMobile/FilterMobile";
 import { BrandsCount } from "./BrandsCount/BrandsCount";

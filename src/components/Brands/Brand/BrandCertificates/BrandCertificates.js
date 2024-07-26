@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Pane, Tooltip, Position } from "evergreen-ui";
 import { majorScale } from "evergreen-ui/commonjs/scales";
-import { certificatesMap } from "../../../../config/certificates";
+import { certificatesMap } from "config/certificates";
 import Image from "next/image";
 
 const CERTIFICATE_SIZE = 24;

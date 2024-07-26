@@ -1,6 +1,6 @@
 import React from "react";
 import { Heading, minorScale, majorScale } from "evergreen-ui";
-import { colors } from "../../../config/constants";
+import { colors } from "theme/constants";
 import { TeamMember } from "../TeamMember/TeamMember";
 import { Section } from "../Section/Section";
 

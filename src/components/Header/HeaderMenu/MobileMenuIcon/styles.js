@@ -1,5 +1,5 @@
 import css from "styled-jsx/css";
-import { colors } from "../../../../config/constants.js";
+import { colors } from "theme/constants.js";
 
 export const { styles, className } = css.resolve`
   .header__menu__mobile-menu-icon {

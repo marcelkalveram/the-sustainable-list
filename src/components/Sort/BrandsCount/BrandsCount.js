@@ -2,7 +2,7 @@ import React from "react";
 
 import { Paragraph } from "evergreen-ui";
 import { majorScale } from "evergreen-ui/commonjs/scales";
-import { colors, fontSizes } from "../../../config/constants";
+import { colors, fontSizes } from "theme/constants";
 import { styles, className } from "./styles";
 
 export const BrandsCount = ({ count, totalCount }) => (

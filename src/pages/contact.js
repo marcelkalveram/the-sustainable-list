@@ -14,11 +14,11 @@ import {
   Alert,
   Link,
 } from "evergreen-ui";
-import { Layout } from "../components/Layout/Layout";
-import { BackgroundImage } from "../components/Content/BackgroundImage/BackgroundImage";
-import { Container } from "../components/Content/Container/Container";
-import { Section } from "../components/Content/Section/Section";
-import { colors } from "../config/constants";
+import { Layout } from "components/Layout/Layout";
+import { BackgroundImage } from "components/Content/BackgroundImage/BackgroundImage";
+import { Container } from "components/Content/Container/Container";
+import { Section } from "components/Content/Section/Section";
+import { colors } from "theme/constants";
 import { Formik } from "formik";
 
 import { NextSeo } from "next-seo";

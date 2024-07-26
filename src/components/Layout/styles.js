@@ -1,6 +1,6 @@
 /* styles.js */
 import css from "styled-jsx/css";
-import { colors } from "../../config/constants";
+import { colors } from "theme/constants";
 
 export const body = css.global`
   body {
@@ -68,10 +68,10 @@ export const body = css.global`
 
   /* terms and conditions */
   .tsl_container h1 {
-    border-bottom-color: rgb(238, 238, 238);
+    border-bottom-color: ${colors.greyedOut};
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    color: rgb(60, 110, 113);
+    color: ${colors.secondary};
     font-size: 24px;
     font-weight: 500;
     letter-spacing: -0.07px;
@@ -82,7 +82,7 @@ export const body = css.global`
   }
 
   .tsl_container h2 {
-    color: rgb(60, 110, 113);
+    color: ${colors.secondary};
     font-size: 18px;
     font-weight: 500;
     letter-spacing: -0.05px;
@@ -94,7 +94,7 @@ export const body = css.global`
   }
 
   .tsl_container h3 {
-    color: rgb(60, 110, 113);
+    color: ${colors.secondary};
     font-size: 16px;
     font-weight: 600;
     letter-spacing: -0.05px;
@@ -106,7 +106,7 @@ export const body = css.global`
   }
 
   .tsl_container h4 {
-    color: rgb(60, 110, 113);
+    color: ${colors.secondary};
     font-size: 14px;
     font-weight: 600;
     letter-spacing: -0.05px;
@@ -119,7 +119,7 @@ export const body = css.global`
 
   .tsl_container p {
     box-sizing: border-box;
-    color: rgb(66, 90, 112);
+    color: ${colors.secondary};
     font-size: 14px;
     font-weight: 400;
     letter-spacing: -0.05px;
@@ -141,7 +141,7 @@ export const body = css.global`
   }
 
   .tsl_container ul li {
-    color: rgb(66, 90, 112);
+    color: ${colors.secondary};
     display: list-item;
     font-size: 14px;
     font-weight: 400;

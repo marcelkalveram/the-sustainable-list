@@ -1,8 +1,8 @@
 import React from "react";
 import { Heading, Paragraph, Pane, minorScale, majorScale } from "evergreen-ui";
-import { colors } from "../../../config/constants";
+import { colors } from "theme/constants";
+import { certificatesMap } from "config/certificates";
 import { Section } from "../Section/Section";
-import { certificatesMap } from "../../../config/certificates";
 import { className, styles } from "./styles";
 import Image from "next/image";
 

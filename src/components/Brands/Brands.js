@@ -2,7 +2,7 @@ import React from "react";
 import { Paragraph, Pane, Icon, majorScale, minorScale } from "evergreen-ui";
 import { brandsStyles } from "./styles.js";
 import { Brand } from "./Brand/Brand";
-import { colors } from "../../config/constants.js";
+import { colors } from "theme/constants.js";
 
 export const Brands = ({ brands }) => {
   return (

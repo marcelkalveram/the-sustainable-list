@@ -10,9 +10,5 @@ export const filterMobileStyles = css`
       display: flex;
       flex-direction: row-reverse;
     }
-    /* make search box visible */
-    .filter__mobile :global(.ub-pst_relative.ub-f-wght_400) {
-      display: inline-flex !important;
-    }
   }
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Pane, majorScale } from "evergreen-ui";
-import { colors } from "../../config/constants";
+import { colors } from "theme/constants";
 
 import { HeaderLogo } from "./HeaderLogo/HeaderLogo";
 import { HeaderMenu } from "./HeaderMenu/HeaderMenu";

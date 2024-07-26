@@ -1,6 +1,6 @@
 import css from "styled-jsx/css";
 import { majorScale } from "evergreen-ui/commonjs/scales";
-import { colors } from "../../config/constants";
+import { colors } from "theme/constants";
 
 export const filtersStyles = css`
   .filters {
@@ -45,7 +45,7 @@ export const filtersStyles = css`
   .filters :global(label div) {
     background-image: none;
   }
-  .filters :global(label :checked + .📦bblr_3px) {
+  .filters :global(label :checked + div) {
     background-image: linear-gradient(to bottom, #509195, #3c6e71) !important;
   }
 `;

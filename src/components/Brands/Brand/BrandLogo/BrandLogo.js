@@ -1,6 +1,6 @@
 import React from "react";
 import { Pane, majorScale } from "evergreen-ui";
-import { colors } from "../../../../config/constants";
+import { colors } from "theme/constants.js";
 import { className, styles } from "./styles.js";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 

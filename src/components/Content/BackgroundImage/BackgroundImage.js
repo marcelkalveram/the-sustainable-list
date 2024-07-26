@@ -1,7 +1,7 @@
 import React from "react";
 import { className, styles } from "./styles";
 import { Pane, Link, UnorderedList, ListItem, majorScale } from "evergreen-ui";
-import { colors } from "../../../config/constants";
+import { colors } from "theme/constants";
 import { useRouter } from "next/router";
 
 export const BackgroundImage = () => {

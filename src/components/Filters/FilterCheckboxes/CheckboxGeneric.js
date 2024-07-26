@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, Checkbox } from "evergreen-ui";
-import { colors, fontSizes } from "../../../config/constants";
+import { colors, fontSizes } from "theme/constants";
 
 const getFieldProp = (val, prop) =>
   typeof val === "string" ? val : val.fields[prop];
