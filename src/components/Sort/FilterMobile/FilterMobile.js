@@ -1,5 +1,5 @@
 import React from "react";
-import { SettingsIcon, Pane, SearchInput, Text } from "evergreen-ui";
+import { SettingsIcon, Pane, SearchInput, Text, Button } from "evergreen-ui";
 import { colors, SEARCH_INPUT_HEIGHT } from "../../../config/constants";
 import { majorScale } from "evergreen-ui/commonjs/scales";
 import { filterMobileStyles } from "./styles.js";
@@ -10,23 +10,23 @@ export const FilterMobile = ({ setShowFilters, setSearchFor, searchFor }) => {
   return (
     <>
       <div className="filter__mobile">
-        <Pane
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          marginLeft={majorScale(1)}
-          marginRight={majorScale(1)}
-          onClick={() => setShowFilters(true)}
-        >
-          <SettingsIcon color={colors.secondary} marginX={majorScale(1)} />
-          <Text fontWeight={600} color={colors.secondary}>
-            FILTER
-          </Text>
+        <Pane display="flex" justifyContent="center" alignItems="center">
+          <Button
+            fontWeight={600}
+            color={colors.secondary}
+            appearance="minimal"
+            onClick={() => setShowFilters(true)}
+          >
+            <SettingsIcon color={colors.secondary} marginX={majorScale(1)} />
+            <Text fontWeight={600} color={colors.secondary}>
+              FILTER
+            </Text>
+          </Button>
         </Pane>
         <SearchInput
           onChange={(e) => setSearchFor(e.target.value)}
           value={searchFor}
-          height={SEARCH_INPUT_HEIGHT}
+          height={SEARCH_INPUT_HEIGHT + 1}
           width={SEARCH_INPUT_WIDTH}
           placeholder="Search..."
         />

@@ -35,29 +35,35 @@ export function Sort(props) {
         paddingY={majorScale(2)}
       >
         <BrandsCount count={count} totalCount={totalCount} />
-        <Pane>
-          <SortButton
-            onToggle={() =>
-              setSortBy({
-                az: sortBy.az === "asc" ? "desc" : "asc",
-                price: null,
-              })
-            }
-          >
-            {sortBy.az !== "asc" ? "A-Z" : "Z-A"}
-          </SortButton>
-          <SortButton
-            onToggle={() =>
-              setSortBy({
-                az: null,
-                price: sortBy.price === "asc" ? "desc" : "asc",
-              })
-            }
-          >
-            {sortBy.price === "asc" ? "$$$" : "$"}
-          </SortButton>
-
-          <div className="searchInput">
+        <Pane
+          className="sortPane"
+          flex="1"
+          display="flex"
+          justifyContent="flex-end"
+        >
+          <div>
+            <SortButton
+              onToggle={() =>
+                setSortBy({
+                  az: sortBy.az === "asc" ? "desc" : "asc",
+                  price: null,
+                })
+              }
+            >
+              {sortBy.az !== "asc" ? "A-Z" : "Z-A"}
+            </SortButton>
+            <SortButton
+              onToggle={() =>
+                setSortBy({
+                  az: null,
+                  price: sortBy.price === "asc" ? "desc" : "asc",
+                })
+              }
+            >
+              {sortBy.price === "asc" ? "$$$" : "$"}
+            </SortButton>
+          </div>
+          <Pane className="sortPane__searchInput" justifySelf="flex-end">
             <SearchInput
               marginLeft={majorScale(1)}
               onChange={(e) => setSearchFor(e.target.value)}
@@ -65,7 +71,7 @@ export function Sort(props) {
               height={SEARCH_INPUT_HEIGHT}
               placeholder="Search by name..."
             />
-          </div>
+          </Pane>
         </Pane>
         <FilterMobile
           setShowFilters={setShowFilters}
