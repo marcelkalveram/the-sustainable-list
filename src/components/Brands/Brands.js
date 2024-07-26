@@ -1,8 +1,8 @@
-import React from 'react';
-import { Paragraph, Pane, Icon, majorScale, minorScale } from 'evergreen-ui';
-import { brandsStyles } from './styles.js';
-import { Brand } from './Brand/Brand';
-import { colors } from '../../config/constants.js';
+import React from "react";
+import { Paragraph, Pane, Icon, majorScale, minorScale } from "evergreen-ui";
+import { brandsStyles } from "./styles.js";
+import { Brand } from "./Brand/Brand";
+import { colors } from "../../config/constants.js";
 
 export const Brands = ({ brands }) => {
   return (
@@ -39,9 +39,9 @@ export const Brands = ({ brands }) => {
       )}
       {brands.length > 0 && (
         <section className="brands">
-          {brands.map((brand, index) => {
-            return <Brand key={brand.sys.id} brand={brand} index={index} />;
-          })}
+          {brands.map((brand, index) => (
+            <Brand key={brand.id} brand={brand} index={index} />
+          ))}
         </section>
       )}
       <style jsx>{brandsStyles}</style>

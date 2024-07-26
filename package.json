@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "npm run contentful:pull && next build",
     "start": "next start",
-    "contentful:pull": "node ./scripts/contentful.js"
+    "contentful:pull": "node ./scripts/contentful.js",
+    "contentful:pull:local": "node --env-file=.env.local ./scripts/contentful.js"
   },
   "keywords": [],
   "author": "",

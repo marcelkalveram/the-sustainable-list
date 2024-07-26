@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Pane,
   Text,
@@ -7,19 +7,19 @@ import {
   Badge,
   majorScale,
   minorScale,
-} from 'evergreen-ui';
-import { colors, fontSizes } from '../../../../config/constants';
-import { className, styles } from './styles.js';
+} from "evergreen-ui";
+import { colors, fontSizes } from "../../../../config/constants";
+import { className, styles } from "./styles.js";
 
-const getLocation = location => {
-  let locationString = 'Unknown location';
+const getLocation = (location) => {
+  let locationString = "Unknown location";
   if (location && location.fields && location.fields.country) {
     locationString = `${location.fields.country}`;
   }
   return locationString;
 };
 
-const getPrice = price => {
+const getPrice = (price) => {
   price = price || 1;
   return (
     <>
@@ -42,45 +42,45 @@ const getPrice = price => {
   );
 };
 
-const getStyleColor = style => {
+const getStyleColor = (style) => {
   switch (style) {
-    case 'casual':
-      return '#FFFAD2';
-    case 'sporty':
-      return '#FEE3C9';
-    case 'swim':
-      return '#E7F9FF';
-    case 'lingerie':
-      return '#FFF6F6';
-    case 'wedding':
-      return '#FAF5FF';
-    case 'elegant':
-      return '#F3F3F3';
-    case 'business':
-      return '#D4E1E6';
+    case "casual":
+      return "#FFFAD2";
+    case "sporty":
+      return "#FEE3C9";
+    case "swim":
+      return "#E7F9FF";
+    case "lingerie":
+      return "#FFF6F6";
+    case "wedding":
+      return "#FAF5FF";
+    case "elegant":
+      return "#F3F3F3";
+    case "business":
+      return "#D4E1E6";
     default:
-      return '#EDF0F2';
+      return "#EDF0F2";
   }
 };
 
-const getStyleColorText = style => {
+const getStyleColorText = (style) => {
   switch (style) {
-    case 'casual':
-      return '#E2AD38';
-    case 'sporty':
-      return '#E58B6D';
-    case 'swim':
-      return '#788E90';
-    case 'lingerie':
-      return '#E4A3A1';
-    case 'wedding':
-      return '#AF95C8';
-    case 'elegant':
-      return '#8F8F8F';
-    case 'business':
-      return '#7190AA';
+    case "casual":
+      return "#E2AD38";
+    case "sporty":
+      return "#E58B6D";
+    case "swim":
+      return "#788E90";
+    case "lingerie":
+      return "#E4A3A1";
+    case "wedding":
+      return "#AF95C8";
+    case "elegant":
+      return "#8F8F8F";
+    case "business":
+      return "#7190AA";
     default:
-      return '#EDF0F2';
+      return "#EDF0F2";
   }
 };
 
@@ -115,20 +115,20 @@ export const BrandDetails = ({
             className="brand-details__meta__styles"
           >
             {clothingStyles &&
-              clothingStyles.map(style => (
+              clothingStyles.map((style) => (
                 <Badge
-                  key={style.sys.id}
+                  key={style.id}
                   className="badge"
                   marginRight={minorScale(1)}
                   backgroundColor={getStyleColor(
-                    style.fields.title.toLowerCase().trim(),
+                    style.fields.title.toLowerCase().trim()
                   )}
                 >
                   <Text
                     size={300}
                     fontWeight={700}
                     color={getStyleColorText(
-                      style.fields.title.toLowerCase().trim(),
+                      style.fields.title.toLowerCase().trim()
                     )}
                   >
                     {style.fields.title.toLowerCase()}

@@ -22,7 +22,7 @@ export const BrandCertificates = ({ certificates }) => {
         }
         return (
           <Link
-            key={cert.sys.id}
+            key={cert.id}
             textDecoration="none"
             target="_blank"
             href={certificate.website}
