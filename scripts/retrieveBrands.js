@@ -3,7 +3,7 @@ const { stripMetaData } = require("./helpers");
 const stripMetaDataFromBrand = (brand, criteriaMap) => ({
   id: brand.sys.id,
   fields: {
-    // base brand fields
+    // base brand fields: title, slug, website, price
     ...brand.fields,
 
     // fields based on criteria map
@@ -14,8 +14,8 @@ const stripMetaDataFromBrand = (brand, criteriaMap) => ({
       return acc;
     }, {}),
 
-    // remaining fields
-    ...["shippingOptions", "image", "logo"].reduce((acc, field) => {
+    // media fields
+    ...["image", "logo"].reduce((acc, field) => {
       acc[field] = stripMetaData(brand.fields[field]);
       return acc;
     }, {}),
@@ -27,6 +27,7 @@ const stripMetaDataFromBrand = (brand, criteriaMap) => ({
 
 const retrieveBrands = (entries, criteriaMap) =>
   entries.items
+    // brands are of id "category"
     .filter((brand) => brand.sys.contentType.sys.id === "category")
     .map((brand) => stripMetaDataFromBrand(brand, criteriaMap));
 
