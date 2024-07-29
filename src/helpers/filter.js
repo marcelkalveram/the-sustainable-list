@@ -10,7 +10,7 @@ export const filterBrands = (brand, selected) => {
   const matches = [];
 
   criteriaMap.data.forEach((criteria, index) => {
-    // if no nothing from criteria selected, matches
+    // if nothing from criteria selected, matches
     matches[index] = selected[criteria.name].length === 0;
 
     // if brand doesn't contain criteria field, skip
