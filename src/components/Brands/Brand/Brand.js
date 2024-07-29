@@ -6,7 +6,7 @@ import { BrandLogo } from "./BrandLogo/BrandLogo";
 import { BrandDetails } from "./BrandDetails/BrandDetails";
 import { className, styles } from "./styles.js";
 
-export const Brand = React.memo(function Brand({
+export const Brand = ({
   brand: {
     fields: {
       certificates,
@@ -20,7 +20,7 @@ export const Brand = React.memo(function Brand({
     },
   },
   index,
-}) {
+}) => {
   const visibleByDefault = index < 3;
   return (
     <>
@@ -64,4 +64,4 @@ export const Brand = React.memo(function Brand({
       {styles}
     </>
   );
-});
+};

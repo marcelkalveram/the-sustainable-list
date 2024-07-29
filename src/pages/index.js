@@ -1,4 +1,4 @@
-import React, { useMemo, useReducer } from "react";
+import React, { useReducer } from "react";
 
 // data
 import data from "/public/data/index.json";
@@ -21,9 +21,8 @@ function Index() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // filter
-  let brands = useMemo(
-    () => data.brands.filter((brands) => filterBrands(brands, state.selected)),
-    [state.selected],
+  let brands = data.brands.filter((brands) =>
+    filterBrands(brands, state.selected),
   );
 
   // search for filter
@@ -42,44 +41,38 @@ function Index() {
     brands.sort((a, b) => sortByAz(state, a, b));
   }
 
-  const filters = useMemo(
-    () => (
-      <Filters
-        criteriaMap={criteriaMap.data}
-        filters={state.filters}
-        selected={state.selected}
-        setSelected={(selected) =>
-          dispatch({ type: actions.SET_SELECTED, payload: selected })
-        }
-        clearSelected={() => dispatch({ type: actions.CLEAR_SELECTED })}
-        showFilters={state.showFilters}
-        setShowFilters={(show) =>
-          dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })
-        }
-      />
-    ),
-    [state.filters, state.selected, state.showFilters],
+  const FiltersComponent = (
+    <Filters
+      criteriaMap={criteriaMap.data}
+      filters={state.filters}
+      selected={state.selected}
+      setSelected={(selected) =>
+        dispatch({ type: actions.SET_SELECTED, payload: selected })
+      }
+      clearSelected={() => dispatch({ type: actions.CLEAR_SELECTED })}
+      showFilters={state.showFilters}
+      setShowFilters={(show) =>
+        dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })
+      }
+    />
   );
 
-  const sort = useMemo(
-    () => (
-      <Sort
-        searchFor={state.searchFor}
-        setSearchFor={(searchTerm) =>
-          dispatch({ type: actions.SET_SEARCH_FOR, payload: searchTerm })
-        }
-        totalCount={state.brandsCount}
-        count={brands.length}
-        sortBy={state.sortBy}
-        setSortBy={(sortBy) =>
-          dispatch({ type: actions.SET_SORT_BY, payload: sortBy })
-        }
-        setShowFilters={(show) =>
-          dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })
-        }
-      />
-    ),
-    [state.searchFor, state.brandsCount, state.sortBy, brands.length],
+  const SortComponent = (
+    <Sort
+      searchFor={state.searchFor}
+      setSearchFor={(searchTerm) =>
+        dispatch({ type: actions.SET_SEARCH_FOR, payload: searchTerm })
+      }
+      totalCount={state.brandsCount}
+      count={brands.length}
+      sortBy={state.sortBy}
+      setSortBy={(sortBy) =>
+        dispatch({ type: actions.SET_SORT_BY, payload: sortBy })
+      }
+      setShowFilters={(show) =>
+        dispatch({ type: actions.SET_SHOW_FILTERS, payload: show })
+      }
+    />
   );
 
   return (
@@ -105,9 +98,9 @@ function Index() {
         }}
       />
       <Layout fixed={state.showFilters} showFilters={state.showFilters}>
-        {filters}
+        {FiltersComponent}
         <Main>
-          {sort}
+          {SortComponent}
           <Brands brands={brands} />
         </Main>
         <BackgroundImage />

@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Pane } from "evergreen-ui";
 import { CheckboxCountry } from "./CheckboxCountry";
 import { CheckboxGeneric } from "./CheckboxGeneric";
@@ -12,15 +12,11 @@ export const FilterCheckboxes = ({
   selected,
   name,
 }) => {
-  const countries = useMemo(
-    () =>
-      filters["location"].reduce((unique, item) => {
-        return unique.filter((u) => u === getLocation(item)).length
-          ? unique
-          : unique.concat(getLocation(item));
-      }, []),
-    [filters],
-  );
+  const countries = filters["location"].reduce((unique, item) => {
+    return unique.filter((u) => u === getLocation(item)).length
+      ? unique
+      : unique.concat(getLocation(item));
+  }, []);
 
   let checkboxes = [];
 
