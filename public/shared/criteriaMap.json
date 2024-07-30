@@ -1,6 +1,10 @@
 {
   "data": [
-    { "name": "category", "title": "Category", "contentfulField": "category" },
+    {
+      "name": "category",
+      "title": "Category",
+      "contentfulField": "category"
+    },
     {
       "name": "type",
       "title": "Clothing type",
