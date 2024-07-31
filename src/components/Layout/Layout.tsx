@@ -19,9 +19,9 @@ export const Layout = ({
   title = DEFAULT_TITLE,
   fixed = false,
   showFilters = false,
-}): ReactElement => {
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const lockViewport = fixed || showMobileMenu;
+}: LayoutProps): ReactElement => {
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+  const lockViewport: boolean = fixed || showMobileMenu;
 
   return (
     <>

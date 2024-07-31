@@ -28,7 +28,7 @@ export function Filters({
   setShowFilters,
   style = null,
 }: FiltersProps): ReactElement {
-  const [hidden, setHidden] = useState([]);
+  const [hidden, setHidden] = useState<string[]>([]);
 
   const toggleHidden = toggleHiddenFn(hidden, setHidden);
   const toggleFilter = toggleFilterFn(selected, setSelected);
