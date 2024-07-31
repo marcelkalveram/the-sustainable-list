@@ -22,7 +22,7 @@ const Index = (): ReactElement => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // filter
-  let brands: Brand[] = data.brands.filter((brand: any) =>
+  let brands: Brand[] = data.brands.filter((brand: Brand) =>
     filterBrands(brand, state.selected),
   ) as unknown as Brand[];
 
