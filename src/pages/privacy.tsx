@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type ReactElement } from "react";
 
 import { Layout } from "components/Layout/Layout";
 import { BackgroundImage } from "components/Content/BackgroundImage/BackgroundImage";
@@ -6,7 +6,7 @@ import { Container } from "components/Content/Container/Container";
 
 import { NextSeo } from "next-seo";
 
-function Privacy() {
+function Privacy(): ReactElement {
   return (
     <>
       <NextSeo

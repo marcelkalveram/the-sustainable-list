@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type ReactElement } from "react";
 
 import { Layout } from "components/Layout/Layout";
 import { BackgroundImage } from "components/Content/BackgroundImage/BackgroundImage";
@@ -8,7 +8,7 @@ import { ContentTeam } from "components/Content/ContentTeam/ContentTeam";
 
 import { NextSeo } from "next-seo";
 
-export default function About() {
+export default function About(): ReactElement {
   return (
     <>
       <NextSeo

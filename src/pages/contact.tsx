@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type ReactElement } from "react";
 import fetch from "isomorphic-unfetch";
 
 import {
@@ -24,12 +24,23 @@ import { Formik } from "formik";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 
+type Values = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 type Errors = {
   email?: string;
   message?: string;
 };
 
-const validateForm = (values) => {
+type SubmitFormProps = {
+  setSubmitting: (isSubmitting: boolean) => void;
+  setStatus: (status: { success: boolean }) => void;
+};
+
+const validateForm = (values: Values): Errors => {
   const errors: Errors = {};
   if (!values.email) {
     errors.email = "Please type in an email address";
@@ -43,7 +54,10 @@ const validateForm = (values) => {
   return errors;
 };
 
-const submitForm = async (values, { setSubmitting, setStatus }) => {
+const submitForm = async (
+  values: Values,
+  { setSubmitting, setStatus }: SubmitFormProps,
+): Promise<void> => {
   const response = await fetch("/api/contact", {
     method: "post",
     headers: {
@@ -63,7 +77,7 @@ const submitForm = async (values, { setSubmitting, setStatus }) => {
   }
 };
 
-export default function About() {
+export default function Contact(): ReactElement {
   return (
     <>
       <NextSeo
