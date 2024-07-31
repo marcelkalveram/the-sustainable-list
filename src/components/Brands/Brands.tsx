@@ -1,10 +1,22 @@
 import React, { ReactElement } from "react";
-import { Paragraph, Pane, Icon, majorScale, minorScale } from "evergreen-ui";
+import {
+  Paragraph,
+  Pane,
+  Icon,
+  majorScale,
+  minorScale,
+  PathSearchIcon,
+} from "evergreen-ui";
 import { brandsStyles } from "./styles";
 import { Brand } from "./Brand/Brand";
 import { colors } from "theme/constants";
+import type { Brand as BrandType } from "types";
 
-export const Brands = ({ brands }): ReactElement => {
+interface Brands {
+  brands: BrandType[];
+}
+
+export const Brands = ({ brands }: Brands): ReactElement => {
   return (
     <>
       {brands.length === 0 && (
@@ -17,12 +29,11 @@ export const Brands = ({ brands }): ReactElement => {
           padding={majorScale(3)}
           textAlign="center"
         >
-          {/* <Icon
+          <PathSearchIcon
             size={48}
-            icon="path-search"
             color={colors.secondarySoft}
             marginBottom={majorScale(1)}
-          /> */}
+          />
           <Paragraph
             size={500}
             fontWeight={500}
