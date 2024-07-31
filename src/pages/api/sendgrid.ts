@@ -1,8 +1,21 @@
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-console.log(process.env.SENDGRID_API_KEY);
 
-export const sendMail = async ({ name, email, message }, response) => {
+interface SendMailRequestProps {
+  name: string;
+  email: string;
+  message: string;
+}
+
+interface SendMailResponseProps {
+  status: string;
+  type: string;
+}
+
+export const sendMail = async (
+  { name, email, message }: SendMailRequestProps,
+  response: SendMailResponseProps,
+): Promise<SendMailResponseProps> => {
   if (!process.env.SENDGRID_API_KEY) {
     response.status = "error";
     response.type = "invalid sendgrid API key";

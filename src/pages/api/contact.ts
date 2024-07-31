@@ -1,8 +1,28 @@
 import { sendMail } from "./sendgrid";
 
-const handler = async (req, res) => {
+interface HandlerRequestProps {
+  method: string;
+  body: {
+    name: string;
+    email: string;
+    message: string;
+  };
+}
+
+interface HandlerResponseProps {
+  statusCode: number;
+  setHeader: Function;
+  end: Function;
+}
+
+interface ResponseProps {
+  status: string;
+  type: string;
+}
+
+const handler = async (req: HandlerRequestProps, res: HandlerResponseProps) => {
   res.setHeader("Content-Type", "application/json");
-  let response = { status: "", type: "unknown_error" };
+  let response: ResponseProps = { status: "", type: "unknown_error" };
   res.statusCode = 200;
   if (req.method === "POST") {
     if (!req.body) {
@@ -27,7 +47,6 @@ const handler = async (req, res) => {
     }
 
     const responseMail = await sendMail(req.body, response);
-    console.log(responseMail);
     return res.end(JSON.stringify(responseMail));
   }
 
