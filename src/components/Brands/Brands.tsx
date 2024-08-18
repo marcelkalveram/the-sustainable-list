@@ -14,7 +14,7 @@ import { colors } from "theme/constants";
 
 import type { Brand as BrandType } from "types";
 import type { RootState } from "store/store";
-import { brandsFilteredSelector } from "store/appSlice";
+import { brandsFilteredSelector } from "store/selectors";
 
 interface Brands {
   brands: BrandType[];

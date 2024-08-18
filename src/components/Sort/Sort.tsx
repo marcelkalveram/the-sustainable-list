@@ -10,15 +10,11 @@ import { FilterMobile } from "./FilterMobile/FilterMobile";
 import { BrandsCount } from "./BrandsCount/BrandsCount";
 import { styles, className } from "./styles";
 
-import {
-  brandsFilteredSelector,
-  setSearchFor,
-  setShowFilters,
-  setSortBy,
-} from "store/appSlice";
+import { setSearchFor, setShowFilters, setSortBy } from "store/appSlice";
 import type { RootState } from "store/store";
 import { SortBy } from "types";
 import { usePostHog } from "posthog-js/react";
+import { brandsFilteredSelector } from "store/selectors";
 
 export const Sort = (): ReactElement => {
   const posthog = usePostHog();
