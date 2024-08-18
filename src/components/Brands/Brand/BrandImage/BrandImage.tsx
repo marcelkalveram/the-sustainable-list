@@ -11,6 +11,7 @@ interface BrandImageProps {
   image: Image;
   website: string;
   visibleByDefault: boolean;
+  onClick: () => void;
 }
 
 export const BrandImage = ({
@@ -18,6 +19,7 @@ export const BrandImage = ({
   image,
   website,
   visibleByDefault,
+  onClick,
 }: BrandImageProps): ReactElement => {
   const imageUrl = image ? image.fields.file.url : DEFAULT_IMAGE;
   return (
@@ -33,6 +35,7 @@ export const BrandImage = ({
         textDecoration="none"
         target="_blank"
         href={`${website}?ref=thesustainablelist`}
+        onClick={onClick}
         style={{
           position: "absolute",
           maxWidth: "100%",

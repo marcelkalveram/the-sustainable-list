@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import { Pane } from "evergreen-ui";
 import { BrandCertificates } from "./BrandCertificates/BrandCertificates";
 import { BrandImage } from "./BrandImage/BrandImage";
@@ -6,6 +6,7 @@ import { BrandLogo } from "./BrandLogo/BrandLogo";
 import { BrandDetails } from "./BrandDetails/BrandDetails";
 import { className, styles } from "./styles";
 import type { Brand as BrandType } from "types";
+import { usePostHog } from "posthog-js/react";
 
 interface BrandProps {
   brand: BrandType;
@@ -26,7 +27,8 @@ export const Brand = ({
     },
   },
   index,
-}: BrandProps): ReactElement => {
+}: BrandProps) => {
+  const posthog = usePostHog();
   const visibleByDefault = index < 3;
   return (
     <>
@@ -41,6 +43,7 @@ export const Brand = ({
           image={image}
           website={website}
           visibleByDefault={visibleByDefault}
+          onClick={() => posthog.capture("brand_clicked", { title })}
         >
           <BrandCertificates certificates={certificates} />
         </BrandImage>

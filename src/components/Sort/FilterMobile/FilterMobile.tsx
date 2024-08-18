@@ -7,8 +7,8 @@ import { filterMobileStyles } from "./styles";
 const SEARCH_INPUT_WIDTH = 140;
 
 interface FilterMobile {
-  setShowFilters: Function;
-  setSearchFor: Function;
+  setShowFilters: () => void;
+  setSearchFor: (searchTerm: string) => void;
   searchFor: string;
 }
 
@@ -25,7 +25,7 @@ export const FilterMobile = ({
             fontWeight={600}
             color={colors.secondary}
             appearance="minimal"
-            onClick={() => setShowFilters(true)}
+            onClick={() => setShowFilters()}
           >
             <SettingsIcon color={colors.secondary} marginX={majorScale(1)} />
             <Text fontWeight={600} color={colors.secondary}>

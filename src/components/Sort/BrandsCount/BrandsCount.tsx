@@ -5,15 +5,7 @@ import { majorScale } from "evergreen-ui/commonjs/scales";
 import { colors, fontSizes } from "theme/constants";
 import { styles, className } from "./styles";
 
-interface BrandsCount {
-  count: number;
-  totalCount: number;
-}
-
-export const BrandsCount = ({
-  count,
-  totalCount,
-}: BrandsCount): ReactElement => (
+export const BrandsCount = ({ count = 0, totalCount = 0 }): ReactElement => (
   <>
     <Paragraph
       className={`sort__brands-count ${className}`}

@@ -4,8 +4,8 @@ import { colors } from "theme/constants";
 import { majorScale } from "evergreen-ui/commonjs/scales";
 
 interface FilterApplyButtonMobileProps {
-  setShowFilters: Function;
-  clearSelected: Function;
+  setShowFilters: (boolean) => void;
+  clearSelected: () => void;
 }
 
 export const FilterApplyButtonMobile = ({

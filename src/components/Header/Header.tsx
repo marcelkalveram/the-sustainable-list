@@ -1,4 +1,4 @@
-import React, { type ReactElement } from "react";
+import React from "react";
 import { Pane, majorScale } from "evergreen-ui";
 import { colors } from "theme/constants";
 
@@ -15,7 +15,7 @@ export const Header = ({
   showFilters,
   showMobileMenu,
   setShowMobileMenu,
-}: HeaderProps): ReactElement => (
+}: HeaderProps) => (
   <Pane
     display="flex"
     justifyContent="space-between"

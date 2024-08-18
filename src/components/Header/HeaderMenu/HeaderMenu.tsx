@@ -4,17 +4,11 @@ import { className, styles } from "./styles";
 import { MobileMenuIcon } from "./MobileMenuIcon/MobileMenuIcon";
 import { useRouter } from "next/router";
 
-interface HeaderMenuProps {
-  showFilters: boolean;
-  showMobileMenu: boolean;
-  setShowMobileMenu: Function;
-}
-
 export const HeaderMenu = ({
-  showFilters,
-  showMobileMenu,
+  showFilters = false,
+  showMobileMenu = false,
   setShowMobileMenu,
-}: HeaderMenuProps): ReactElement => {
+}) => {
   const router = useRouter();
   return (
     <>

@@ -1,22 +1,30 @@
-import React, { ReactElement } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import {
   Paragraph,
   Pane,
-  Icon,
   majorScale,
   minorScale,
   PathSearchIcon,
 } from "evergreen-ui";
+
 import { brandsStyles } from "./styles";
 import { Brand } from "./Brand/Brand";
 import { colors } from "theme/constants";
+
 import type { Brand as BrandType } from "types";
+import type { RootState } from "store/store";
+import { brandsFilteredSelector } from "store/appSlice";
 
 interface Brands {
   brands: BrandType[];
 }
 
-export const Brands = ({ brands }: Brands): ReactElement => {
+export const Brands = () => {
+  const brands = useSelector((state: RootState) =>
+    brandsFilteredSelector(state),
+  );
+
   return (
     <>
       {brands.length === 0 && (

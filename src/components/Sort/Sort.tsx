@@ -1,33 +1,47 @@
 import React, { type ReactElement } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import { Pane, SearchInput } from "evergreen-ui";
 import { majorScale } from "evergreen-ui/commonjs/scales";
 import { colors, SEARCH_INPUT_HEIGHT } from "theme/constants";
+
 import { SortButton } from "./SortButton/SortButton";
 import { FilterMobile } from "./FilterMobile/FilterMobile";
 import { BrandsCount } from "./BrandsCount/BrandsCount";
 import { styles, className } from "./styles";
+
+import {
+  brandsFilteredSelector,
+  setSearchFor,
+  setShowFilters,
+  setSortBy,
+} from "store/appSlice";
+import type { RootState } from "store/store";
 import { SortBy } from "types";
+import { usePostHog } from "posthog-js/react";
 
-interface SortProps {
-  count: number;
-  totalCount: number;
-  searchFor: string;
-  setSearchFor: Function;
-  setShowFilters: Function;
-  sortBy: SortBy;
-  setSortBy: Function;
-}
+export const Sort = (): ReactElement => {
+  const posthog = usePostHog();
+  const dispatch = useDispatch();
 
-export const Sort = (props: SortProps): ReactElement => {
-  const {
-    count,
-    totalCount,
-    searchFor,
-    setSearchFor,
-    setShowFilters,
-    sortBy,
-    setSortBy,
-  } = props;
+  const totalCount = useSelector((state: RootState) => state.brands.length);
+
+  const brandsFiltered = useSelector((state: RootState) =>
+    brandsFilteredSelector(state),
+  );
+
+  const searchFor = useSelector((state: RootState) => state.searchFor);
+  const sortBy = useSelector((state: RootState) => state.sortBy);
+
+  const dispatchSortBy = (sortBy: SortBy) => {
+    posthog?.capture("brands_sorted", sortBy);
+    dispatch(setSortBy(sortBy));
+  };
+
+  const dispatchSearchFor = (searchTerm: string) => {
+    posthog?.capture("brands_searched", { searchTerm });
+    dispatch(setSearchFor(searchTerm));
+  };
 
   return (
     <>
@@ -45,7 +59,7 @@ export const Sort = (props: SortProps): ReactElement => {
         paddingX="0"
         paddingY={majorScale(2)}
       >
-        <BrandsCount count={count} totalCount={totalCount} />
+        <BrandsCount count={brandsFiltered.length} totalCount={totalCount} />
         <Pane
           className="sortPane"
           flex="1"
@@ -55,7 +69,7 @@ export const Sort = (props: SortProps): ReactElement => {
           <Pane className="sortPane__buttons">
             <SortButton
               onToggle={() =>
-                setSortBy({
+                dispatchSortBy({
                   az: sortBy.az === "asc" ? "desc" : "asc",
                   price: null,
                 })
@@ -65,7 +79,7 @@ export const Sort = (props: SortProps): ReactElement => {
             </SortButton>
             <SortButton
               onToggle={() =>
-                setSortBy({
+                dispatchSortBy({
                   az: null,
                   price: sortBy.price === "asc" ? "desc" : "asc",
                 })
@@ -77,7 +91,7 @@ export const Sort = (props: SortProps): ReactElement => {
           <Pane className="sortPane__searchInput" justifySelf="flex-end">
             <SearchInput
               marginLeft={majorScale(1)}
-              onChange={(e) => setSearchFor(e.target.value)}
+              onChange={(e) => dispatchSearchFor(e.target.value)}
               value={searchFor}
               height={SEARCH_INPUT_HEIGHT}
               placeholder="Search by name..."
@@ -85,8 +99,8 @@ export const Sort = (props: SortProps): ReactElement => {
           </Pane>
         </Pane>
         <FilterMobile
-          setShowFilters={setShowFilters}
-          setSearchFor={setSearchFor}
+          setShowFilters={() => dispatch(setShowFilters(true))}
+          setSearchFor={(searchTerm) => dispatchSearchFor(searchTerm)}
           searchFor={searchFor}
         />
       </Pane>

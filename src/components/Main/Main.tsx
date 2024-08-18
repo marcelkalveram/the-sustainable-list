@@ -1,11 +1,7 @@
-import React, { type ReactNode, type ReactElement } from "react";
+import React from "react";
 import { mainStyles } from "./styles";
 
-interface MainProps {
-  children: ReactNode;
-}
-
-export const Main = ({ children }: MainProps): ReactElement => (
+export const Main = ({ children }) => (
   <div className="main">
     {children}
     <style jsx>{mainStyles}</style>

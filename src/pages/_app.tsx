@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
 import { useEffect } from "react";
+import { Provider } from "react-redux";
+import { store } from "store/store";
 
 // Check that PostHog is client-side (used to handle Next.js SSR)
 if (typeof window !== "undefined") {
@@ -31,11 +33,15 @@ export default function App({ Component, pageProps }) {
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
-  }, []);
+  }, [router.events]);
 
   return (
     <PostHogProvider client={posthog}>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Provider>
     </PostHogProvider>
   );
 }

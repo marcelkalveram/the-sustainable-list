@@ -1,48 +1,46 @@
 import React, { type ReactElement, useState } from "react";
-import { toggleHiddenFn, toggleFilterFn } from "../../helpers/toggle";
+import { toggleHiddenFn } from "../../helpers/toggle";
 import { FilterHeading } from "./FilterHeading/FilterHeading";
 import { FilterCheckboxes } from "./FilterCheckboxes/FilterCheckboxes";
 import { FilterCloseButtonMobile } from "./FilterCloseButtonMobile/FilterCloseButtonMobile";
 import { FilterApplyButtonMobile } from "./FilterApplyButtonMobile/FilterApplyButtonMobile";
 import { filtersStyles } from "./styles";
-import type { Criteria, CriteriaMapFlattened } from "types";
 
-interface FiltersProps {
-  criteriaMap: Criteria[];
-  filters: CriteriaMapFlattened;
-  selected: CriteriaMapFlattened;
-  setSelected: Function;
-  clearSelected: Function;
-  showFilters: boolean;
-  setShowFilters: Function;
-  style?: Object;
-}
+import criteriaMap from "../../../public/shared/criteriaMap";
 
-export function Filters({
-  criteriaMap,
-  filters,
-  selected,
-  setSelected,
-  clearSelected,
-  showFilters,
-  setShowFilters,
-  style = null,
-}: FiltersProps): ReactElement {
-  const [hidden, setHidden] = useState<string[]>([]);
+import { useDispatch, useSelector } from "react-redux";
+import { clearSelected, setSelected, setShowFilters } from "store/appSlice";
+
+import type { RootState } from "store/store";
+import type { CriteriaNames } from "types";
+import { usePostHog } from "posthog-js/react";
+
+export function Filters(): ReactElement {
+  const dispatch = useDispatch();
+  const posthog = usePostHog();
+
+  const filters = useSelector((state: RootState) => state.filters);
+  const selected = useSelector((state: RootState) => state.selected);
+  const showFilters = useSelector((state: RootState) => state.showFilters);
+
+  const [hidden, setHidden] = useState([]);
 
   const toggleHidden = toggleHiddenFn(hidden, setHidden);
-  const toggleFilter = toggleFilterFn(selected, setSelected);
+  const toggleFilter = (value: string, type: CriteriaNames) => {
+    dispatch(setSelected({ value, type }));
+    posthog?.capture("brands_filtered", { type, value });
+    window.scrollTo(0, 0);
+  };
 
   return (
     <>
       {showFilters && (
-        <FilterCloseButtonMobile setShowFilters={setShowFilters} />
+        <FilterCloseButtonMobile
+          setShowFilters={(show) => dispatch(setShowFilters(show))}
+        />
       )}
-      <div
-        className={`filters${showFilters ? " filters--visible" : ""}`}
-        style={style}
-      >
-        {criteriaMap.map((criteria) => (
+      <div className={`filters${showFilters ? " filters--visible" : ""}`}>
+        {criteriaMap.data.map((criteria) => (
           <React.Fragment key={criteria.title}>
             <FilterHeading
               hidden={hidden}
@@ -63,8 +61,8 @@ export function Filters({
       </div>
       {showFilters && (
         <FilterApplyButtonMobile
-          setShowFilters={setShowFilters}
-          clearSelected={clearSelected}
+          setShowFilters={(show) => dispatch(setShowFilters(show))}
+          clearSelected={() => dispatch(clearSelected())}
         />
       )}
 

@@ -77,21 +77,21 @@ interface CriteriaMap {
 }
 
 enum CriteriaNames {
-  category = "category",
-  type = "type",
-  style = "style",
-  sustainabilityType = "sustainabilityType",
-  certificates = "certificates",
-  location = "location",
+  category,
+  type,
+  style,
+  sustainabilityType,
+  certificates,
+  location,
 }
 
 type CriteriaMapFlattened = {
-  [CriteriaNames.category]: string[];
-  [CriteriaNames.type]: Field[];
-  [CriteriaNames.style]: Field[];
-  [CriteriaNames.sustainabilityType]: Field[];
-  [CriteriaNames.certificates]: Field[];
-  [CriteriaNames.location]: Location[];
+  category: string[];
+  type: Field[];
+  style: Field[];
+  sustainabilityType: Field[];
+  certificates: Field[];
+  location: Location[];
 };
 
 export type {

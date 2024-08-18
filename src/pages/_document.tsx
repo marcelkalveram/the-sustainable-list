@@ -15,7 +15,6 @@ interface MyDocumentProps extends DocumentInitialProps {
 }
 
 export default class MyDocument extends Document<MyDocumentProps> {
-  // runs once per page load
   static async getInitialProps(ctx: DocumentContext): Promise<MyDocumentProps> {
     const initialProps = await Document.getInitialProps(ctx);
     const { css, hydrationScript } = extractStyles();

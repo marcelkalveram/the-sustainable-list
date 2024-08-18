@@ -3,6 +3,8 @@ import Head from "next/head";
 import { Header } from "../Header/Header";
 import { body } from "./styles";
 import { colors } from "theme/constants";
+import { useSelector } from "react-redux";
+import { RootState } from "store/store";
 
 const DEFAULT_TITLE =
   "The Sustainable List - all the good fashion brands at a glance";
@@ -10,18 +12,16 @@ const DEFAULT_TITLE =
 interface LayoutProps {
   children: ReactNode;
   title?: string;
-  fixed?: boolean;
-  showFilters?: boolean;
 }
 
 export const Layout = ({
   children,
   title = DEFAULT_TITLE,
-  fixed = false,
-  showFilters = false,
 }: LayoutProps): ReactElement => {
-  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
-  const lockViewport: boolean = fixed || showMobileMenu;
+  const showFilters = useSelector((state: RootState) => state.showFilters);
+
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const lockViewport: boolean = showFilters || showMobileMenu;
 
   return (
     <>
