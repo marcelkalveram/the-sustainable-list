@@ -17,6 +17,7 @@ import { BackgroundImage } from "components/Content/BackgroundImage/BackgroundIm
 
 import { NextSeo } from "next-seo";
 import type { Brand } from "types";
+import posthog from "posthog-js";
 
 const Index = (): ReactElement => {
   const [state, dispatch] = useReducer(reducer, initialState);
