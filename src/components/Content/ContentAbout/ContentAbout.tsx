@@ -7,7 +7,7 @@ import { className, styles } from "./styles";
 import Image from "next/image";
 
 export const ContentAbout = (): ReactElement => (
-  <Section className={`${className} content-about`}>
+  <Section wrapperClassName={`${className} content-about`}>
     <Heading
       size={700}
       color={colors.secondary}

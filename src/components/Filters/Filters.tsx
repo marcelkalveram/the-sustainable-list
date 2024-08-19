@@ -8,22 +8,23 @@ import { filtersStyles } from "./styles";
 
 import criteriaMap from "../../../public/shared/criteriaMap";
 
-import { useDispatch, useSelector } from "react-redux";
 import { clearSelected, setSelected, setShowFilters } from "store/appSlice";
 
 import type { RootState } from "store/store";
 import type { CriteriaNames } from "types";
 import { usePostHog } from "posthog-js/react";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 
 export function Filters(): ReactElement {
-  const dispatch = useDispatch();
-  const posthog = usePostHog();
+  const dispatch = useAppDispatch();
 
-  const filters = useSelector((state: RootState) => state.filters);
-  const selected = useSelector((state: RootState) => state.selected);
-  const showFilters = useSelector((state: RootState) => state.showFilters);
+  const filters = useAppSelector((state: RootState) => state.filters);
+  const selected = useAppSelector((state: RootState) => state.selected);
+  const showFilters = useAppSelector((state: RootState) => state.showFilters);
 
   const [hidden, setHidden] = useState([]);
+
+  const posthog = usePostHog();
 
   const toggleHidden = toggleHiddenFn(hidden, setHidden);
   const toggleFilter = (value: string, type: CriteriaNames) => {
