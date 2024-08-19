@@ -1,46 +1,46 @@
-import { createDraftSafeSelector } from "@reduxjs/toolkit";
+import { createSelector } from "@reduxjs/toolkit";
 import { filterBrands } from "helpers/filter";
 import { sortByAz, sortByPrice } from "helpers/sort";
-import type { Brand, State } from "types";
+import type { Brand } from "types";
+import type { RootState } from "./store";
 
-const createTypedDraftSafeSelector = createDraftSafeSelector.withTypes<State>();
+const brandsSelectedSelector = createSelector(
+  [(state: RootState) => state.brands, (state: RootState) => state.selected],
+  (brands, selected) =>
+    brands.filter((brand: Brand) => filterBrands(brand, selected)),
+);
 
-export const brandsFilteredSelector = createTypedDraftSafeSelector(
-  (state) => ({
-    brands: state.brands,
-    selected: state.selected,
-    sortBy: state.sortBy,
-    searchFor: state.searchFor,
-  }),
-  (state) => {
-    // filter
-    let brandsFiltered: Brand[] = state.brands.filter((brand: Brand) =>
-      filterBrands(brand, state.selected),
-    ) as unknown as Brand[];
-
-    // search for filter
-    if (state.searchFor !== "") {
-      brandsFiltered = brandsFiltered.filter((brand: Brand) =>
-        brand.fields.title
-          .toLowerCase()
-          .includes(state.searchFor.toLowerCase()),
+export const brandsSelectedAndSearchedSelector = createSelector(
+  [brandsSelectedSelector, (state: RootState) => state.searchFor],
+  (brands, searchFor) => {
+    if (searchFor !== "") {
+      brands = brands.filter((brand: Brand) =>
+        brand.fields.title.toLowerCase().includes(searchFor.toLowerCase()),
       );
     }
+    return brands;
+  },
+);
 
+export const brandsSortedSelector = createSelector(
+  [
+    brandsSelectedAndSearchedSelector,
+    (state: RootState) => state.sortBy.price,
+    (state: RootState) => state.sortBy.az,
+  ],
+  (brands, price, az) => {
     // sort by price
-    if (state.sortBy.price !== null) {
-      brandsFiltered.sort((a: Brand, b: Brand) =>
-        sortByPrice(state.sortBy.price, a, b),
-      );
+    if (price !== null) {
+      brands = brands
+        .slice()
+        .sort((a: Brand, b: Brand) => sortByPrice(price, a, b));
     }
 
     // sort by az
-    if (state.sortBy.az !== null) {
-      brandsFiltered.sort((a: Brand, b: Brand) =>
-        sortByAz(state.sortBy.az, a, b),
-      );
+    if (az !== null) {
+      brands = brands.slice().sort((a: Brand, b: Brand) => sortByAz(az, a, b));
     }
 
-    return brandsFiltered;
+    return brands;
   },
 );

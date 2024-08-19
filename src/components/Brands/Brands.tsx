@@ -13,17 +13,14 @@ import { Brand } from "./Brand/Brand";
 import { colors } from "theme/constants";
 
 import type { Brand as BrandType } from "types";
-import type { RootState } from "store/store";
-import { brandsFilteredSelector } from "store/selectors";
+import { brandsSortedSelector } from "store/selectors";
 
 interface Brands {
   brands: BrandType[];
 }
 
 export const Brands = () => {
-  const brands = useSelector((state: RootState) =>
-    brandsFilteredSelector(state),
-  );
+  const brands = useSelector(brandsSortedSelector);
 
   return (
     <>

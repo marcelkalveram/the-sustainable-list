@@ -1,5 +1,4 @@
 import React, { type ReactElement } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
 import { Pane, SearchInput } from "evergreen-ui";
 import { majorScale } from "evergreen-ui/commonjs/scales";
@@ -12,22 +11,22 @@ import { styles, className } from "./styles";
 
 import { setSearchFor, setShowFilters, setSortBy } from "store/appSlice";
 import type { RootState } from "store/store";
+import { brandsSelectedAndSearchedSelector } from "store/selectors";
 import { SortBy } from "types";
+
 import { usePostHog } from "posthog-js/react";
-import { brandsFilteredSelector } from "store/selectors";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 
 export const Sort = (): ReactElement => {
   const posthog = usePostHog();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const totalCount = useSelector((state: RootState) => state.brands.length);
+  const totalCount = useAppSelector((state: RootState) => state.brands.length);
 
-  const brandsFiltered = useSelector((state: RootState) =>
-    brandsFilteredSelector(state),
-  );
+  const brandsFiltered = useAppSelector(brandsSelectedAndSearchedSelector);
 
-  const searchFor = useSelector((state: RootState) => state.searchFor);
-  const sortBy = useSelector((state: RootState) => state.sortBy);
+  const searchFor = useAppSelector((state: RootState) => state.searchFor);
+  const sortBy = useAppSelector((state: RootState) => state.sortBy);
 
   const dispatchSortBy = (sortBy: SortBy) => {
     posthog?.capture("brands_sorted", sortBy);
