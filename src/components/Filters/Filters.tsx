@@ -1,5 +1,4 @@
 import React, { type ReactElement, useState } from "react";
-import { toggleHiddenFn } from "../../helpers/toggle";
 import { FilterHeading } from "./FilterHeading/FilterHeading";
 import { FilterCheckboxes } from "./FilterCheckboxes/FilterCheckboxes";
 import { FilterCloseButtonMobile } from "./FilterCloseButtonMobile/FilterCloseButtonMobile";
@@ -14,6 +13,17 @@ import type { RootState } from "store/store";
 import type { CriteriaNames } from "types";
 import { usePostHog } from "posthog-js/react";
 import { useAppDispatch, useAppSelector } from "store/hooks";
+
+export const toggleHiddenFn =
+  (hidden: string[], setHidden: Function) => (toggledItem: string) => {
+    let newHidden = hidden;
+    if (!newHidden.includes(toggledItem)) {
+      newHidden.push(toggledItem);
+    } else {
+      newHidden = newHidden.filter((item) => toggledItem !== item);
+    }
+    setHidden([...newHidden]);
+  };
 
 export function Filters(): ReactElement {
   const dispatch = useAppDispatch();
