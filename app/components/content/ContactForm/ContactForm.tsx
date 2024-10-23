@@ -4,7 +4,6 @@ import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { useFormState } from "react-dom";
 
-
 import { submitForm } from "actions/submitForm";
 import { Input } from "components/content/Input/Input";
 import { SubmitButton } from "components/content/SubmitButton/SubmitButton";
@@ -20,8 +19,6 @@ export const ContactForm = () => {
   };
 
   const [state, formAction] = useFormState(submitForm, initialState);
-
-  console.log(state);
 
   return state.success ? (
     <p className={styles.successMsg}>

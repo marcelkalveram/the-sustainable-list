@@ -4,11 +4,9 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 import React, { Suspense, useState } from "react";
 
 import { MobileMenuButton } from "components/MobileMenuButton/MobileMenuButton";
-import { BrandFilters } from "types";
 
 import criteriaMap from "/public/shared/criteriaMap";
 import data from "/public/data/index.json";
-
 
 import { FiltersButtonsMobile } from "./FiltersButtonsMobile/FiltersButtonsMobile";
 import { FiltersCheckboxes } from "./FiltersCheckboxes/FiltersCheckboxes";
@@ -31,7 +29,7 @@ export const Filters = ({ showFilters, setShowFilters }: Props) => {
     document.body.classList.toggle("lock-viewport");
   };
 
-  const filters = data.filters as BrandFilters;
+  const filters = data.filters;
 
   return (
     <>
@@ -56,9 +54,10 @@ export const Filters = ({ showFilters, setShowFilters }: Props) => {
 
             {hidden.includes(criteria.name) ? null : (
               <Suspense fallback={<div>Loading...</div>}>
+                {/* @ts-expect-error: needs to be typed properly */}
                 <FiltersCheckboxes
                   name={criteria.name}
-                  filters={filters[criteria.name]}
+                  filters={filters[criteria.name] || []}
                 />
               </Suspense>
             )}

@@ -10,8 +10,6 @@ type Props = {
 export const SubmitButton = ({ children = "" }: Props) => {
   const { pending } = useFormStatus();
 
-  console.log("pending", pending);
-
   return (
     <button
       type="submit"

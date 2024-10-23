@@ -9,7 +9,6 @@ import { createFilterQueryParams } from "./helpers/createFilterQueryParams";
 import { mapCountriesToCheckbox } from "./helpers/mapCountriesToCheckbox";
 import { mapFiltersToCheckbox } from "./helpers/mapFiltersToCheckbox";
 
-
 type CategoryProps = {
   name: CriteriaNames.category;
   filters: string[];
