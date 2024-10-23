@@ -1,0 +1,18 @@
+@value textXs from '/app/theme/fonts.css';
+@value major1x from '/app/theme/spacing.css';
+
+.container {
+  /* position: absolute; */
+  /* right: 6px; */
+  /* top: 14px; */
+  /* z-index: 1; */
+  color: grey;
+  font-size: textXs;
+  margin: 0;
+}
+
+.certificate {
+  /* display: inline-flex; */
+  margin-right: major1x;
+  text-decoration: none;
+}

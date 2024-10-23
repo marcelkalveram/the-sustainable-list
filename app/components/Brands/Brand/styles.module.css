@@ -1,0 +1,19 @@
+@value sm from '/app/theme/breakpoints.css';
+@value major1x from '/app/theme/spacing.css';
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  position: relative;
+}
+
+.brandContent {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

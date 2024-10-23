@@ -1,0 +1,45 @@
+@value primary from "/app/theme/colors.css";
+@value md from "/app/theme/breakpoints.css";
+@value minor3x, major3x from "/app/theme/spacing.css";
+@value textSm, text2Xl, fontMedium, fontSemibold from "/app/theme/fonts.css";
+
+.headerMenuItem {
+  width: 100%;
+  text-align: center;
+  margin: minor3x 0;
+  margin-top: 0;
+  padding-top: minor3x;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(87.5%, 43.9%, 29.4%, 0.2);
+}
+
+.headerMenuItem:last-child {
+  border-bottom: 0;
+}
+
+.headerMenuItemLink {
+  font-size: text2Xl;
+  font-weight: fontMedium;
+  color: primary;
+  text-decoration: none;
+}
+
+.headerMenuItemLinkSelected {
+  opacity: 0.75;
+}
+
+@media md {
+  .headerMenuItem {
+    white-space: nowrap;
+    margin: 0;
+    margin-left: major3x;
+    padding: 0;
+    border: 0;
+    text-align: left;
+  }
+
+  .headerMenuItemLink {
+    font-size: textSm;
+    font-weight: fontSemibold;
+  }
+}

@@ -1,0 +1,47 @@
+@value major1x, minor1x from '/app/theme/spacing.css';
+@value textXs from '/app/theme/fonts.css';
+
+.brandDetailsStyles {
+  margin-top: major1x;
+}
+
+.brandDetailsStylesBadge {
+  display: inline-block;
+  font-size: textXs;
+  font-weight: fontBold;
+  margin: 0;
+  margin-right: minor1x;
+  padding: 2px 4px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.casual {
+  background-color: #fffad2;
+  color: #e2ad38;
+}
+.sporty {
+  background-color: #fee3c9;
+  color: #e58b6d;
+}
+.swim {
+  background-color: #e7f9ff;
+  color: #788e90;
+}
+.lingerie {
+  background-color: #fff6f6;
+  color: #e4a3a1;
+}
+.wedding {
+  background-color: #faf5ff;
+  color: #af95c8;
+}
+.elegant {
+  background-color: #f3f3f3;
+  color: #8f8f8f;
+}
+.business {
+  background-color: #d4e1e6;
+  color: #edf0f2;
+}

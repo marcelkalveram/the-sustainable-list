@@ -1,0 +1,58 @@
+@value major4x, major3x, major2x from '/app/theme/spacing.css';
+@value sm, md, lg, xl, xxl from '/app/theme/breakpoints.css';
+
+.brandsEmpty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 160px);
+  padding: major3x;
+  text-align: center;
+}
+
+.brands {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0 major2x 0;
+  gap: major3x major2x;
+}
+
+@media only screen and (min-width: 600px) {
+  .brands {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media md {
+  .brands {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media lg {
+  .brands {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media xl {
+  .brands {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 1680 */
+@media xxl {
+  .brands {
+    grid-template-columns: repeat(4, 1fr);
+    gap: major4x;
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  .brands {
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+  }
+}

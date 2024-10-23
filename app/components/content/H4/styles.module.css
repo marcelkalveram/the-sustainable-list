@@ -1,0 +1,11 @@
+@value textSm, fontBold from '/app/theme/fonts.css';
+@value secondary from '/app/theme/colors.css';
+@value major2x from '/app/theme/spacing.css';
+
+.text {
+  font-size: textSm;
+  font-weight: fontBold;
+  color: secondary;
+  padding: 0;
+  margin: major1x 0 0;
+}

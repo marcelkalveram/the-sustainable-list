@@ -1,0 +1,18 @@
+@value secondary from '/app/theme/colors.css';
+@value textSm, lineHeightMd, fontSemibold from '/app/theme/fonts.css';
+@value minor1x from '/app/theme/spacing.css';
+
+.filtersCheckbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: minor1x;
+  cursor: pointer;
+}
+
+.filtersCheckboxLabel {
+  margin-left: minor1x;
+  font-size: textSm;
+  font-weight: fontSemibold;
+  line-height: lineHeightMd;
+  color: secondary;
+}

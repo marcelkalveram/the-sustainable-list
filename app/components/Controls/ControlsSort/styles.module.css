@@ -1,0 +1,13 @@
+@value lg from '/app/theme/breakpoints.css';
+
+.controlsSort {
+  display: flex;
+  flex: 1;
+}
+
+@media lg {
+  .controlsSort {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+}

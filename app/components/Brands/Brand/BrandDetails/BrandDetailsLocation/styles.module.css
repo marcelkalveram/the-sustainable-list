@@ -1,0 +1,9 @@
+@value major1x, minor2x from '/app/theme/spacing.css';
+@value secondary from '/app/theme/colors.css';
+@value textBase from '/app/theme/fonts.css';
+
+.brandDetailsLocation {
+  font-size: textBase;
+  padding-left: major1x;
+  color: secondary;
+}

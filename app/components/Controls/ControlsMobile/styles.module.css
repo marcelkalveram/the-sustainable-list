@@ -1,0 +1,45 @@
+@value secondary, grey from '/app/theme/colors.css';
+@value fontBold from '/app/theme/fonts.css';
+@value major1x from '/app/theme/spacing.css';
+@value md from '/app/theme/breakpoints.css';
+
+@value buttonHeight: 32px;
+
+.controlsMobile {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.controlsButtonMobileButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: secondary;
+  height: buttonHeight;
+  border: 0;
+  background: white;
+  margin-left: major1x;
+  cursor: pointer;
+}
+
+.controlsButtonMobileButton:hover {
+  background-color: grey;
+}
+
+.controlsMobileButtonIcon {
+  color: secondary;
+  margin-left: major1x;
+}
+
+.controlsMobileButtonLabel {
+  color: secondary;
+  margin-left: major1x;
+  margin-right: major1x;
+  font-weight: fontBold;
+}
+
+@media md {
+  .controlsMobile {
+    display: none;
+  }
+}

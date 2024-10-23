@@ -1,0 +1,15 @@
+@value secondary, grey from "/app/theme/colors.css";
+@value textXl, lineHeightSm, fontBold from "/app/theme/fonts.css";
+@value major3x, major4x from "/app/theme/spacing.css";
+
+.text {
+  font-size: textXl;
+  line-height: lineHeightSm;
+  font-weight: fontBold;
+  letter-spacing: -0.07px;
+  color: secondary;
+  margin-bottom: major3x;
+  margin-top: 0;
+  padding-bottom: major3x;
+  border-bottom: 1px solid grey;
+}

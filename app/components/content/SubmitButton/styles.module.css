@@ -1,0 +1,16 @@
+@value secondary from '/app/theme/colors.css';
+@value major2x, minor3x, minor4x from '/app/theme/spacing.css';
+
+.button {
+  margin-top: major2x;
+  background-color: secondary;
+  color: white;
+  border: none;
+  padding: minor3x minor4x;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buttonDisabled {
+  opacity: 0.5;
+}

@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  padding: 56px;
+  padding-top: 48px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 1140px) {
+  .container {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .container {
+    padding: 36px;
+  }
+}

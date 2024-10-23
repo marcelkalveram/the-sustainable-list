@@ -1,0 +1,39 @@
+@value major1x, major2x, major4x, minor1x from '/app/theme/spacing.css';
+@value grey from '/app/theme/colors.css';
+@value textSm from '/app/theme/fonts.css';
+@value md from '/app/theme/breakpoints.css';
+
+@value searchHeight: 32px;
+
+.controlsSearch {
+  justify-self: flex-end;
+}
+
+.controlsSearchContainer {
+  position: relative;
+}
+
+.controlsSearchIcon {
+  position: absolute;
+  left: major2x;
+  top: 7px;
+}
+
+.controlsSearchInput {
+  display: inline;
+  height: searchHeight;
+  width: 160px;
+  margin-left: major1x;
+  padding: major1x;
+  padding-left: major4x;
+  border: 0;
+  border-radius: minor1x;
+  background: grey;
+  font-size: textSm;
+}
+
+@media md {
+  .controlsSearchInput {
+    width: 260px;
+  }
+}

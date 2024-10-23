@@ -1,0 +1,22 @@
+@value grey from '/app/theme/colors.css';
+@value textSm from '/app/theme/fonts.css';
+@value major3x, minor3x, minor2x from '/app/theme/spacing.css';
+
+.footerLink {
+  font-size: textSm;
+  color: grey;
+  margin: minor2x major3x minor2x 0;
+}
+
+.footerLink:last-child {
+  margin-right: 0;
+}
+
+.footerLinkA {
+  color: grey;
+  text-decoration: none;
+}
+
+.footerLinkSelected {
+  opacity: 0.5;
+}

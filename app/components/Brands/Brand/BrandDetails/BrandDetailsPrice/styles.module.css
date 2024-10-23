@@ -1,0 +1,9 @@
+@value secondary, greyedOut from '/app/theme/colors.css';
+
+.brandDetailsPrice {
+  color: greyedOut;
+}
+
+.brandDetailsPriceActive {
+  color: secondary;
+}

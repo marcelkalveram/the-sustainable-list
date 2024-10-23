@@ -1,0 +1,14 @@
+@value major2x, major3x from '/app/theme/spacing.css';
+@value textSm, lineHeightSm from '/app/theme/fonts.css';
+
+.paragraph {
+  font-size: textSm;
+  letter-spacing: -0.05px;
+  line-height: lineHeightSm;
+  padding: 0;
+  margin: major2x 0 0;
+}
+
+.paragraphBottomGap {
+  margin-bottom: major3x;
+}

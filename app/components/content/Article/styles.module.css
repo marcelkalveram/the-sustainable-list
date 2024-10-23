@@ -1,0 +1,5 @@
+@value major3x from '/app/theme/spacing.css';
+
+.article {
+  margin-bottom: major3x;
+}

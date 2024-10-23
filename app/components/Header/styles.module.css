@@ -1,0 +1,14 @@
+@value colors: "/app/theme/colors.css";
+@value spacing: "/app/theme/spacing.css";
+@value primary, primarySoft from colors;
+@value major1x, major2x from spacing;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid primary;
+  background-color: primarySoft;
+  padding: major1x major2x;
+  position: relative;
+}

@@ -1,0 +1,33 @@
+@value major3x, major1x from '/app/theme/spacing.css';
+@value greyedOut from '/app/theme/colors.css';
+@value md from '/app/theme/breakpoints.css';
+
+@value logoSize: 76px;
+@value offset: calc(logoSize / -2);
+
+.brandLogo {
+  position: absolute;
+  right: 0;
+  top: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: logoSize;
+  width: logoSize;
+  height: logoSize;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: major3x;
+  margin-right: major3x;
+  padding: major1x;
+  background: white;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: greyedOut;
+}
+
+@media md {
+  .brandLogo {
+    top: offset;
+  }
+}

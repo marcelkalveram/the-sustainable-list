@@ -1,0 +1,15 @@
+@value breakpoints: "/app/theme/breakpoints.css";
+@value md from breakpoints;
+
+.main {
+  margin-left: 0;
+  min-height: auto;
+  height: auto;
+}
+
+@media md {
+  .main {
+    margin-left: 200px;
+    min-height: 2900px;
+  }
+}

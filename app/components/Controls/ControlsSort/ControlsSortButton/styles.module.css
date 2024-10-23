@@ -1,0 +1,26 @@
+@value grey from '/app/theme/colors.css';
+
+@value fontBold, textXs from '/app/theme/fonts.css';
+@value major1x,minor1x from '/app/theme/spacing.css';
+@value secondary from '/app/theme/colors.css';
+
+@value buttonWidth: 40px;
+
+.controlsSortButton {
+  font-size: textXs;
+  font-weight: fontBold;
+  color: secondary;
+  margin-right: major1x;
+  width: buttonWidth;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: major1x;
+  border-radius: minor1x;
+}
+
+.controlsSortButton:hover {
+  background: grey;
+  color: secondary;
+  opacity: 0.75;
+}

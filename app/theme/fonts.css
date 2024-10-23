@@ -1,0 +1,13 @@
+@value textXs: 0.75em;
+@value textSm: 0.875em;
+@value textBase: 1em;
+@value textLg: 1.125em;
+@value textXl: 1.25em;
+@value text2Xl: 1.5em;
+
+@value lineHeightSm: 1.75;
+@value lineHeightMd: 2;
+
+@value fontSemibold: 400;
+@value fontMedium: 500;
+@value fontBold: 600;

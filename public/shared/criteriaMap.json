@@ -2,29 +2,24 @@
   "data": [
     {
       "name": "category",
-      "title": "Category",
-      "contentfulField": "category"
+      "title": "Category"
     },
     {
       "name": "type",
-      "title": "Clothing type",
-      "contentfulField": "clothingTypes"
+      "title": "Clothing type"
     },
     {
       "name": "style",
-      "title": "Clothing style",
-      "contentfulField": "clothingStyles"
+      "title": "Clothing style"
     },
     {
       "name": "sustainabilityType",
-      "title": "Characteristics",
-      "contentfulField": "sustainabilityType"
+      "title": "Characteristics"
     },
     {
       "name": "certificates",
-      "title": "Certificates",
-      "contentfulField": "certificates"
+      "title": "Certificates"
     },
-    { "name": "location", "title": "Location", "contentfulField": "location" }
+    { "name": "location", "title": "Location" }
   ]
 }

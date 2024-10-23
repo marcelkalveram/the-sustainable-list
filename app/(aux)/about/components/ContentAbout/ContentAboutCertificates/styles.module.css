@@ -1,0 +1,66 @@
+@value sm, md, lg, xl, xxl from '/app/theme/breakpoints.css';
+@value major2x, minor3x from '/app/theme/spacing.css';
+
+@value imageSmall: 45px;
+@value imageMedium: 52px;
+
+.certificatesGrid {
+  max-width: 500px;
+  justify-content: center;
+}
+.certificatesGridImage {
+  width: imageSmall;
+  height: imageSmall;
+  margin-right: minor3x;
+  margin-bottom: minor3x;
+}
+
+@media sm {
+  .certificatesGridImage {
+    margin-right: major2x;
+    margin-bottom: major2x;
+  }
+}
+
+@media md {
+  .certificatesGrid {
+    max-width: 100%;
+  }
+  .certificatesGridImage {
+    width: imageMedium;
+    height: imageMedium;
+  }
+}
+
+@media lg {
+  .certificatesGridImage {
+    width: imageSmall;
+    height: imageSmall;
+  }
+}
+
+@media xl {
+  .certificatesGrid {
+    max-width: 520px;
+  }
+
+  .certificatesGridImage {
+    margin-right: minor3x;
+    margin-bottom: minor3x;
+  }
+}
+
+@media xxl {
+  .certificatesGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+  }
+
+  .certificatesGridImage {
+    display: inline-block;
+    margin-bottom: major2x;
+    margin-right: major2x;
+  }
+}

@@ -1,0 +1,29 @@
+@value textXl from '/app/theme/fonts.css';
+@value major2x, major1x from '/app/theme/spacing.css';
+@value secondary from '/app/theme/colors.css';
+
+.container {
+  width: 100%;
+  height: calc(100vh - 134px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  color: secondary;
+  fill: secondary;
+}
+
+.heading {
+  font-size: textXl;
+  margin: major2x 0 0;
+  color: secondary;
+}
+
+.text {
+  margin: major1x;
+}

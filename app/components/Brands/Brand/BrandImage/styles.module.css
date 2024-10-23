@@ -1,0 +1,27 @@
+@value minor3x from '/app/theme/spacing.css';
+@value imageHeight: 200px;
+
+.brandImage {
+  width: 100%;
+  height: imageHeight;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  border-radius: minor3x;
+}
+
+.brandImageLink {
+  position: absolute;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+}
+
+.brandImageImg {
+  max-width: 100%;
+  /* width: auto; */
+  height: auto;
+}

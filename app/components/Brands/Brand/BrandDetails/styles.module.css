@@ -1,0 +1,51 @@
+@value major1x from '/app/theme/spacing.css';
+@value secondary from '/app/theme/colors.css';
+@value textBase, textXs, fontBold from '/app/theme/fonts.css';
+
+.brandDetails {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-top: 8;
+  width: 100%;
+}
+
+.brandDetailsMeta {
+  display: flex;
+  flex-direction: row;
+}
+
+.brandDetailsLink {
+  text-decoration: none;
+}
+
+.brandDetailsTitle {
+  font-size: textBase;
+  font-weight: fontBold;
+  color: secondary;
+  margin: 0;
+  padding-top: major1x;
+}
+
+.brandDetailsMetaStyles {
+  max-width: 75%;
+  max-height: 19px;
+  margin-top: minor3x;
+  overflow: hidden;
+}
+
+.brandDetailsPriceLocation {
+  margin-left: major1x;
+  white-space: nowrap;
+  font-size: textXs;
+  color: secondary;
+}
+
+.brandDetailPriceLocationMiddot {
+  margin-left: major1x;
+}
+
+/* @media only screen and (max-width: 480px) {
+    .brand-details :global(.brand-details__meta__styles .badge span) {
+      font-size: 10px;
+    } */

@@ -1,0 +1,19 @@
+@value major1x, minor1x from '/app/theme/spacing.css';
+@value textSm, fontBold from '/app/theme/fonts.css';
+@value secondary from '/app/theme/colors.css';
+
+.filtersHeading {
+  font-size: textSm;
+  font-weight: fontBold;
+  cursor: pointer;
+  color: secondary;
+}
+
+.filtersHeadingHidden {
+  padding-bottom: major1x;
+}
+
+.filtersHeadingIcon {
+  position: relative;
+  top: minor1x;
+}

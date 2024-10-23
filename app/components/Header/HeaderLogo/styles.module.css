@@ -1,0 +1,40 @@
+@value primary from "/app/theme/colors.css";
+@value textXs, fontMedium from "/app/theme/fonts.css";
+@value minor2x, major1x from "/app/theme/spacing.css";
+@value md, lg from "/app/theme/breakpoints.css";
+
+.headerLogo {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: major1x;
+}
+
+.headerLogoSubtitle {
+  display: block;
+  margin-left: 37px;
+  margin-top: 3px;
+  font-size: textXs;
+  color: primary;
+  font-weight: fontMedium;
+}
+
+@media md {
+  .headerLogo {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .headerLogoSubtitle {
+    display: none;
+  }
+}
+
+@media lg {
+  .headerLogoSubtitle {
+    margin-bottom: 3px;
+    margin-left: minor2x;
+    display: block;
+  }
+}

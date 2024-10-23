@@ -1,0 +1,45 @@
+@value primarySoft from "/app/theme/colors.css";
+@value minor3x from "/app/theme/spacing.css";
+@value md from "/app/theme/breakpoints.css";
+
+.headerMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: primarySoft;
+  z-index: 2;
+}
+
+.headerMenuIsVisible {
+  display: block;
+}
+
+.headerMenuList {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+@media md {
+  .headerMenu {
+    display: block;
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+  }
+
+  .headerMenuList {
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    margin-right: minor3x;
+  }
+}

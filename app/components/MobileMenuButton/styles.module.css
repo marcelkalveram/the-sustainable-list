@@ -1,0 +1,39 @@
+@value primary from "/app/theme/colors.css";
+@value major1x, major2x from "/app/theme/spacing.css";
+@value md from "/app/theme/breakpoints.css";
+
+.mobileMenuButton {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: major1x;
+  padding-top: major2x;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.mobileMenuButtonElevated {
+  z-index: 4;
+}
+
+.mobileMenuButtonBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  background-color: transparent;
+  color: primary;
+  padding-left: major2x;
+  padding-right: major2x;
+  cursor: pointer;
+}
+
+@media md {
+  .mobileMenuButton {
+    display: none;
+  }
+}

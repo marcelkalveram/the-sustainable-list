@@ -1,0 +1,20 @@
+@value textXs from '/app/theme/fonts.css';
+@value major1x, minor1x from '/app/theme/spacing.css';
+@value secondary from '/app/theme/colors.css';
+@value lg from '/app/theme/breakpoints.css';
+
+.controlsBrandsCount {
+  display: none;
+}
+
+@media lg {
+  .controlsBrandsCount {
+    display: block;
+    font-size: textXs;
+    padding-top: major1x;
+    padding-bottom: major1x;
+    margin: 0;
+    margin-right: major1x;
+    color: secondary;
+  }
+}

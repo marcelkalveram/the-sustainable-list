@@ -1,0 +1,15 @@
+.section {
+  width: 50%;
+}
+
+.sectionPadding {
+  padding-right: 10%;
+}
+
+@media only screen and (max-width: 1140px) {
+  .section {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 56px;
+  }
+}

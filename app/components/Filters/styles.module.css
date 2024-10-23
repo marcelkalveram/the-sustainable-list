@@ -1,0 +1,42 @@
+@value md from '/app/theme/breakpoints.css';
+@value minor1x, major2x from '/app/theme/spacing.css';
+
+@value filtersWidthDesktop: 200px;
+@value filterButtonsHeightMobile: 66px;
+
+.filters {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  float: none;
+  display: none;
+  position: fixed;
+  background: white;
+  width: 100%;
+  height: calc(100% - filterButtonsHeightMobile);
+  margin-top: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: major2x;
+  padding-top: 0;
+  z-index: 3;
+}
+
+.filtersVisibleMobile {
+  display: block;
+}
+
+@media md {
+  .filters {
+    float: left;
+    overflow-y: auto;
+    display: block;
+    position: static;
+    width: filtersWidthDesktop;
+    text-align: left;
+    margin-top: minor1x;
+  }
+}

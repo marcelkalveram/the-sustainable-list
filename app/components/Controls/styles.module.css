@@ -1,0 +1,26 @@
+@value major2x, major1x from '/app/theme/spacing.css';
+@value white from '/app/theme/colors.css';
+@value md, lg from '/app/theme/breakpoints.css';
+
+.controls {
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: major2x;
+  margin-right: major2x;
+  padding: major1x;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media md {
+  .controls {
+    margin-left: major2x;
+    padding-top: major2x;
+    padding-bottom: major2x;
+  }
+}

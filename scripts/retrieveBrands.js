@@ -7,9 +7,9 @@ const stripMetaDataFromBrand = (brand, criteriaMap) => ({
     ...brand.fields,
 
     // fields based on criteria map
-    ...criteriaMap.data.reduce((acc, { contentfulField }) => {
-      if (brand.fields[contentfulField]) {
-        acc[contentfulField] = stripMetaData(brand.fields[contentfulField]);
+    ...criteriaMap.data.reduce((acc, { name }) => {
+      if (brand.fields[name]) {
+        acc[name] = stripMetaData(brand.fields[name]);
       }
       return acc;
     }, {}),

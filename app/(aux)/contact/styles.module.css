@@ -1,0 +1,16 @@
+@value major1x from '/app/theme/spacing.css';
+@value fontBold from '/app/theme/fonts.css';
+@value secondary from '/app/theme/colors.css';
+
+.successMsg {
+  display: flex;
+  align-items: center;
+  font-weight: fontBold;
+  color: secondary;
+}
+
+.successMsgIcon {
+  width: 32px;
+  height: 32px;
+  margin-right: major1x;
+}

@@ -1,0 +1,40 @@
+@value grey, error, errorBg from '/app/theme/colors.css';
+@value textBase, textSm, fontBold from '/app/theme/fonts.css';
+@value major2x, minor4x, minor3x, minor2x, minor1x from '/app/theme/spacing.css';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: major2x;
+}
+
+.label {
+  display: block;
+  font-size: textBase;
+  font-weight: fontBold;
+}
+
+.input {
+  display: block;
+  margin-top: minor2x;
+  padding: minor3x;
+  border: 1px solid grey;
+  border-radius: minor3x;
+}
+
+.errorMsg {
+  background-color: errorBg;
+  color: error;
+  padding: minor3x minor4x;
+  border-radius: minor3x;
+  font-size: textSm;
+  margin-top: minor2x;
+  display: flex;
+  align-items: center;
+}
+
+.errorMsgIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: minor1x;
+}

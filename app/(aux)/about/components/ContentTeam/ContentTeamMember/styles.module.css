@@ -1,0 +1,35 @@
+@value major4x, major3x, minor1x from '/app/theme/spacing.css';
+@value textBase from '/app/theme/fonts.css';
+@value secondary from '/app/theme/colors.css';
+@value imageSize: 128px;
+
+.teamMember {
+  display: flex;
+  margin-bottom: major4x;
+}
+
+.teamMemberImage {
+  max-height: imageSize;
+  min-width: imageSize;
+  border-radius: 50%;
+  margin-right: major3x;
+}
+
+.teamMemberDetails {
+  display: flex;
+  flex-direction: column;
+  /* margin-top: major3x; */
+}
+
+.teamMemberDetailsHeading {
+  font-size: textBase;
+  color: secondary;
+  padding-bottom: minor1x;
+  margin: 0;
+}
+
+.teamMemberDetailsRole {
+  color: secondary;
+  padding-left: minor1x;
+  opacity: 0.5;
+}

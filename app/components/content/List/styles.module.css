@@ -1,0 +1,14 @@
+@value textSm, lineHeightSm from '/app/theme/fonts.css';
+@value major3x, major2x, major1x from '/app/theme/spacing.css';
+
+.list {
+  list-style: disc;
+  padding: 0;
+  margin: major2x major3x;
+}
+
+.listItem {
+  font-size: textSm;
+  margin: 0 0 major1x;
+  line-height: lineHeightSm;
+}
