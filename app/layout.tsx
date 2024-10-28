@@ -39,7 +39,9 @@ export default function RootLayout({ children }: Props) {
         <Header />
         {children}
         <Footer />
-        <Script src="https://www.google.com/recaptcha/api.js?render=6LcnTW4qAAAAAAWvWlUUbm2s3-y464OV_JXPncq2" />
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+        />
       </body>
     </html>
   );

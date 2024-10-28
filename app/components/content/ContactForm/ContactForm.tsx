@@ -1,9 +1,12 @@
 "use client";
 
-// Declare grecaptcha as a global variable
-declare const grecaptcha: {
-  execute: (siteKey?: string) => Promise<string>;
-};
+declare global {
+  interface Window {
+    grecaptcha: {
+      execute: (siteKey?: string) => Promise<string>;
+    };
+  }
+}
 
 import { ExclamationCircleIcon } from "@heroicons/react/16/solid";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
@@ -32,7 +35,7 @@ async function addRecaptcha(
   prevState: ContactFormStateProps,
   formData: FormData,
 ) {
-  const token = await grecaptcha.execute(
+  const token = await window.grecaptcha?.execute(
     process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
   );
 
