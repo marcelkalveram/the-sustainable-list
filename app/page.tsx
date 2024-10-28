@@ -10,7 +10,6 @@ export default function Index() {
   const [showFilters, setShowFilters] = useState<boolean>(false);
 
   return (
-    // <PostHogProvider client={posthog}>
     <>
       <Filters showFilters={showFilters} setShowFilters={setShowFilters} />
       <Main>
@@ -22,6 +21,5 @@ export default function Index() {
         </Suspense>
       </Main>
     </>
-    // </PostHogProvider>
   );
 }
