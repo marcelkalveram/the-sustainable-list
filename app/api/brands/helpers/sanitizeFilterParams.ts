@@ -1,4 +1,4 @@
-import { CriteriaNames } from "types";
+import { CriteriaNames } from "constants/enums";
 
 import criteriaMap from "/public/shared/criteriaMap";
 

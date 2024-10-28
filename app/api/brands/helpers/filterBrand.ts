@@ -1,4 +1,5 @@
-import { Brand, CriteriaNames } from "types";
+import { Brand } from "types";
+import { CriteriaNames } from "constants/enums";
 
 import criteriaMap from "/public/shared/criteriaMap";
 

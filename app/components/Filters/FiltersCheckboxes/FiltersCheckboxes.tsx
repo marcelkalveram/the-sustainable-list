@@ -2,7 +2,8 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-import { CriteriaNames, Field, Location } from "types";
+import { CriteriaNames } from "constants/enums";
+import { Field, Location } from "types";
 
 import { FiltersCheckbox } from "./FiltersCheckbox/FiltersCheckbox";
 import { createFilterQueryParams } from "./helpers/createFilterQueryParams";

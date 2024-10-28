@@ -1,4 +1,4 @@
-import { DirectionValues, SortValues } from "types";
+import { DirectionValues, SortValues } from "constants/enums";
 
 import { ControlsSortButton } from "./ControlsSortButton/ControlsSortButton";
 import styles from "./styles.module.css";
