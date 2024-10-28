@@ -36,11 +36,9 @@ async function addRecaptcha(
   prevState: ContactFormStateProps,
   formData: FormData,
 ) {
-  await window.grecaptcha?.ready();
   const token = await window.grecaptcha?.execute(
     process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
   );
-
   formData.set("captcha", token);
   return submitForm(prevState, formData);
 }
