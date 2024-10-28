@@ -1,6 +1,7 @@
 import "./global.css";
 
 import { Metadata } from "next";
+import Script from "next/script";
 import React from "react";
 
 import { Footer } from "./components/Footer/Footer";
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: Props) {
         <Header />
         {children}
         <Footer />
+        <Script src="https://www.google.com/recaptcha/api.js?render=6LcnTW4qAAAAAAWvWlUUbm2s3-y464OV_JXPncq2" />
       </body>
     </html>
   );

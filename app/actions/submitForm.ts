@@ -3,6 +3,7 @@
 import { z } from "zod";
 
 import { sendMail } from "./sendGrid";
+import { validateCaptcha } from "./validateCaptcha";
 
 const schema = z.object({
   email: z.string().email({
@@ -26,6 +27,17 @@ export async function submitForm(_: unknown, formData: FormData) {
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
+    };
+  }
+
+  const valid = await validateCaptcha(
+    (formData.get("captcha") as string) ?? "",
+  );
+
+  if (!valid) {
+    return {
+      success: false,
+      error: "Captcha validation failed",
     };
   }
 

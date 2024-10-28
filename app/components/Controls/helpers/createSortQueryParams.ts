@@ -1,4 +1,4 @@
-import { DirectionValues, SortType, type SortValues } from "types";
+import { DirectionValues, SortType, SortValues } from "constants/enums";
 
 import type { ReadonlyURLSearchParams } from "next/navigation";
 

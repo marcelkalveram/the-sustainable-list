@@ -3,7 +3,7 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 
-import { DirectionValues, SortType, SortValues } from "types";
+import { DirectionValues, SortType, SortValues } from "constants/enums";
 
 import { ControlsBrandsCount } from "./ControlsBrandsCount/ControlsBrandsCount";
 import { ControlsMobile } from "./ControlsMobile/ControlsMobile";

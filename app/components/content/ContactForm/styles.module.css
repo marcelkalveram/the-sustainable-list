@@ -1,0 +1,37 @@
+@value error, errorBg, secondary from '/app/theme/colors.css';
+@value textSm from '/app/theme/fonts.css';
+@value minor4x, minor3x, minor2x, minor1x from '/app/theme/spacing.css';
+
+.successMsg {
+  color: secondary;
+  padding: minor3x minor4x;
+  border: 1px solid secondary;
+  border-radius: minor3x;
+  font-size: textSm;
+  margin-top: minor2x;
+  display: flex;
+  align-items: center;
+}
+
+.successMsgIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: minor1x;
+}
+
+.errorMsg {
+  background-color: errorBg;
+  color: error;
+  padding: minor3x minor4x;
+  border-radius: minor3x;
+  font-size: textSm;
+  margin-top: minor2x;
+  display: flex;
+  align-items: center;
+}
+
+.errorMsgIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: minor1x;
+}

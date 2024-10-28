@@ -1,4 +1,5 @@
-import { Brand, DirectionValues, SortType, SortValues } from "types";
+import { DirectionValues, SortType, SortValues } from "constants/enums";
+import { Brand } from "types";
 
 const sortByPrice =
   (direction: DirectionValues) =>

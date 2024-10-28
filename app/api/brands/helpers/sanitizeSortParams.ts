@@ -1,4 +1,4 @@
-import { SortType } from "types";
+import { SortType } from "constants/enums";
 
 export const sanitizeSortParams = (searchParams: URLSearchParams) => {
   const sortParamsSanitized = new URLSearchParams();

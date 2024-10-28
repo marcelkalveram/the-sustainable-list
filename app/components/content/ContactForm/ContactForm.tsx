@@ -1,5 +1,11 @@
 "use client";
 
+// Declare grecaptcha as a global variable
+declare const grecaptcha: {
+  execute: (siteKey?: string) => Promise<string>;
+};
+
+import { ExclamationCircleIcon } from "@heroicons/react/16/solid";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { useFormState } from "react-dom";
@@ -7,18 +13,35 @@ import { useFormState } from "react-dom";
 import { submitForm } from "actions/submitForm";
 import { Input } from "components/content/Input/Input";
 import { SubmitButton } from "components/content/SubmitButton/SubmitButton";
+import { ContactFormStateProps } from "types";
 
 import styles from "./styles.module.css";
 
-export const ContactForm = () => {
-  const initialState = {
-    email: "",
-    name: "",
-    message: "",
-    errors: { name: [], email: [], message: [] },
-  };
+const initialState = {
+  email: "",
+  name: "",
+  message: "",
+  errors: {
+    message: [],
+    email: [],
+    name: [],
+  },
+};
 
-  const [state, formAction] = useFormState(submitForm, initialState);
+async function addRecaptcha(
+  prevState: ContactFormStateProps,
+  formData: FormData,
+) {
+  const token = await grecaptcha.execute(
+    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+  );
+
+  formData.set("captcha", token);
+  return submitForm(prevState, formData);
+}
+
+export const ContactForm = () => {
+  const [state, formAction] = useFormState(addRecaptcha, initialState);
 
   return state.success ? (
     <p className={styles.successMsg}>
@@ -48,6 +71,13 @@ export const ContactForm = () => {
         placeholder="Let us know your thoughts..."
         errors={state?.errors?.message}
       />
+
+      {state.error && (
+        <p className={styles.errorMsg}>
+          <ExclamationCircleIcon className={styles.errorMsgIcon} />
+          <span>{state.error}</span>
+        </p>
+      )}
 
       <SubmitButton>Submit form</SubmitButton>
     </form>

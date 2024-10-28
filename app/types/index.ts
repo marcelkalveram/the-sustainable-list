@@ -1,3 +1,5 @@
+import { CriteriaNames } from "constants/enums";
+
 interface Field {
   id: string;
   fields?: {
@@ -32,15 +34,6 @@ interface Image {
   };
 }
 
-enum CriteriaNames {
-  category = "category",
-  type = "type",
-  style = "style",
-  sustainabilityType = "sustainabilityType",
-  certificates = "certificates",
-  location = "location",
-}
-
 type BrandFilters = {
   [CriteriaNames.category]?: string[];
   [CriteriaNames.certificates]?: Field[];
@@ -71,20 +64,18 @@ interface CriteriaMap {
   data: Criteria[];
 }
 
-enum SortType {
-  SORT = "sort",
-  DIRECTION = "direction",
-}
-
-enum SortValues {
-  ALPHABETICAL = "alphabetical",
-  PRICE = "price",
-}
-
-enum DirectionValues {
-  ASC = "asc",
-  DESC = "desc",
-}
+type ContactFormStateProps = {
+  email?: "";
+  name?: "";
+  message?: "";
+  errors?: {
+    message?: string[] | undefined;
+    email?: string[] | undefined;
+    name?: string[] | undefined;
+  };
+  error?: string;
+  success?: boolean;
+};
 
 export type {
   Field,
@@ -94,6 +85,5 @@ export type {
   BrandFilters,
   Criteria,
   CriteriaMap,
+  ContactFormStateProps,
 };
-
-export { CriteriaNames, SortType, SortValues, DirectionValues };
