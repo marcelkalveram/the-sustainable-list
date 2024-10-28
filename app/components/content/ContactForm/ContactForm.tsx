@@ -3,6 +3,7 @@
 declare global {
   interface Window {
     grecaptcha: {
+      ready: () => Promise<void>;
       execute: (siteKey?: string) => Promise<string>;
     };
   }
@@ -35,6 +36,7 @@ async function addRecaptcha(
   prevState: ContactFormStateProps,
   formData: FormData,
 ) {
+  await window.grecaptcha?.ready();
   const token = await window.grecaptcha?.execute(
     process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
   );
