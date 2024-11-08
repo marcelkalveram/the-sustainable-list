@@ -1,5 +1,6 @@
 import "./global.css";
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata } from "next";
 import React from "react";
 
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: Props) {
         <Header />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
