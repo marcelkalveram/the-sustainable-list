@@ -1,4 +1,4 @@
-@value textXl from '/app/theme/fonts.css';
+@value textXl, lineHeightSm from '/app/theme/fonts.css';
 @value major2x, major1x from '/app/theme/spacing.css';
 @value secondary from '/app/theme/colors.css';
 
@@ -26,4 +26,6 @@
 
 .text {
   margin: major1x;
+  text-align: center;
+  line-height: lineHeightSm;
 }
