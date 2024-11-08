@@ -1,7 +1,6 @@
 @value md from '/app/theme/breakpoints.css';
-@value minor1x, major2x from '/app/theme/spacing.css';
+@value minor1x, major2x, filtersWidthDesktop from '/app/theme/spacing.css';
 
-@value filtersWidthDesktop: 200px;
 @value filterButtonsHeightMobile: 66px;
 
 .filters {

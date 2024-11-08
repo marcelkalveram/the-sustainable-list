@@ -1,5 +1,5 @@
-@value breakpoints: "/app/theme/breakpoints.css";
-@value md from breakpoints;
+@value md from "/app/theme/breakpoints.css";
+@value filtersWidthDesktop from '/app/theme/spacing.css';
 
 .main {
   margin-left: 0;
@@ -9,7 +9,7 @@
 
 @media md {
   .main {
-    margin-left: 200px;
-    min-height: 2900px;
+    margin-left: filtersWidthDesktop;
+    min-height: 3000px;
   }
 }
