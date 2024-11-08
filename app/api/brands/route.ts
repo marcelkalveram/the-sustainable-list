@@ -26,5 +26,8 @@ export async function GET(request: NextRequest) {
   const sortParamsSanitized = sanitizeSortParams(searchParams);
   const sortedBrands = filteredBrands.sort(sortBrands(sortParamsSanitized));
 
-  return Response.json({ brands: sortedBrands });
+  return Response.json({
+    brands: sortedBrands,
+    totalCount: data.brands.length,
+  });
 }
