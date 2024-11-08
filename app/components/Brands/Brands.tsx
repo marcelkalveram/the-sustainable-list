@@ -1,16 +1,13 @@
 import { useSearchParams } from "next/navigation";
 import useSWR from "swr";
 
+import { API_URL } from "constants/api";
 import { Brand as BrandType } from "types";
+import { fetcher } from "utils/fetcher";
 
 import { Brand } from "./Brand/Brand";
 import { BrandsEmpty } from "./BrandsEmpty/BrandsEmpty";
 import styles from "./styles.module.css";
-
-const API_URL = "/api/brands";
-
-const fetcher = (...args: [string, RequestInit?]) =>
-  fetch(...args).then((res) => res.json());
 
 export const Brands = () => {
   const searchParams = useSearchParams();
@@ -26,7 +23,7 @@ export const Brands = () => {
   const brands = data?.brands;
 
   if (isLoading) {
-    return <p>Loading brands...</p>;
+    return null;
   }
 
   return brands?.length ? (

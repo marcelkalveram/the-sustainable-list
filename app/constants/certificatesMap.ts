@@ -48,12 +48,12 @@ export const certificatesMap = {
     website: "",
   },
   "the-world-fair-trade-organization-wfto": {
-    title: "The World Fair Trade Organization (WFTO)",
+    title: "The World Fair Trade Organization",
     image: "/badges/badges-wft.png",
     website: "",
   },
   "fairtrade-international-flo": {
-    title: "Fairtrade International (FLO)",
+    title: "Fairtrade International",
     image: "/badges/badges-fti.png",
     website: "",
   },
