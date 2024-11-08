@@ -1,6 +1,8 @@
 const path = require("path");
+
 const contentful = require("contentful");
 const fse = require("fs-extra");
+
 const { retrieveBrands } = require("./retrieveBrands");
 const { retrieveFilters } = require("./retrieveFilters");
 
