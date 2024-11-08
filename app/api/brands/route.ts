@@ -5,6 +5,7 @@ import { filterBrand } from "./helpers/filterBrand";
 import data from "/public/data/index.json";
 
 import { sanitizeFilterParams } from "./helpers/sanitizeFilterParams";
+import { sanitizeSeachParams } from "./helpers/sanitizeSearchParams";
 import { sanitizeSortParams } from "./helpers/sanitizeSortParams";
 import { sortBrands } from "./helpers/sortBrands";
 
@@ -14,10 +15,11 @@ export async function GET(request: NextRequest) {
   const filterParamsSanitized = sanitizeFilterParams(searchParams);
   let filteredBrands = data.brands.filter(filterBrand(filterParamsSanitized));
 
-  const searchParamSanitized = searchParams.get("search");
+  const searchParamSanitized = sanitizeSeachParams(searchParams);
+  console.log(searchParamSanitized);
   if (searchParamSanitized) {
     filteredBrands = filteredBrands.filter((brand) =>
-      brand.fields.title.includes(searchParamSanitized),
+      brand.fields.title.toLowerCase().includes(searchParamSanitized),
     );
   }
 
