@@ -44,7 +44,7 @@ export const Controls = ({ setShowFilters }: Props) => {
 
   return (
     <div className={styles.controls}>
-      <ControlsBrandsCount count={10} totalCount={20} />
+      <ControlsBrandsCount />
       <ControlsSort sort={sort} direction={direction} toggleSort={toggleSort} />
       <ControlsSearch onChange={triggerSearch} />
       <ControlsMobile onClick={toggleFilters} />
