@@ -42,6 +42,9 @@ Create an `.env.local` file in the root directory of the project and add the nec
 CONTENTFUL_ACCESS_TOKEN=""
 CONTENTFUL_SPACE_ID=""
 SENDGRID_API_KEY=""
+
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=
+RECAPTCHA_SECRET_KEY=
 ```
 
 After logging in to Vercel (see [Deployment](#deployment) below), these can be pulled directly from there using the following command:
