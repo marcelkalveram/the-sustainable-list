@@ -22,8 +22,8 @@ export const ContentAbout = () => (
         </Paragraph>
         <Paragraph>
           We choose fashion brands that aim to work more sustainably by
-          Paragraphroviding or developing a more responsible supply chain,
-          fostering local production and fighting for decent worker conditions.
+          providing or developing a more responsible supply chain, fostering
+          local production and fighting for decent worker conditions.
         </Paragraph>
         <Paragraph>
           Many of them have been recognised for their work towards
