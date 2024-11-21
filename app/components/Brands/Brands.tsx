@@ -17,17 +17,14 @@ export const Brands = () => {
     {
       suspense: true,
       fallbackData: { brands: [] },
+      keepPreviousData: true,
     },
   );
 
   const brands = data?.brands;
 
-  if (isLoading) {
-    return null;
-  }
-
   return brands?.length ? (
-    <div className={styles.brands}>
+    <div className={styles.brands} style={isLoading ? { opacity: 0.5 } : {}}>
       {brands.map((brand) => (
         <Brand key={brand.id} brand={brand} />
       ))}
