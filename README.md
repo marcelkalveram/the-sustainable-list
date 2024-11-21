@@ -2,7 +2,7 @@
 
 ![Vercel](https://vercelbadge.vercel.app/api/marcelkalveram/the-sustainable-list)
 
-This is the README file for the project "The Sustainable List". It provides instructions on how to set up and deploy the project on Vercel.
+This is the README file for the project [thesustainablelist.com](https://thesustainablelist.com). It provides instructions on how to set up and deploy the project on Vercel.
 
 This project runs on the React framework [Next.js](https://nextjs.org/) and gets deployed on [Vercel](https://vercel.com/) for maximum performance and infrastructure efficiency.
 

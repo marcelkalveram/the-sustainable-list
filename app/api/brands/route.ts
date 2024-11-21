@@ -16,7 +16,6 @@ export async function GET(request: NextRequest) {
   let filteredBrands = data.brands.filter(filterBrand(filterParamsSanitized));
 
   const searchParamSanitized = sanitizeSeachParams(searchParams);
-  console.log(searchParamSanitized);
   if (searchParamSanitized) {
     filteredBrands = filteredBrands.filter((brand) =>
       brand.fields.title.toLowerCase().includes(searchParamSanitized),
