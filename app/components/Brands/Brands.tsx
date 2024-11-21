@@ -11,7 +11,7 @@ import styles from "./styles.module.css";
 
 export const Brands = () => {
   const searchParams = useSearchParams();
-  const { data, isLoading } = useSWR<{ brands: BrandType[] }>(
+  const { data, isLoading, isValidating } = useSWR<{ brands: BrandType[] }>(
     `${API_URL}?${searchParams?.toString()}`,
     fetcher,
     {
@@ -22,14 +22,21 @@ export const Brands = () => {
   );
 
   const brands = data?.brands;
+  const isInitialLoad = !brands?.length && isValidating;
 
-  return brands?.length ? (
+  if (isInitialLoad) {
+    return <BrandsEmpty title="Loading brands..." description="" />;
+  }
+
+  if (!brands || brands?.length === 0) {
+    return <BrandsEmpty />;
+  }
+
+  return (
     <div className={styles.brands} style={isLoading ? { opacity: 0.5 } : {}}>
       {brands.map((brand) => (
         <Brand key={brand.id} brand={brand} />
       ))}
     </div>
-  ) : (
-    <BrandsEmpty />
   );
 };

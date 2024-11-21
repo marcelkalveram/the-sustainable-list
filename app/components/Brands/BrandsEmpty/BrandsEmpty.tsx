@@ -2,7 +2,14 @@ import React from "react";
 
 import styles from "./styles.module.css";
 
-export const BrandsEmpty = () => {
+const DEFAULT_TITLE = "We're sorry!";
+const DEFAULT_DESCRIPTION =
+  "Unfortunately, no brands matched your search. Please try broadening your search a bit.";
+
+export const BrandsEmpty = ({
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+}) => {
   return (
     <div className={styles.container}>
       <svg className={styles.icon} viewBox="0 0 20 20">
@@ -12,12 +19,9 @@ export const BrandsEmpty = () => {
         ></path>
       </svg>
       <p className={styles.heading}>
-        <b>We&apos;re sorry!</b>
+        <b>{title}</b>
       </p>
-      <p className={styles.text}>
-        Unfortunately, no brands matched your search. Please try broadening your
-        search a bit.
-      </p>
+      <p className={styles.text}>{description}</p>
     </div>
   );
 };
