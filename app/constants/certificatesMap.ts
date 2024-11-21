@@ -45,31 +45,31 @@ export const certificatesMap = {
   "b-corporation": {
     title: "B Corporation",
     image: "/badges/badges-bco.png",
-    website: "",
+    website: "https://www.bcorporation.net/",
   },
   "the-world-fair-trade-organization-wfto": {
     title: "The World Fair Trade Organization",
     image: "/badges/badges-wft.png",
-    website: "",
+    website: "https://wfto.com/",
   },
   "fairtrade-international-flo": {
     title: "Fairtrade International",
     image: "/badges/badges-fti.png",
-    website: "",
+    website: "https://www.fairtrade.net/",
   },
   "fair-trade-certified": {
     title: "Fair Trade Certified",
     image: "/badges/badges-ftc.png",
-    website: "",
+    website: "https://www.fairtradecertified.org/",
   },
   "econyl-r": {
     title: "Econyl",
     image: "/badges/badges-enl.png",
-    website: "",
+    website: "https://www.econyl.com/",
   },
   "fashion-revolution": {
     title: "Fashion Revolution",
     image: "/badges/badges-fre.png",
-    website: "",
+    website: "https://www.fashionrevolution.org/",
   },
 };
