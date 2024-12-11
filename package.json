@@ -32,7 +32,7 @@
     "react-redux": "^9.1.2",
     "styled-jsx": "^5.1.6",
     "swr": "^2.2.5",
-    "zod": "^3.23.8"
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@types/node": "22.9.0",
