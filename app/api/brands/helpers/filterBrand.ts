@@ -1,6 +1,5 @@
-import { Brand } from "types";
 import { CriteriaNames } from "constants/enums";
-
+import { Brand } from "types";
 import criteriaMap from "/public/shared/criteriaMap";
 
 export const filterBrand =
