@@ -42,7 +42,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "esm": "^3.2.25",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.3.6",
     "prettier": "3.5.0"
   },
   "volta": {
