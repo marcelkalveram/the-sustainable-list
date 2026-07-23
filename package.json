@@ -40,7 +40,7 @@
     "contentful": "^11.4.6",
     "eslint-config-next": "15.0.3",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
     "esm": "^3.2.25",
     "fs-extra": "^11.2.0",
     "prettier": "3.5.0"
